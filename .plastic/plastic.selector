@@ -1,0 +1,4 @@
+repository "Incantation@ssl://sh_hattrick@sh03-plasticscm.unity.cn:8787"
+  path "/"
+    smartbranch "/main/693901492" 
+     
