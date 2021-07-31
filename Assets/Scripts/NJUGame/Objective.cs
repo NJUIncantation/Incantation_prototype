@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Unity.NJUGame
+namespace Unity.NJUCS.Game
 {
     public abstract class Objective : MonoBehaviour
     {

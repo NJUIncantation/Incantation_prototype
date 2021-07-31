@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Unity.NJUGame
+namespace Unity.NJUCS.Game
 {
     public class GameEvent
     {

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Unity.NJUGame
+namespace Unity.NJUCS.Game
 {
     public class GameFlowManager : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Unity.NJUGame
+namespace Unity.NJUCS.Game
 {
     // The Game Events used across the Game.
     // Anytime there is a need for a new event, it should be added here.

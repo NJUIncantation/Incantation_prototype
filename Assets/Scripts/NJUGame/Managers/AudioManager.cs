@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
 
-namespace Unity.NJUGame
+namespace Unity.NJUCS.Game
 {
     public class AudioManager : MonoBehaviour
     {
