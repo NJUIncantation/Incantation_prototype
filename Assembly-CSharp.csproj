@@ -56,29 +56,49 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\NJUGame\AudioUtility.cs" />
-    <Compile Include="Assets\Scripts\NJUGame\Objective.cs" />
-    <Compile Include="Assets\Scripts\UI\UIManager.cs" />
-    <Compile Include="Assets\Scripts\NJUGame\Managers\GameFlowManager.cs" />
-    <Compile Include="Assets\Scripts\NJUGame\Managers\ObjectiveManager.cs" />
-    <Compile Include="Assets\Scripts\NJUGame\Managers\EventManager.cs" />
-    <Compile Include="Assets\Scripts\UI\UIBase.cs" />
-    <Compile Include="Assets\Scripts\NJUGame\Managers\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\NJUGame\Events.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
+    <Compile Include="Assets\Scripts\Camera\HandHeldCam.cs" />
+    <Compile Include="Assets\Scripts\Camera\AbstractTargetFollower.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\NJUGame\AudioUtility.cs" />
     <Compile Include="Assets\Scripts\Character\ThirdPersonCharacter.cs" />
-    <Compile Include="Assets\Scripts\Character\AICharacterControl.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\ButtonHandler.cs" />
+    <Compile Include="Assets\Scripts\NJUGame\Objective.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\Joystick.cs" />
+    <Compile Include="Assets\Scripts\Camera\FreeLookCam.cs" />
+    <Compile Include="Assets\Scripts\Camera\TargetFieldOfView.cs" />
+    <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
+    <Compile Include="Assets\Scripts\NJUGame\Managers\GameFlowManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\AxisTouchButton.cs" />
+    <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
+    <Compile Include="Assets\Scripts\Camera\PivotBasedCameraRig.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\Scripts\NJUGame\Managers\ObjectiveManager.cs" />
+    <Compile Include="Assets\Scripts\Camera\LookatTarget.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\PlatformSpecific\MobileInput.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\VirtualInput.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\TouchPad.cs" />
+    <Compile Include="Assets\Scripts\NJUGame\Managers\EventManager.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
+    <Compile Include="Assets\Scripts\Camera\ProtectCameraFromWallClip.cs" />
+    <Compile Include="Assets\Scripts\UI\UIBase.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\InputAxisScrollbar.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\Scripts\Camera\AutoCam.cs" />
+    <Compile Include="Assets\Scripts\NJUGame\Managers\AudioManager.cs" />
+    <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Character\ThirdPersonUserControl.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
+    <Compile Include="Assets\Scripts\Character\AICharacterControl.cs" />
+    <Compile Include="Assets\Scripts\NJUGame\Events.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\MobileControlRig.cs" />
+    <Compile Include="Assets\Scripts\PlayerInput\TiltInput.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
+     <None Include="Assets\Prefabs\Cameras\CameraGuidelines.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity 2021.1.7f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -312,6 +332,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.6.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="clipper_library">
+      <HintPath>Library\PackageCache\com.unity.cinemachine@2.7.5\Runtime\ThirdParty\clipper_library.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity 2021.1.7f1c1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -661,8 +684,14 @@
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>

@@ -5,9 +5,10 @@ namespace UnityStandardAssets.CrossPlatformInput.PlatformSpecific
 {
     public class StandaloneInput : VirtualInput
     {
+        
         public override float GetAxis(string name, bool raw)
         {
-            return raw ? Input.GetAxisRaw(name) : Input.GetAxis(name);
+            return raw ? UnityEngine.Input.GetAxisRaw(name) : Input.GetAxis(name);
         }
 
 

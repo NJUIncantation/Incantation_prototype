@@ -303,6 +303,7 @@
 -r:"C:/Program Files/Unity 2021.1.7f1c1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity 2021.1.7f1c1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
 -r:"C:/Program Files/Unity 2021.1.7f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
+-r:"C:/Users/Yongp/Desktop/Unity/Incantation/Library/PackageCache/com.unity.cinemachine@2.7.5/Runtime/ThirdParty/clipper_library.dll"
 -r:"C:/Users/Yongp/Desktop/Unity/Incantation/Library/PackageCache/com.unity.plasticscm-cn@1.2.1-preview/Lib/Editor/antlr.runtimePlastic.dll"
 -r:"C:/Users/Yongp/Desktop/Unity/Incantation/Library/PackageCache/com.unity.plasticscm-cn@1.2.1-preview/Lib/Editor/Antlr3.RuntimePlastic.dll"
 -r:"C:/Users/Yongp/Desktop/Unity/Incantation/Library/PackageCache/com.unity.plasticscm-cn@1.2.1-preview/Lib/Editor/LibGit2SharpPlastic.dll"
