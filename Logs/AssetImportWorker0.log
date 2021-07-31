@@ -1,0 +1,177 @@
+Using pre-set license
+Built from '2021.1/china_unity/release' branch; Version is '2021.1.7f1c1 (4e944ebb9621) revision 5149774'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home China; OS build 19042.1110; Version 2009; 64bit' Language: 'zh' Physical Memory: 16191 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 2021.1.7f1c1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/Yongp/Desktop/Unity/Incantation
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+52704
+Successfully changed project path to: C:/Users/Yongp/Desktop/Unity/Incantation
+C:/Users/Yongp/Desktop/Unity/Incantation
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 76.58 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.7f1c1 (4e944ebb9621)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2021.1.7f1c1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Yongp/Desktop/Unity/Incantation/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce MX250 (ID=0x1d13)
+    Vendor:   NVIDIA
+    VRAM:     1983 MB
+    Driver:   27.21.14.6231
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 2021.1.7f1c1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 2021.1.7f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity 2021.1.7f1c1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56152
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 2021.1.7f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001854 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 73.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.097 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005317 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Yongp\Desktop\Unity\Incantation\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Yongp\Desktop\Unity\Incantation\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.314 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.98 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2925 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 105.0 MB.
+System memory in use after: 105.2 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 3373.
+Total: 3.701500 ms (FindLiveObjects: 0.360000 ms CreateObjectMapping: 0.186400 ms MarkObjects: 3.057300 ms  DeleteObjects: 0.095900 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42d402b061de3733987d63b9cc3b64de') in 0.010856 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.021989 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(0fc40c4a6ee3a16458ff5a661ec95795) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(0fc40c4a6ee3a16458ff5a661ec95795) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6139600f63e7e0421130fb8e632dd14') in 0.005877 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 81.163427 seconds.
+  path: Assets/Scripts/AudioManager.cs
+  artifactKey: Guid(9457c9ccd5f76174fa01898e59194974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/AudioManager.cs using Guid(9457c9ccd5f76174fa01898e59194974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b51bdafd98837af324ea98c856f14f3') in 0.024355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.091983 seconds.
+  path: Assets/Scripts/EventManager.cs
+  artifactKey: Guid(b4fd71bc4c3af924cb3b0a1aeed695d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EventManager.cs using Guid(b4fd71bc4c3af924cb3b0a1aeed695d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e83e7a222277f002c973190ab701e91b') in 0.007721 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.780888 seconds.
+  path: Assets/Scripts/GameFlowManager.cs
+  artifactKey: Guid(a3df58d48b6fe3945a997639201c1533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GameFlowManager.cs using Guid(a3df58d48b6fe3945a997639201c1533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff1ee543416a5b305cf32aca552cd3e1') in 0.021370 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.297954 seconds.
+  path: Assets/Scripts/ObjectiveManager.cs
+  artifactKey: Guid(d4e4e5f80991cb54d8e04a904e0ce9e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ObjectiveManager.cs using Guid(d4e4e5f80991cb54d8e04a904e0ce9e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e3dcffa870f11a2c81f34e2cd8d6973') in 0.007796 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 269.116738 seconds.
+  path: Assets/Scripts/Managers
+  artifactKey: Guid(ea76d38637be0dc44bd5678c7ec9f566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers using Guid(ea76d38637be0dc44bd5678c7ec9f566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51600fdc16d54dcb57eec7d277b45f22') in 0.005279 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.862872 seconds.
+  path: Assets/Scripts/Managers/ObjectiveManager.cs
+  artifactKey: Guid(d4e4e5f80991cb54d8e04a904e0ce9e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/ObjectiveManager.cs using Guid(d4e4e5f80991cb54d8e04a904e0ce9e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76f006c84df97f637201dafea348a59f') in 0.036650 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.549964 seconds.
+  path: Assets/Scripts/Managers/GameFlowManager.cs
+  artifactKey: Guid(a3df58d48b6fe3945a997639201c1533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/GameFlowManager.cs using Guid(a3df58d48b6fe3945a997639201c1533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8413e061e69b1ecb1586c41d3241c3a8') in 0.003895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.952008 seconds.
+  path: Assets/Scripts/Objective.cs
+  artifactKey: Guid(313e4675f45c0cf4b85cf8ad0083426c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Objective.cs using Guid(313e4675f45c0cf4b85cf8ad0083426c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09661dac9837dcb065bd10b3df770375') in 0.006370 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.596829 seconds.
+  path: Assets/Scripts/Events.cs
+  artifactKey: Guid(2656db58c4742f847bf79e1141a19431) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Events.cs using Guid(2656db58c4742f847bf79e1141a19431) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '182113a0db610a959f713e3fb9710cec') in 0.009208 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.505782 seconds.
+  path: Assets/Scripts/AudioUtility.cs
+  artifactKey: Guid(0f5a8e73c89816d4fab922d5fc9f7395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/AudioUtility.cs using Guid(0f5a8e73c89816d4fab922d5fc9f7395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50b52b5b66b56b754534c375cbbbe916') in 0.007946 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 77.473111 seconds.
+  path: Assets/Scripts/AudioUtility.cs
+  artifactKey: Guid(0f5a8e73c89816d4fab922d5fc9f7395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/AudioUtility.cs using Guid(0f5a8e73c89816d4fab922d5fc9f7395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '395614c357c3406139647612b83aae30') in 0.005199 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004633 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Yongp\Desktop\Unity\Incantation\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Yongp\Desktop\Unity\Incantation\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.224 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2926 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 105.1 MB.
+System memory in use after: 105.3 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3383.
+Total: 3.622300 ms (FindLiveObjects: 0.470900 ms CreateObjectMapping: 0.264500 ms MarkObjects: 2.849100 ms  DeleteObjects: 0.035700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 240.352658 seconds.
+  path: Assets/Scripts/NJUGame/AudioUtility.cs
+  artifactKey: Guid(0f5a8e73c89816d4fab922d5fc9f7395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/NJUGame/AudioUtility.cs using Guid(0f5a8e73c89816d4fab922d5fc9f7395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd87283c4e639a758bef40c063e5911f5') in 0.009462 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
