@@ -206,3 +206,4 @@ Received Import Request.
   path: Assets/Scripts/NJUGame/Managers/GameFlowManager.cs
   artifactKey: Guid(a3df58d48b6fe3945a997639201c1533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/NJUGame/Managers/GameFlowManager.cs using Guid(a3df58d48b6fe3945a997639201c1533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '964e7fb74354fcf8ef5dd67e8e90b4bb') in 0.004202 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
