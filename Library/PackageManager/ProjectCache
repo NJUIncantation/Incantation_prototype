@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637633196837094035
-    m_Hash: 2625430335
+      ticks: 637633873874135088
+    m_Hash: 1626366601
   m_LockFileStatus:
     m_FilePath: C:/Users/Yongp/Desktop/Unity/Incantation/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637633196845314080
-    m_Hash: 2603835659
+      ticks: 637633873874145086
+    m_Hash: 2787694947
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
