@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Unity.NJUCS.PlayerInput
 {
+
     public class MobileInput : VirtualInput
     {
         private void AddButton(string name)
@@ -128,6 +129,21 @@ namespace Unity.NJUCS.PlayerInput
         public override Vector3 MousePosition()
         {
             return virtualMousePosition;
+        }
+
+        public override bool GetKey(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool GetKeyDown(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool GetKeyUp(string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }
