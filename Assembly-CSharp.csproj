@@ -56,15 +56,18 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Game\Damageable.cs" />
     <Compile Include="Assets\Scripts\Game\Exceptions.cs" />
     <Compile Include="Assets\Scripts\Game\AudioUtility.cs" />
     <Compile Include="Assets\Scripts\Character\ThirdPersonCharacter.cs" />
+    <Compile Include="Assets\Scripts\Game\DamageArea.cs" />
     <Compile Include="Assets\Scripts\Game\Objective.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\GameFlowManager.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\ObjectiveManager.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\MobileInput.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Game\Health.cs" />
     <Compile Include="Assets\Scripts\UI\UIBase.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\InputManager.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\AudioManager.cs" />
