@@ -1,3 +1,5 @@
+// Author:WangJunYao
+// UIBase
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
@@ -5,25 +7,29 @@ using UnityEngine.EventSystems;
 
 namespace Unity.NJUCS.UI
 {
-	//强制依赖组件
-	[RequireComponent(typeof(CanvasGroup))]
 	public class UIBase : MonoBehaviour
 	{
 
 		public string UIName = "";
 		public int UILayer = 0;
-		protected CanvasGroup canvasGroup;
-		protected virtual void Awake() { canvasGroup = GetComponent<CanvasGroup>(); }
+		protected Canvas canvas;
+		protected virtual void Start() { canvas = GetComponent<Canvas>(); }
 
 		/// <summary>
 		/// 进入
 		/// </summary>
-		public virtual void DoOnEntering() { }
+		public virtual void DoOnEntering() 
+		{ 
+			canvas.enabled = true;
+		}
 
 		/// <summary>
 		/// 锁定
 		/// </summary>
-		public virtual void DoOnPausing() { }
+		public virtual void DoOnPausing() 
+		{
+			canvas.enabled = false;
+		}
 
 		/// <summary>
 		/// 解锁
