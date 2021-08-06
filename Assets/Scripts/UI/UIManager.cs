@@ -1,3 +1,5 @@
+// NOTE: This file has not been modified. USELESS now.
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,7 +23,7 @@ namespace Unity.NJUCS.UI
 		//»º´æ×Öµä
 		private Dictionary<string, UIBase> currentUIDic = new Dictionary<string, UIBase>();
 
-		void Awake()
+		void Start()
 		{
 			_instance = this;
 			LoadAllUIObject();
