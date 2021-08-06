@@ -107,10 +107,6 @@ namespace Unity.NJUCS.PlayerInput
 			return activeInput.GetAxis(name, raw);
 		}
 
-		public static bool GetKey(KeyCode key) 
-		{
-			return Input.GetKey(key);
-		}
 		// -- Button handling --
 		public static bool GetButton(string name)
 		{
