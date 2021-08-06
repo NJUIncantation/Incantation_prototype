@@ -45,7 +45,8 @@ namespace Unity.NJUCS.Widget
         void HandleShoot()
         {
             //×Óµ¯ÊµÀý»¯
-            Instantiate(FlyingObjectPrefab,WeaponMuzzle.position,WeaponMuzzle.rotation);
+            FlyingObjectBase newFlyingObject = Instantiate(FlyingObjectPrefab,WeaponMuzzle.position,WeaponMuzzle.rotation);
+            newFlyingObject.Shoot(this);
         }
     }
 }
