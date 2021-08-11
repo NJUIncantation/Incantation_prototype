@@ -130,11 +130,11 @@ namespace Unity.NJUCS.PlayerInput
         public abstract void SetAxisZero(string name);
         public abstract void SetAxis(string name, float value);
 
-        public abstract bool GetKey(string name);
+        public abstract bool GetKey(KeyCode name);
 
-        public abstract bool GetKeyDown(string name);
+        public abstract bool GetKeyDown(KeyCode name);
 
-        public abstract bool GetKeyUp(string name);
+        public abstract bool GetKeyUp(KeyCode name);
         public abstract Vector3 MousePosition();
     }
 }

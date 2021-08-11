@@ -21,7 +21,7 @@ namespace Unity.NJUCS.Character
         public float runSpeed;
         public float sprintSpeed;
         public float crouchSpeed;
-        private Rigidbody rigidbody;
+        private Rigidbody m_rigidbody;
         private Vector3 actualVelocity;
         private Vector3 characterPosition;
         // Start is called before the first frame update
@@ -36,7 +36,7 @@ namespace Unity.NJUCS.Character
             crouchSpeed = 3.3f;
             jumpForce = 300;
             SetMovementMode(MovementMode.Walking);
-            rigidbody = GetComponent<Rigidbody>();
+            m_rigidbody = GetComponent<Rigidbody>();
             characterPosition = transform.position;
 
         }
@@ -48,11 +48,11 @@ namespace Unity.NJUCS.Character
 
             actualVelocity = Vector3.Lerp(actualVelocity, (transform.position - characterPosition) / Time.deltaTime, Time.deltaTime * 5);
             characterPosition = transform.position;
-            Debug.Log(actualVelocity.magnitude);
+            //Debug.Log(actualVelocity.magnitude);
             if (velocity.magnitude > 0)
             {
                 //Debug.Log(velocity.magnitude);
-                rigidbody.velocity = new Vector3(velocity.normalized.x * smoothSpeed, rigidbody.velocity.y, velocity.normalized.z * smoothSpeed);
+                m_rigidbody.velocity = new Vector3(velocity.normalized.x * smoothSpeed, GetComponent<Rigidbody>().velocity.y, velocity.normalized.z * smoothSpeed);
                 smoothSpeed = Mathf.Lerp(smoothSpeed, maxSpeed, Time.deltaTime * 5);
                 t_mesh.rotation = Quaternion.Lerp(t_mesh.rotation, Quaternion.LookRotation(velocity), Time.deltaTime * rotationSpeed);
                 //Debug.Log(rigidbody.velocity.magnitude);
@@ -67,7 +67,7 @@ namespace Unity.NJUCS.Character
 
         internal void Jump()
         {
-            rigidbody.AddForce(Vector3.up * jumpForce);
+            m_rigidbody.AddForce(Vector3.up * jumpForce);
         }
 
         public void SetMovementMode(MovementMode mode)

@@ -20,24 +20,24 @@ namespace Unity.NJUCS.Character
         void Update()
         {
 
-            character.UpdatePosition(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
-            if (Input.GetKeyDown(KeyCode.CapsLock))
+            character.UpdatePosition(CrossPlatformInputManager.GetAxis("Vertical"), CrossPlatformInputManager.GetAxis("Horizontal"));
+            if (CrossPlatformInputManager.GetKeyDown(KeyCode.CapsLock))
             {
                 character.ToggleRun();
             }
-            if (Input.GetKeyDown(KeyCode.LeftControl))
+            if (CrossPlatformInputManager.GetKeyDown(KeyCode.LeftControl))
             {
                 character.ToggleCrouch();
             }
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (CrossPlatformInputManager.GetKeyDown(KeyCode.LeftShift))
             {
                 character.ToggleSprint();
             }
-            if (Input.GetKeyUp(KeyCode.LeftShift))
+            if (CrossPlatformInputManager.GetKeyUp(KeyCode.LeftShift))
             {
                 character.ToggleSprint();
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (CrossPlatformInputManager.GetKeyDown(KeyCode.Space))
             {
                 character.Jump();
             }

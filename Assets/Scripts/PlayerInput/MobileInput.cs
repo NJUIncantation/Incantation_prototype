@@ -131,17 +131,17 @@ namespace Unity.NJUCS.PlayerInput
             return virtualMousePosition;
         }
 
-        public override bool GetKey(string name)
+        public override bool GetKey(KeyCode name)
         {
             throw new NotImplementedException();
         }
 
-        public override bool GetKeyDown(string name)
+        public override bool GetKeyDown(KeyCode name)
         {
             throw new NotImplementedException();
         }
 
-        public override bool GetKeyUp(string name)
+        public override bool GetKeyUp(KeyCode name)
         {
             throw new NotImplementedException();
         }

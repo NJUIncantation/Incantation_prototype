@@ -185,6 +185,21 @@ namespace Unity.NJUCS.PlayerInput
 			activeInput.SetVirtualMousePositionZ(f);
 		}
 
+		public static bool GetKeyDown(KeyCode keyname)
+        {
+			return activeInput.GetKeyDown(keyname);
+        }
+
+		public static bool GetKeyUp(KeyCode keyname)
+		{
+			return activeInput.GetKeyUp(keyname);
+		}
+
+		public static bool GetKey(KeyCode keyname)
+		{
+			return activeInput.GetKey(keyname);
+		}
+
 
 		// virtual axis and button classes - applies to mobile input
 		// Can be mapped to touch joysticks, tilt, gyro, etc, depending on desired implementation.

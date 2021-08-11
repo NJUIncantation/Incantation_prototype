@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.NJUCS.Game;
 using Unity.NJUCS.Camera;
 //[RequireComponent(typeof(MainCameraController))]
 namespace Unity.NJUCS.Character
 {
+    [RequireComponent(typeof(Health))]
+    [RequireComponent(typeof(Damageable))]
     public class PlayerCharacter : MonoBehaviour
     {
         float forwardInput;
@@ -13,13 +16,33 @@ namespace Unity.NJUCS.Character
         public MainCameraController mainCameraController;
         public CharacterMovement characterMovement;
         public CharacterAnimationController characterAnimationController;
+        public string characterName;
+
         private Vector3 velocity;
+        private ActorManager m_actorManager;
+        private Health health;
+        private Damageable damageable;
         // Start is called before the first frame update
         void Start()
         {
-            //mainCameraController =GetComponent<MainCameraController>();
-            //characterMovement.SetMovementMode(MovementMode.Walking);
-            //characterAnimationController.SetMovementMode(MovementMode.Walking);
+            m_actorManager = FindObjectOfType<ActorManager>();
+            characterName = "mainCharacter";
+            health = gameObject.GetComponent<Health>();
+            damageable = gameObject.GetComponent<Damageable>();
+            if(health == null)
+            {
+                Debug.LogError("Health Component Not Found");
+            }
+            if(damageable = null)
+            {
+                Debug.LogError("Damagable Component Not Found");
+            }
+            m_actorManager.CreateActor(characterName, gameObject);
+        }
+
+        private void OnDestroy()
+        {
+            m_actorManager.DeleteActor(characterName);
         }
 
         // Update is called once per frame
@@ -89,6 +112,11 @@ namespace Unity.NJUCS.Character
         {
             //Debug.Log(characterMovement.Velocity.magnitude);
             return characterMovement.Velocity.magnitude;
+        }
+
+        public void OnDie()
+        {
+            EventManager.Broadcast(Events.PlayerDeathEvent);
         }
     }
 }
