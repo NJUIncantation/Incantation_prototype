@@ -60,7 +60,7 @@
     <Compile Include="Assets\Scripts\Game\Exceptions.cs" />
     <Compile Include="Assets\Scripts\Game\AudioUtility.cs" />
     <Compile Include="Assets\script.cs" />
-    <Compile Include="Assets\Scripts\Character\ThirdPersonCharacter.cs" />
+    <Compile Include="Assets\Scripts\Character\MainCharacter\CharacterAnimationController.cs" />
     <Compile Include="Assets\Scripts\Game\DamageArea.cs" />
     <Compile Include="Assets\Scripts\Game\Objective.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\PlayerWeaponManager.cs" />
@@ -73,25 +73,22 @@
     <Compile Include="Assets\Scripts\PlayerInput\MobileInput.cs" />
     <Compile Include="Assets\Scripts\UI\CombatUI.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Character\MainCharacter\PlayerCharacter.cs" />
     <Compile Include="Assets\Scripts\Game\Health.cs" />
+    <Compile Include="Assets\Scripts\Character\MainCharacter\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\UI\StateBar.cs" />
     <Compile Include="Assets\Scripts\UI\UIBase.cs" />
+    <Compile Include="Assets\Scripts\Character\MainCharacter\PlayerInput.cs" />
     <Compile Include="Assets\Art\UI\Script\Slide.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\InputManager.cs" />
     <Compile Include="Assets\Scripts\Widgets\FlyingWidget\WeaponController.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Camera\MainCamera\Scripts\MainCameraController.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\StandaloneInput.cs" />
     <Compile Include="Assets\Scripts\Widgets\FlyingWidget\FlyingObjectStandard.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\VirtualInput.cs" />
-    <Compile Include="Assets\Scripts\Character\ThirdPersonUserControl.cs" />
-    <Compile Include="Assets\Scripts\Character\AICharacterControl.cs" />
     <Compile Include="Assets\Scripts\Game\Events.cs" />
     <Compile Include="Assets\Scripts\Widgets\FlyingWidget\FlyingObjectBase.cs" />
-    <Compile Include="Assets\Character\MainCamera\Scripts\MainCameraController.cs" />
-    <Compile Include="Assets\Character\MainCharacter\Scripts\Character\CharacterAnimationController.cs" />
-    <Compile Include="Assets\Character\MainCharacter\Scripts\Player\PlayerInput.cs" />
-    <Compile Include="Assets\Character\MainCharacter\Scripts\Character\CharacterMovement.cs" />
-    <Compile Include="Assets\Character\MainCharacter\Scripts\Player\PlayerCharacter.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Prefabs\Cameras\CameraGuidelines.txt" />
