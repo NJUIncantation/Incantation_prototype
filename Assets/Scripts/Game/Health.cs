@@ -71,6 +71,8 @@ namespace Unity.NJUCS.Game
             if (m_Invincible)
                 return;
 
+            Debug.Log(gameObject + " 's health is damaged by " + damageSource);
+
             float healthBefore = CurrentHealth;
             CurrentHealth -= damage;
             CurrentHealth = Mathf.Clamp(CurrentHealth, 0f, MaxHealth);

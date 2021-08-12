@@ -350,6 +350,7 @@
 "Assets/Scripts/Game/Managers/ObjectiveManager.cs"
 "Assets/Scripts/Game/Managers/PlayerWeaponManager.cs"
 "Assets/Scripts/Game/Objective.cs"
+"Assets/Scripts/Game/ObjectiveDock.cs"
 "Assets/Scripts/NPC/EnemyController.cs"
 "Assets/Scripts/NPC/Scripts/Character Stats/Monobehavior/CharacterStats.cs"
 "Assets/Scripts/NPC/Scripts/Character Stats/ScriptableObject/CharacterData_SO.cs"
@@ -373,6 +374,7 @@
 "Assets/Scripts/Widgets/FlyingWidget/FlyingObjectBase.cs"
 "Assets/Scripts/Widgets/FlyingWidget/FlyingObjectStandard.cs"
 "Assets/Scripts/Widgets/FlyingWidget/WeaponController.cs"
+"Assets/Scripts/Widgets/PlayableWidget/FireDamageArea.cs"
 -langversion:8.0
 
 /deterministic
