@@ -44,6 +44,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce453bbe5a5d8849a903d38ea648eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Radius: 0.01
+  Tip: {fileID: 8632117892949998630}
+  MaxLifeTime: 5
+  Speed: 20
+  GravityDownAcceleration: 0
+  InheritWeaponVelocity: 0
+  Damage: 40
+  AreaOfDamage: {fileID: 0}
+--- !u!1 &4494776862552027007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8632117892949998630}
+  m_Layer: 0
+  m_Name: tip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8632117892949998630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4494776862552027007}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5539538440442701786}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5434399587635298353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,15 +95,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f77bafe237efff741865979694a4d775, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5591803
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f77bafe237efff741865979694a4d775, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.028908
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f77bafe237efff741865979694a4d775, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.990206
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f77bafe237efff741865979694a4d775, type: 3}
       propertyPath: m_LocalRotation.w
@@ -95,6 +133,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f77bafe237efff741865979694a4d775, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 71c477194e057f947b1efda4de599e68, type: 2}
     - target: {fileID: 919132149155446097, guid: f77bafe237efff741865979694a4d775, type: 3}
       propertyPath: m_Name
       value: Mesh_Projectile

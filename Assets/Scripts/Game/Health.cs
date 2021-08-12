@@ -81,7 +81,7 @@ namespace Unity.NJUCS.Game
             {
                 OnDamaged?.Invoke(trueDamageAmount, damageSource);
             }
-
+            Debug.Log(message: "current health:" + CurrentHealth);
             HandleDeath();
         }
 
