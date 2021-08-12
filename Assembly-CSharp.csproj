@@ -56,8 +56,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\NPC\Scripts\Tools\Singleton.cs" />
     <Compile Include="Assets\Scripts\Game\Damageable.cs" />
     <Compile Include="Assets\Scripts\Game\Exceptions.cs" />
+    <Compile Include="Assets\Scripts\NPC\Scripts\Managers\MouseManager.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\ActorManager.cs" />
     <Compile Include="Assets\Scripts\Game\AudioUtility.cs" />
     <Compile Include="Assets\script.cs" />
@@ -65,9 +67,11 @@
     <Compile Include="Assets\Scripts\Game\DamageArea.cs" />
     <Compile Include="Assets\Scripts\Game\Objective.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\PlayerWeaponManager.cs" />
+    <Compile Include="Assets\Scripts\NPC\Scripts\Combat\AttackData_SO.cs" />
     <Compile Include="Assets\Art\UI\Script\Togglescript.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\GameFlowManager.cs" />
+    <Compile Include="Assets\Scripts\NPC\Scripts\Characters\Enemy\Grunt.cs" />
     <Compile Include="Assets\Scripts\NPC\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\ObjectiveManager.cs" />
     <Compile Include="Assets\Scripts\UI\Avatar.cs" />
@@ -80,19 +84,35 @@
     <Compile Include="Assets\Scripts\UI\StateBar.cs" />
     <Compile Include="Assets\Scripts\UI\UIBase.cs" />
     <Compile Include="Assets\Scripts\Character\MainCharacter\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\NPC\Scripts\Characters\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\NPC\Scripts\Character Stats\ScriptableObject\CharacterData_SO.cs" />
+    <Compile Include="Assets\Scripts\Game\GameConstants.cs" />
     <Compile Include="Assets\Art\UI\Script\Slide.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\InputManager.cs" />
+    <Compile Include="Assets\Scripts\NPC\Scripts\Characters\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Widgets\FlyingWidget\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\NPC\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\NPC\Scripts\Character Stats\Monobehavior\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\Camera\MainCamera\Scripts\MainCameraController.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\StandaloneInput.cs" />
     <Compile Include="Assets\Scripts\Widgets\FlyingWidget\FlyingObjectStandard.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\VirtualInput.cs" />
     <Compile Include="Assets\Scripts\Game\Events.cs" />
     <Compile Include="Assets\Scripts\Widgets\FlyingWidget\FlyingObjectBase.cs" />
+    <Compile Include="Assets\Scripts\NPC\Scripts\Tools\IEndGameOberver.cs" />
+    <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
+    <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\GunShoot.cs" />
+    <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
+    <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
+    <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
+    <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Prefabs\Cameras\CameraGuidelines.txt" />
+     <None Include="Assets\Old Sea Port\Shaders\MFEP_Stream.shader" />
+     <None Include="Assets\Old Sea Port\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity 2021.1.7f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
