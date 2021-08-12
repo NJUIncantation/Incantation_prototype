@@ -1,12 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.NJUCS.Game;
 
 namespace Unity.NJUCS.Widget
 {
     public class FlyingObjectStandard : FlyingObjectBase
     {
-        [Header("General")][Tooltip("子弹生存时间")]
+        [Header("General")]
+        [Tooltip("弹丸碰撞检测的半径")]
+        public float Radius = 0.01f;
+
+        //[Tooltip("飞行物根的变换（用于碰撞检测）")]
+        //public Transform Root;
+
+        [Tooltip("飞行物顶点的变换（用于碰撞检测）")]
+        public Transform Tip;
+
+        [Tooltip("子弹生存时间")]
         public float MaxLifeTime = 5f;
 
 
@@ -19,6 +30,13 @@ namespace Unity.NJUCS.Widget
 
         [Tooltip("是否计算武器本身的速度")]
         public bool InheritWeaponVelocity = false;
+
+        [Header("Damage")]
+        [Tooltip("飞行物伤害")]
+        public float Damage = 40f;
+
+        [Tooltip("伤害范围")]
+        public DamageArea AreaOfDamage;
 
         FlyingObjectBase m_FlyingObjectBase;
         Vector3 m_Velocity;

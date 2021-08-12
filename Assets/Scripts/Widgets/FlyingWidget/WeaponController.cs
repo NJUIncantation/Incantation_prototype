@@ -20,12 +20,11 @@ namespace Unity.NJUCS.Widget
         [Header("Internal References")]
         //[Tooltip("The root object for the weapon, this is what will be deactivated when the weapon isn't active")]
         //public GameObject WeaponRoot;
-
         [Tooltip("存放枪口的位置")]
         public Transform WeaponMuzzle;
 
         [Header("Shoot Parameters")]
-        [Tooltip("The type of weapon wil affect how it shoots")]
+        [Tooltip("武器攻击类型")]
         public WeaponShootType ShootType;
 
         [Tooltip("子弹预制体")]
@@ -48,6 +47,8 @@ namespace Unity.NJUCS.Widget
             FlyingObjectBase newFlyingObject = Instantiate(FlyingObjectPrefab,WeaponMuzzle.position,WeaponMuzzle.rotation);
             newFlyingObject.Shoot(this);
         }
+
+        
     }
 }
 

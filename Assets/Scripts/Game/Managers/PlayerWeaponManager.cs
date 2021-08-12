@@ -16,6 +16,12 @@ namespace Unity.NJUCS.Game
         [Tooltip("所有武器会被添加到父级")]
         public Transform WeaponParentSocket;
 
+        public int ActiveWeaponIndex { get; private set; }
+
+        WeaponController[] m_WeaponSlots = new WeaponController[9]; // 9 available weapon slots
+        
+
+
         // Start is called before the first frame update
         void Start()
         {
@@ -25,17 +31,58 @@ namespace Unity.NJUCS.Game
                 AddWeapon(weapon);
             }
         }
+
         public bool AddWeapon(WeaponController weaponPrefab)
         {
-            WeaponController weaponInstance = Instantiate(weaponPrefab, WeaponParentSocket);
-            weaponInstance.Owner = gameObject;
-            return true;
+            if (HasWeapon(weaponPrefab) != null)
+            {
+                return false;
+            }
+            for (int i = 0; i < m_WeaponSlots.Length; i++)
+            {
+                //选择空闲的武器槽位加入武器
+                if (m_WeaponSlots[i] == null)
+                {
+                    WeaponController weaponInstance = Instantiate(weaponPrefab, WeaponParentSocket);
+                    weaponInstance.transform.localPosition = Vector3.zero;
+                    weaponInstance.transform.localRotation = Quaternion.identity;
+
+                    weaponInstance.Owner = gameObject;
+                    weaponInstance.SourcePrefab = weaponPrefab.gameObject;
+                    m_WeaponSlots[i] = weaponInstance;
+                    return true;
+                }
+            }
+
+
+            return false ;
         }
 
         // Update is called once per frame
         void Update()
         {
 
+        }
+
+        //当前使用的武器开火
+        public void ActivedWeaponShoot()
+        {
+            m_WeaponSlots[ActiveWeaponIndex].TryShoot();
+        }
+
+        //避免重复添加武器
+        public WeaponController HasWeapon(WeaponController weaponPrefab)
+        {
+            for (var index = 0; index < m_WeaponSlots.Length; index++)
+            {
+                var w = m_WeaponSlots[index];
+                if (w != null && w.SourcePrefab == weaponPrefab.gameObject)
+                {
+                    return w;
+                }
+            }
+
+            return null;
         }
     }
 }
