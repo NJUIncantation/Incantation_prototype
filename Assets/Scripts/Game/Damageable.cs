@@ -35,6 +35,7 @@ namespace Unity.NJUCS.Game
         /// <param name="damageSource"></param>
         public void InflictDamage(float damage, bool isExplosionDamage, GameObject damageSource)
         {
+            Debug.Log("DamageAble is damaged by: " + damage);
             if (Health)
             {
                 if (damage < 0)

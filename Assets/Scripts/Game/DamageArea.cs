@@ -53,6 +53,7 @@ namespace Unity.NJUCS.Game
                 float damageAfterDecay = Damage;
                 if (damageDecayByDistance != null)
                 {
+                    Debug.Log("Apply damage on a damageable object: " + uniqueDamageable);
                     damageAfterDecay = damageDecayByDistance(uniqueDamageable.transform.position);
                 }
                 uniqueDamageable.InflictDamage(damageAfterDecay, true, Owner);

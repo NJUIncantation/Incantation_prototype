@@ -1,37 +1,50 @@
-锘縰sing System;
+using System.Collections;
+using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace Unity.NJUCS.Game
 {
     public abstract class Objective : MonoBehaviour
     {
-        [Tooltip("Name of the objective that will be shown on screen")]
-        public string Title;
+        [Tooltip("目标名称")]
+        public string ObjectiveTitle;
 
-        [Tooltip("Short text explaining the objective that will be shown on screen")]
-        public string Description;
+        [Tooltip("目标描述")]
+        public string ObjectiveDescription;
 
-        [Tooltip("Whether the objective is required to win or not")]
+        [Tooltip("目标是否为可选")]
         public bool IsOptional;
 
-        [Tooltip("Delay before the objective becomes visible")]
+        [Tooltip("目标延迟时间")]
         public float DelayVisible;
 
-        public bool IsCompleted { get; private set; }
-        public bool IsBlocking() => !(IsOptional || IsCompleted);
+
+        public bool IsBlocking() => !(IsOptional || IsCompleted || !IsEnable);
 
         public static event Action<Objective> OnObjectiveCreated;
         public static event Action<Objective> OnObjectiveCompleted;
+
+        public bool IsCompleted { get; private set; }
+        public bool IsEnable { get; set; }
 
         protected virtual void Start()
         {
             OnObjectiveCreated?.Invoke(this);
 
+            IsCompleted = false;
+            IsEnable = true;
             DisplayMessageEvent displayMessage = Events.DisplayMessageEvent;
-            displayMessage.Message = Title;
+            displayMessage.Message = ObjectiveTitle;
             displayMessage.DelayBeforeDisplay = 0.0f;
             EventManager.Broadcast(displayMessage);
         }
+
+        private void OnDestroy()
+        {
+            
+        }
+
 
         public void UpdateObjective(string descriptionText, string counterText, string notificationText)
         {
@@ -48,15 +61,10 @@ namespace Unity.NJUCS.Game
         {
             IsCompleted = true;
 
-            ObjectiveUpdateEvent evt = Events.ObjectiveUpdateEvent;
-            evt.Objective = this;
-            evt.DescriptionText = descriptionText;
-            evt.CounterText = counterText;
-            evt.NotificationText = notificationText;
-            evt.IsComplete = IsCompleted;
-            EventManager.Broadcast(evt);
+            UpdateObjective(descriptionText, counterText, notificationText);
 
             OnObjectiveCompleted?.Invoke(this);
         }
     }
+
 }

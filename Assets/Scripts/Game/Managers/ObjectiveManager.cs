@@ -1,19 +1,63 @@
-锘縰sing System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+
 
 namespace Unity.NJUCS.Game
 {
+    /// <summary>
+    /// 管理一个scene或level的所有objective。objectiveManager应当只作用于一个level
+    /// </summary>
     public class ObjectiveManager : MonoBehaviour
     {
-        List<Objective> m_Objectives = new List<Objective>();
-        bool m_ObjectivesCompleted = false;
+        private List<Objective> m_Objectives = new List<Objective>();
+        private bool m_ObjectivesCompleted = false;
+        public Objective TopObjective = null;
 
         void Awake()
         {
             Objective.OnObjectiveCreated += RegisterObjective;
         }
 
-        void RegisterObjective(Objective objective) => m_Objectives.Add(objective);
+        void RegisterObjective(Objective objective)
+        {
+            Debug.Log("Objective created: " + objective.ObjectiveTitle);
+            m_Objectives.Add(objective);
+        }
+
+
+        public void EnableObjective(string ObjectiveTitle)
+        {
+            foreach(Objective obj in m_Objectives)
+            {
+                if(obj.ObjectiveTitle == ObjectiveTitle)
+                {
+                    obj.IsEnable = true;
+                    break;
+                }
+            }
+        }
+
+        public void DisableObjective(string ObjectiveTitle)
+        {
+            foreach (Objective obj in m_Objectives)
+            {
+                if (obj.ObjectiveTitle == ObjectiveTitle)
+                {
+                    obj.IsEnable = false;
+                    break;
+                }
+            }
+        }
+
+        public void ClearAllObjective()
+        {
+            foreach (Objective obj in m_Objectives)
+            {
+                Destroy(obj);
+            }
+            m_Objectives.Clear();
+        }
 
         void Update()
         {
@@ -22,10 +66,8 @@ namespace Unity.NJUCS.Game
 
             for (int i = 0; i < m_Objectives.Count; i++)
             {
-                // pass every objectives to check if they have been completed
                 if (m_Objectives[i].IsBlocking())
                 {
-                    // break the loop as soon as we find one uncompleted objective
                     return;
                 }
             }
@@ -33,10 +75,12 @@ namespace Unity.NJUCS.Game
             m_ObjectivesCompleted = true;
             EventManager.Broadcast(Events.AllObjectivesCompletedEvent);
         }
-
         void OnDestroy()
         {
             Objective.OnObjectiveCreated -= RegisterObjective;
         }
     }
+
+
+
 }
