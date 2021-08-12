@@ -77,17 +77,17 @@ namespace Unity.NJUCS.PlayerInput
             return Input.mousePosition;
         }
 
-        public override bool GetKey(string name)
+        public override bool GetKey(KeyCode name)
         {
             return Input.GetKey(name);
         }
 
-        public override bool GetKeyDown(string name)
+        public override bool GetKeyDown(KeyCode name)
         {
             return Input.GetKeyDown(name);
         }
 
-        public override bool GetKeyUp(string name)
+        public override bool GetKeyUp(KeyCode name)
         {
             return Input.GetKeyUp(name);
         }
