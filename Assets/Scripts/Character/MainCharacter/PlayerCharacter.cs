@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.NJUCS.Game;
 using Unity.NJUCS.Camera;
+using Unity.NJUCS.Spell;
 //[RequireComponent(typeof(MainCameraController))]
 namespace Unity.NJUCS.Character
 {
@@ -11,6 +12,13 @@ namespace Unity.NJUCS.Character
     [RequireComponent(typeof(Damageable))]
     public class PlayerCharacter : MonoBehaviour
     {
+        public enum CharacterSpells
+        {
+            Spell_J
+        }
+
+        public Dictionary<CharacterSpells, VirtualSpell> MySpells = new Dictionary<CharacterSpells, VirtualSpell>();
+
         float forwardInput;
         float rightInput;
         public MainCameraController mainCameraController;
@@ -38,6 +46,7 @@ namespace Unity.NJUCS.Character
                 Debug.LogError("Damagable Component Not Found");
             }
             m_actorManager.CreateActor(characterName, gameObject);
+            LoadSpells();
         }
 
         private void OnDestroy()
@@ -69,6 +78,20 @@ namespace Unity.NJUCS.Character
             characterAnimationController.Jump();
         }
 
+        public void Cast(CharacterSpells spell)
+        {
+            VirtualSpell virtualSpell = MySpells[spell];
+            if(virtualSpell != null)
+            {
+                Debug.Log("Character casting: " + spell);
+                virtualSpell.Cast();
+            }    
+        }
+
+        public void LoadSpells()
+        {
+            MySpells.Add(CharacterSpells.Spell_J, new SpellLightning());
+        }
         public void ToggleRun()
         {
             if (characterMovement.GetMovementMode() == MovementMode.Running)
