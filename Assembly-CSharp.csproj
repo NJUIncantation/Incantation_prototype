@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\NPC\Scripts\Tools\Singleton.cs" />
     <Compile Include="Assets\Scripts\Game\Damageable.cs" />
+    <Compile Include="Assets\Scripts\Widgets\PlayableWidget\FireDamageArea.cs" />
     <Compile Include="Assets\Scripts\Game\Exceptions.cs" />
     <Compile Include="Assets\Scripts\NPC\Scripts\Managers\MouseManager.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\ActorManager.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\Scripts\Character\MainCharacter\CharacterAnimationController.cs" />
     <Compile Include="Assets\Scripts\Game\DamageArea.cs" />
+    <Compile Include="Assets\Scripts\Widgets\PlayableWidget\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\Game\Objective.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\PlayerWeaponManager.cs" />
     <Compile Include="Assets\Scripts\NPC\Scripts\Combat\AttackData_SO.cs" />
@@ -106,10 +108,11 @@
     <Compile Include="Assets\Scripts\PlayerInput\VirtualInput.cs" />
     <Compile Include="Assets\Scripts\Game\Events.cs" />
     <Compile Include="Assets\Scripts\Widgets\FlyingWidget\FlyingObjectBase.cs" />
-    <Compile Include="Assets\Scripts\NPC\Scripts\Tools\IEndGameOberver.cs" />
-    <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\GunAim.cs" />
     <Compile Include="Assets\Scripts\Game\ObjectiveDock.cs" />
-    <Compile Include="Assets\Scripts\Widgets\PlayableWidget\FireDamageArea.cs" />
+    <Compile Include="Assets\Scripts\NPC\Scripts\Tools\IEndGameOberver.cs" />
+    <Compile Include="Assets\Scripts\Widgets\PlayableWidget\Pickup.cs" />
+    <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\Scripts\Game\Mana.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Prefabs\Cameras\CameraGuidelines.txt" />

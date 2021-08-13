@@ -343,6 +343,7 @@
 "Assets/Scripts/Game/Exceptions.cs"
 "Assets/Scripts/Game/GameConstants.cs"
 "Assets/Scripts/Game/Health.cs"
+"Assets/Scripts/Game/Mana.cs"
 "Assets/Scripts/Game/Managers/ActorManager.cs"
 "Assets/Scripts/Game/Managers/AudioManager.cs"
 "Assets/Scripts/Game/Managers/EventManager.cs"
@@ -375,6 +376,8 @@
 "Assets/Scripts/Widgets/FlyingWidget/FlyingObjectStandard.cs"
 "Assets/Scripts/Widgets/FlyingWidget/WeaponController.cs"
 "Assets/Scripts/Widgets/PlayableWidget/FireDamageArea.cs"
+"Assets/Scripts/Widgets/PlayableWidget/HealthPickup.cs"
+"Assets/Scripts/Widgets/PlayableWidget/Pickup.cs"
 -langversion:8.0
 
 /deterministic
