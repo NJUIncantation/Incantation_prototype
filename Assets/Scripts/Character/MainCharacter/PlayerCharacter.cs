@@ -12,14 +12,13 @@ namespace Unity.NJUCS.Character
     [RequireComponent(typeof(Damageable))]
     public class PlayerCharacter : MonoBehaviour
     {
-        
 
-        public Dictionary<CharacterCasting.CharacterSpells, VirtualSpell> MySpells = new Dictionary<CharacterCasting.CharacterSpells, VirtualSpell>();
 
         float forwardInput;
         float rightInput;
         public MainCameraController mainCameraController;
         public CharacterMovement characterMovement;
+        public CharacterCasting characterCasting;
         public CharacterAnimationController characterAnimationController;
         public string characterName;
 
@@ -35,20 +34,28 @@ namespace Unity.NJUCS.Character
             characterName = "mainCharacter";
             health = gameObject.GetComponent<Health>();
             mana = gameObject.GetComponent<Mana>();
-
-            mana.ResetMana(100);
-
+            characterCasting = gameObject.GetComponent<CharacterCasting>();
             damageable = gameObject.GetComponent<Damageable>();
             if(health == null)
             {
                 Debug.LogError("Health Component Not Found");
             }
-            if(damageable = null)
+            if (mana == null)
+            {
+                Debug.LogError("Mana Component Not Found");
+            }
+            if (damageable == null)
             {
                 Debug.LogError("Damagable Component Not Found");
             }
+            if (characterCasting == null)
+            {
+                Debug.LogError("CharacterCasting Component Not Found");
+            }
+
             m_actorManager.CreateActor(characterName, gameObject);
-            LoadSpells();
+            mana.ResetMana(100);
+            characterCasting.LoadSpells();
         }
 
         private void OnDestroy()
@@ -82,12 +89,13 @@ namespace Unity.NJUCS.Character
 
         public void Cast(CharacterCasting.CharacterSpells spell)
         {
-            VirtualSpell virtualSpell = MySpells[spell];
+            VirtualSpell virtualSpell = characterCasting.GetSpell(spell);
             if(virtualSpell != null)
             {
                 virtualSpell.SetMaster(gameObject);
                 if (mana.HaveEnoughMana(virtualSpell.GetManaCost()))
                 {
+                    //Debug.Log("Mana Cost: " + virtualSpell.GetManaCost());
                     bool successfullyCast = virtualSpell.Cast();
                     if(successfullyCast)
                     {
@@ -97,10 +105,6 @@ namespace Unity.NJUCS.Character
             }    
         }
 
-        public void LoadSpells()
-        {
-            MySpells.Add(CharacterCasting.CharacterSpells.Spell_J, new SpellLightning());
-        }
         public void ToggleRun()
         {
             if (characterMovement.GetMovementMode() == MovementMode.Running)

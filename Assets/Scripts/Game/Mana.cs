@@ -14,7 +14,7 @@ public class Mana : MonoBehaviour
     public UnityAction<float, GameObject> OnManaGained;
     public UnityAction<float, GameObject> OnManaSpent;
 
-
+    [SerializeField]
     private float CurrentMana;
 
     public float GetRatio() => CurrentMana / MaxMana;
@@ -53,6 +53,7 @@ public class Mana : MonoBehaviour
     {
         if(CurrentMana >= mana)
         {
+            //Debug.Log("Spending mana");
             CurrentMana -= mana;
             OnManaSpent?.Invoke(mana, spendon);
             return true;

@@ -9,7 +9,7 @@ namespace Unity.NJUCS.Game
     public class Health : MonoBehaviour
     {
         [Tooltip("最大生命值")] 
-        public float MaxHealth = 10f;
+        public float MaxHealth = 100f;
 
         [Tooltip("\"危险\"生命值比例")]
         public float CriticalHealthRatio = 0.3f;
@@ -21,6 +21,7 @@ namespace Unity.NJUCS.Game
         public float StartingShield = 0;
 
         [Tooltip("当前护盾值")]
+        [SerializeField]
         private float CurrentShield = 0f;
 
         [Tooltip("生命回复速度: 生命/秒")]
@@ -33,6 +34,7 @@ namespace Unity.NJUCS.Game
         public UnityAction OnDie;
         public UnityAction OnRespawn;
 
+        [SerializeField]
         private float CurrentHealth;
        
 

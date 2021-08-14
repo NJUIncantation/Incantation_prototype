@@ -98,7 +98,7 @@
     <Compile Include="Assets\Art\UI\Script\Slide.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\InputManager.cs" />
     <Compile Include="Assets\Scripts\NPC\Scripts\Characters\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Widgets\FlyingWidget\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\Widgets\Weapons\WeaponController.cs" />
     <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\Scripts\NPC\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\AudioManager.cs" />
