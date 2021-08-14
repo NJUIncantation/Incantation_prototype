@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Unity.NJUCS.Widget;
+using Unity.NJUCS.PlayerInput;
 
 namespace Unity.NJUCS.Game
 {
@@ -61,13 +62,26 @@ namespace Unity.NJUCS.Game
         // Update is called once per frame
         void Update()
         {
-
+            if (CrossPlatformInputManager.GetKeyDown(KeyCode.Q))
+            {
+                ActivedWeaponShootSingle();
+            }
+            if (CrossPlatformInputManager.GetKeyDown(KeyCode.E))
+            {
+                ActivedWeaponShootSpread();
+            }
         }
 
-        //当前使用的武器开火
-        public void ActivedWeaponShoot()
+        //当前使用的武器单发开火
+        public void ActivedWeaponShootSingle()
         {
             m_WeaponSlots[ActiveWeaponIndex].TryShoot();
+        }
+
+        //当前使用的武器散发开火
+        public void ActivedWeaponShootSpread()
+        {
+            m_WeaponSlots[ActiveWeaponIndex].TryShootSpread();
         }
 
         //避免重复添加武器
