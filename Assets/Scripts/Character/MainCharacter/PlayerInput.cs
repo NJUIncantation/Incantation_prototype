@@ -39,7 +39,7 @@ namespace Unity.NJUCS.Character
             }
             if (CrossPlatformInputManager.GetKeyDown(KeyCode.J))
             {
-                character.Cast(PlayerCharacter.CharacterSpells.Spell_J);
+                character.Cast(CharacterCasting.CharacterSpells.Spell_J);
             }
         }
     }

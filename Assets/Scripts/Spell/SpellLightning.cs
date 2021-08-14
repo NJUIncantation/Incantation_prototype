@@ -7,19 +7,38 @@ namespace Unity.NJUCS.Spell
     public class SpellLightning : VirtualSpell
     {
         public ParticleSystem particleSystem;
-        public override void Cast()
+        public SpellLightning()
         {
-            particleSystem = Resources.Load<ParticleSystem>("Spells/LightningPrison");
+            ManaCost = 10;
+            CoolDown = 5;
+        }
+        private void OnDestroy()
+        {
+            Destroy(particleSystem);
+        }
+        public override bool Cast()
+        {
+            if(particleSystem == null)
+                particleSystem = Instantiate(Resources.Load<ParticleSystem>("Spells/LightningPrison"));
+            //仍在冷却
+            //Debug.Log("Cooldown: " + CoolDownTimeLeft());
+            if (CoolDownTimeLeft() != 0)
+                return false;
+
             if(particleSystem != null)
             {
-                Debug.Log("Casting Lightning");
-                particleSystem.Emit(10);
+                if (particleSystem.isPlaying)
+                    return false;
+                particleSystem.transform.position = Master.transform.position;
+                //particleSystem.transform.Rotate(180, 0, 0);
+                //更新技能释放时间
+                LastTimeCast = Time.time;
                 particleSystem.Play();
-                Debug.Log(particleSystem.IsAlive());
-                return;
+                return true;
             }
-            Debug.Log("Lightning Particle Effect Not Found");
+            return false;
         }
+
     }
 
 }

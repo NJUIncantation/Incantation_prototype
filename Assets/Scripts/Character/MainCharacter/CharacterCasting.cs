@@ -7,7 +7,10 @@ namespace Unity.NJUCS.Character
 {
     public class CharacterCasting : MonoBehaviour
     {
-        public VirtualSpell spell_J;
+        public enum CharacterSpells
+        {
+            Spell_J
+        }
     }
 
 }

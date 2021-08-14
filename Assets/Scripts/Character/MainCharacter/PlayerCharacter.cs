@@ -12,12 +12,9 @@ namespace Unity.NJUCS.Character
     [RequireComponent(typeof(Damageable))]
     public class PlayerCharacter : MonoBehaviour
     {
-        public enum CharacterSpells
-        {
-            Spell_J
-        }
+        
 
-        public Dictionary<CharacterSpells, VirtualSpell> MySpells = new Dictionary<CharacterSpells, VirtualSpell>();
+        public Dictionary<CharacterCasting.CharacterSpells, VirtualSpell> MySpells = new Dictionary<CharacterCasting.CharacterSpells, VirtualSpell>();
 
         float forwardInput;
         float rightInput;
@@ -29,6 +26,7 @@ namespace Unity.NJUCS.Character
         private Vector3 velocity;
         private ActorManager m_actorManager;
         private Health health;
+        private Mana mana;
         private Damageable damageable;
         // Start is called before the first frame update
         void Start()
@@ -36,6 +34,10 @@ namespace Unity.NJUCS.Character
             m_actorManager = FindObjectOfType<ActorManager>();
             characterName = "mainCharacter";
             health = gameObject.GetComponent<Health>();
+            mana = gameObject.GetComponent<Mana>();
+
+            mana.ResetMana(100);
+
             damageable = gameObject.GetComponent<Damageable>();
             if(health == null)
             {
@@ -78,19 +80,26 @@ namespace Unity.NJUCS.Character
             characterAnimationController.Jump();
         }
 
-        public void Cast(CharacterSpells spell)
+        public void Cast(CharacterCasting.CharacterSpells spell)
         {
             VirtualSpell virtualSpell = MySpells[spell];
             if(virtualSpell != null)
             {
-                Debug.Log("Character casting: " + spell);
-                virtualSpell.Cast();
+                virtualSpell.SetMaster(gameObject);
+                if (mana.HaveEnoughMana(virtualSpell.GetManaCost()))
+                {
+                    bool successfullyCast = virtualSpell.Cast();
+                    if(successfullyCast)
+                    {
+                        mana.SpendMana(virtualSpell.GetManaCost(), gameObject);
+                    }
+                }
             }    
         }
 
         public void LoadSpells()
         {
-            MySpells.Add(CharacterSpells.Spell_J, new SpellLightning());
+            MySpells.Add(CharacterCasting.CharacterSpells.Spell_J, new SpellLightning());
         }
         public void ToggleRun()
         {
