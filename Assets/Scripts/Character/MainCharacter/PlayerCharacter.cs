@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.NJUCS.Game;
 using Unity.NJUCS.Camera;
+using Unity.NJUCS.Spell;
 //[RequireComponent(typeof(MainCameraController))]
 namespace Unity.NJUCS.Character
 {
@@ -11,16 +12,20 @@ namespace Unity.NJUCS.Character
     [RequireComponent(typeof(Damageable))]
     public class PlayerCharacter : MonoBehaviour
     {
+
+
         float forwardInput;
         float rightInput;
         public MainCameraController mainCameraController;
         public CharacterMovement characterMovement;
+        public CharacterCasting characterCasting;
         public CharacterAnimationController characterAnimationController;
         public string characterName;
 
         private Vector3 velocity;
         private ActorManager m_actorManager;
         private Health health;
+        private Mana mana;
         private Damageable damageable;
         // Start is called before the first frame update
         void Start()
@@ -28,16 +33,29 @@ namespace Unity.NJUCS.Character
             m_actorManager = FindObjectOfType<ActorManager>();
             characterName = "mainCharacter";
             health = gameObject.GetComponent<Health>();
+            mana = gameObject.GetComponent<Mana>();
+            characterCasting = gameObject.GetComponent<CharacterCasting>();
             damageable = gameObject.GetComponent<Damageable>();
             if(health == null)
             {
                 Debug.LogError("Health Component Not Found");
             }
-            if(damageable = null)
+            if (mana == null)
+            {
+                Debug.LogError("Mana Component Not Found");
+            }
+            if (damageable == null)
             {
                 Debug.LogError("Damagable Component Not Found");
             }
+            if (characterCasting == null)
+            {
+                Debug.LogError("CharacterCasting Component Not Found");
+            }
+
             m_actorManager.CreateActor(characterName, gameObject);
+            mana.ResetMana(100);
+            characterCasting.LoadSpells();
         }
 
         private void OnDestroy()
@@ -65,8 +83,31 @@ namespace Unity.NJUCS.Character
 
         public void Jump()
         {
-            characterMovement.Jump();
-            characterAnimationController.Jump();
+            //Debug.Log(transform.position + new Vector3(0, -1f, 0));
+            if (Physics.Linecast(transform.position+ new Vector3(0, 0.1f, 0), transform.position + new Vector3(0, -0.1f, 0)))
+            {
+                characterMovement.Jump();
+                characterAnimationController.Jump();
+                characterMovement.onLanded+= characterAnimationController.Land;
+            }
+        }
+
+        public void Cast(CharacterCasting.CharacterSpells spell)
+        {
+            VirtualSpell virtualSpell = characterCasting.GetSpell(spell);
+            if(virtualSpell != null)
+            {
+                virtualSpell.SetMaster(gameObject);
+                if (mana.HaveEnoughMana(virtualSpell.GetManaCost()))
+                {
+                    //Debug.Log("Mana Cost: " + virtualSpell.GetManaCost());
+                    bool successfullyCast = virtualSpell.Cast();
+                    if(successfullyCast)
+                    {
+                        mana.SpendMana(virtualSpell.GetManaCost(), gameObject);
+                    }
+                }
+            }    
         }
 
         public void ToggleRun()

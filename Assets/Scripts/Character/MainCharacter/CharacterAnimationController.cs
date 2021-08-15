@@ -54,5 +54,10 @@ namespace Unity.NJUCS.Character
         {
             animator.SetTrigger("Jump");
         }
+        public void Land()
+        {
+            Debug.Log("setTrggier");
+            animator.SetTrigger("Land");
+        }
     }
 }

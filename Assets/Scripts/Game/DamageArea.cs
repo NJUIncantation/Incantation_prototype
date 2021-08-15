@@ -58,6 +58,8 @@ namespace Unity.NJUCS.Game
                 }
                 uniqueDamageable.InflictDamage(damageAfterDecay, true, Owner);
             }
+
+            Debug.Log("DamageArea Created! Master = " + Owner + ", Damage = " + Damage);
         }
 
         private float DefaultDamageDecayByDistance(Vector3 currentPosition)

@@ -24,6 +24,11 @@ namespace Unity.NJUCS.Character
         private Rigidbody m_rigidbody;
         private Vector3 actualVelocity;
         private Vector3 characterPosition;
+
+        public delegate void OnLandedDelegate();
+        public event OnLandedDelegate onLanded;
+
+        private bool inAir;
         // Start is called before the first frame update
         void Start()
         {
@@ -38,6 +43,7 @@ namespace Unity.NJUCS.Character
             SetMovementMode(MovementMode.Walking);
             m_rigidbody = GetComponent<Rigidbody>();
             characterPosition = transform.position;
+            inAir = false;
 
         }
 
@@ -62,12 +68,23 @@ namespace Unity.NJUCS.Character
             {
                 smoothSpeed = 0;// Mathf.Lerp(smoothSpeed, 0, Time.deltaTime);
             }
+            if(inAir)
+            {
+                Debug.Log("inAir");
+                if (Physics.Linecast(transform.position + new Vector3(0, 0.1f, 0), transform.position + new Vector3(0, -0.1f, 0)))
+                {
+                    inAir = false;
+                    Debug.Log("onlanded");
+                    onLanded();
+                }
+            }
 
         }
 
         internal void Jump()
         {
             m_rigidbody.AddForce(Vector3.up * jumpForce);
+            inAir = true;
         }
 
         public void SetMovementMode(MovementMode mode)
