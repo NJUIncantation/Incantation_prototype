@@ -65,8 +65,13 @@ namespace Unity.NJUCS.Character
 
         public void Jump()
         {
-            characterMovement.Jump();
-            characterAnimationController.Jump();
+            //Debug.Log(transform.position + new Vector3(0, -1f, 0));
+            if (Physics.Linecast(transform.position+ new Vector3(0, 0.1f, 0), transform.position + new Vector3(0, -0.1f, 0)))
+            {
+                characterMovement.Jump();
+                characterAnimationController.Jump();
+                characterMovement.onLanded+= characterAnimationController.Land;
+            }
         }
 
         public void ToggleRun()

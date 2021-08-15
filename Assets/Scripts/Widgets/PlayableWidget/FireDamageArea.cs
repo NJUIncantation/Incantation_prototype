@@ -33,11 +33,11 @@ namespace Unity.NJUCS.Game
         // Update is called once per frame
         void Update()
         {
-            Debug.Log("In Fire");
+            //Debug.Log("In Fire");
             float currentTime = Time.time;
             if(currentTime - m_LastTime >= m_DamageTimeGap)
             {
-                Debug.Log("Trigger FireDamageArea");
+                //Debug.Log("Trigger FireDamageArea");
                 damageArea.InflictDamageInArea(
                     LayerMask.NameToLayer("AllLayer"), 
                     QueryTriggerInteraction.UseGlobal,
