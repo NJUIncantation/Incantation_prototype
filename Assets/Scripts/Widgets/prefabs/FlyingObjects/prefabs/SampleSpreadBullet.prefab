@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7568988812656950878}
   - component: {fileID: -1522175558774789244}
+  - component: {fileID: 5645597894698710755}
   m_Layer: 0
   m_Name: SampleSpreadBullet
   m_TagString: Untagged
@@ -45,13 +46,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Radius: 0.01
+  Root: {fileID: 9162635807789367155}
   Tip: {fileID: 3569428791646687639}
   MaxLifeTime: 5
+  HittableLayers:
+    serializedVersion: 2
+    m_Bits: 2147483647
   Speed: 20
   GravityDownAcceleration: 0
   InheritWeaponVelocity: 0
   Damage: 40
-  AreaOfDamage: {fileID: 0}
+  AreaOfEffect: 1
+--- !u!114 &5645597894698710755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280342491141863105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1125a0c48dfcee34da9a6171a1305855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AreaOfEffectDistance: 1
+  Center: {x: 0, y: 0, z: 0}
+  Damage: 0
+  Owner: {fileID: 0}
 --- !u!1 &5288768807185153344
 GameObject:
   m_ObjectHideFlags: 0

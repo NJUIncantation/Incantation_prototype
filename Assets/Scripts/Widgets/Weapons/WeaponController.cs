@@ -30,10 +30,10 @@ namespace Unity.NJUCS.Widget
         [Tooltip("武器攻击类型")]
         public WeaponShootType ShootType;
 
-        [Tooltip("Angle for the cone in which the bullets will be shot randomly (0 means no spread at all)")]
+        [Tooltip("随机扩散的最大角度(0表示没有扩散)")]
         public float BulletSpreadAngle = 0f;
 
-        [Tooltip("Amount of bullets per shot")]
+        [Tooltip("一次发射弹丸的数量")]
         public int BulletsPerShot = 5;
 
         [Tooltip("单发子弹预制体")]
