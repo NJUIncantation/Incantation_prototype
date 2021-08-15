@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\UI\Avatar.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\MobileInput.cs" />
     <Compile Include="Assets\Scripts\UI\CombatUI.cs" />
+    <Compile Include="Assets\Scripts\Game\Managers\CameraManager.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\EventManager.cs" />
     <Compile Include="Assets\Scripts\Character\MainCharacter\PlayerCharacter.cs" />
     <Compile Include="Assets\Scripts\Game\Health.cs" />

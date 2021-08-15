@@ -348,6 +348,7 @@
 "Assets/Scripts/Game/Mana.cs"
 "Assets/Scripts/Game/Managers/ActorManager.cs"
 "Assets/Scripts/Game/Managers/AudioManager.cs"
+"Assets/Scripts/Game/Managers/CameraManager.cs"
 "Assets/Scripts/Game/Managers/EventManager.cs"
 "Assets/Scripts/Game/Managers/GameFlowManager.cs"
 "Assets/Scripts/Game/Managers/ObjectiveManager.cs"
