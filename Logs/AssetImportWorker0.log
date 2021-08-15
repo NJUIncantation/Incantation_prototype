@@ -15,11 +15,11 @@ D:/Unity/MyGame/Incantation_prototype
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50357
+50472
 Successfully changed project path to: D:/Unity/MyGame/Incantation_prototype
 D:/Unity/MyGame/Incantation_prototype
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 88.85 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 85.98 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1c1 (4e944ebb9621)
 [Subsystems] Discovering subsystems at path D:/Unity/2021.1.7f1c1/Editor/Data/Resources/UnitySubsystems
@@ -35,65 +35,121 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2021.1.7f1c1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2021.1.7f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2021.1.7f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56500
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56504
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2021.1.7f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001621 seconds.
+Registered in 0.001091 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 107.92 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 90.67 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.105 seconds
+- Completed reload, in  1.012 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006024 seconds.
+Registered in 0.005123 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity\MyGame\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity\MyGame\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.56 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.362 seconds
+- Completed reload, in  1.176 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.56 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3143 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 131.4 MB.
 System memory in use after: 131.6 MB.
 
 Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3614.
-Total: 3.494000 ms (FindLiveObjects: 0.383100 ms CreateObjectMapping: 0.234300 ms MarkObjects: 2.742000 ms  DeleteObjects: 0.133400 ms)
+Total: 2.424500 ms (FindLiveObjects: 0.264700 ms CreateObjectMapping: 0.110300 ms MarkObjects: 1.960400 ms  DeleteObjects: 0.088000 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes/DockScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/DockScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7e67220ba7561857a0b8601633d89d3') in 0.014650 seconds 
+  path: Assets/Animation/Animation/Attack
+  artifactKey: Guid(2ec6d2e3a1cecff4bb8c1eca68bf014b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack using Guid(2ec6d2e3a1cecff4bb8c1eca68bf014b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '537f26445b071e8b94ac1ff3bfe89656') in 0.010800 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005400 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity\MyGame\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity\MyGame\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.081 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3133 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 130.9 MB.
-System memory in use after: 131.2 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3617.
-Total: 2.775700 ms (FindLiveObjects: 0.233000 ms CreateObjectMapping: 0.129500 ms MarkObjects: 2.393600 ms  DeleteObjects: 0.018700 ms)
-
+Received Import Request.
+  Time since last request: 15.624472 seconds.
+  path: Assets/Animation/Animation/Attack/standing 1H cast spell 01.fbx
+  artifactKey: Guid(17014ce53ebac5a4dbd13c597cca5e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/standing 1H cast spell 01.fbx using Guid(17014ce53ebac5a4dbd13c597cca5e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f26d9bb45afabf275a26d9b9d0129113') in 0.134116 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000362 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 1H Magic Attack 03.fbx
+  artifactKey: Guid(32ff5e9d272a12a469c6232132d6bc90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 1H Magic Attack 03.fbx using Guid(32ff5e9d272a12a469c6232132d6bc90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ba05549bed828f4bbd1df6620e91f14') in 0.011541 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000330 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 2H Magic Attack 01.fbx
+  artifactKey: Guid(59a4760d9dd39994ba6bf59baf5a0e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 2H Magic Attack 01.fbx using Guid(59a4760d9dd39994ba6bf59baf5a0e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e574918dc239b39db3ec610f73168b1') in 0.013776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000375 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 1H Magic Attack 01.fbx
+  artifactKey: Guid(425ae07b697022e4ab6caa4cf1583027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 1H Magic Attack 01.fbx using Guid(425ae07b697022e4ab6caa4cf1583027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73283e15010e2bc026f2efc15ae0e2b8') in 0.012532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 2H Magic Attack 04.fbx
+  artifactKey: Guid(7b2d7110b0b443f418c040e7eb0f32b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 2H Magic Attack 04.fbx using Guid(7b2d7110b0b443f418c040e7eb0f32b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deb92cbf42fe61e105b8319824f08ab4') in 0.014849 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000451 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 2H Magic Attack 05.fbx
+  artifactKey: Guid(96271e615bc36da4aa8983f4bda10761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 2H Magic Attack 05.fbx using Guid(96271e615bc36da4aa8983f4bda10761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a23e6c995610c2af6ce0ae4e8060d0b4') in 0.017979 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000382 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 2H Magic Area Attack 01.fbx
+  artifactKey: Guid(3be52f8f7c443ff4a972fb60584b7ca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 2H Magic Area Attack 01.fbx using Guid(3be52f8f7c443ff4a972fb60584b7ca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67f02ce50f2c1a1a74c95fb4fad97ad9') in 0.012893 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 2H Magic Area Attack 02.fbx
+  artifactKey: Guid(13235424e9be3c445aa5096fe3f53425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 2H Magic Area Attack 02.fbx using Guid(13235424e9be3c445aa5096fe3f53425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb417a45c3bacbdcfa2371d30eb3e0ad') in 0.011841 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000481 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 2H Cast Spell 01.fbx
+  artifactKey: Guid(d0b820425308afc429a7351d86564497) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 2H Cast Spell 01.fbx using Guid(d0b820425308afc429a7351d86564497) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a16bfb081843cb1e79af12bc9d25ec2') in 0.011811 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 2H Magic Attack 03.fbx
+  artifactKey: Guid(be0110620f6095c489e755ebe986d7ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 2H Magic Attack 03.fbx using Guid(be0110620f6095c489e755ebe986d7ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd066e427d2ca12d6dc596f55397d16b1') in 0.013858 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 1H Magic Attack 02.fbx
+  artifactKey: Guid(99c845f9fc0ea5048a6ca786b80fe960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 1H Magic Attack 02.fbx using Guid(99c845f9fc0ea5048a6ca786b80fe960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e0d74afd6be09844f04916fd5047708') in 0.011881 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 2H Magic Attack 02.fbx
+  artifactKey: Guid(01d0d0ef2ec3c8248b41b10bc4b4f490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 2H Magic Attack 02.fbx using Guid(01d0d0ef2ec3c8248b41b10bc4b4f490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecae4fa4fa2c6323de42e8ac32b3437d') in 0.012712 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.865932 seconds.
+  path: Assets/Animation/Animation/Attack/Standing 1H Magic Attack 02.fbx
+  artifactKey: Guid(99c845f9fc0ea5048a6ca786b80fe960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Animation/Attack/Standing 1H Magic Attack 02.fbx using Guid(99c845f9fc0ea5048a6ca786b80fe960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1124357bd9e6b194c89275ab6bdce86b') in 0.005843 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
