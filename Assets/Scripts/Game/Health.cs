@@ -9,22 +9,39 @@ namespace Unity.NJUCS.Game
     public class Health : MonoBehaviour
     {
         [Tooltip("最大生命值")] 
-        public float MaxHealth = 10f;
+        public float MaxHealth = 100f;
 
         [Tooltip("\"危险\"生命值比例")]
         public float CriticalHealthRatio = 0.3f;
 
+        [Tooltip("最大护盾值")]
+        public float MaxShield = 10f;
+
+        [Tooltip("护盾初始值")]
+        public float StartingShield = 0;
+
+        [Tooltip("当前护盾值")]
+        [SerializeField]
+        private float CurrentShield = 0f;
+
+        [Tooltip("生命回复速度: 生命/秒")]
+        private float HealingSpeed = 0;
+
         
         public UnityAction<float, GameObject> OnDamaged;
         public UnityAction<float, GameObject> OnHealed;
+        public UnityAction<float> OnBecomeInvincible;
         public UnityAction OnDie;
-        public UnityAction OnBecomeInvincible;
+        public UnityAction OnRespawn;
 
-        public float CurrentHealth { get; set; }
+        [SerializeField]
+        private float CurrentHealth;
        
 
         public float GetRatio() => CurrentHealth / MaxHealth;
         public bool IsCritical() => GetRatio() <= CriticalHealthRatio;
+
+        public bool IsFull() => Mathf.Abs(CurrentHealth - MaxHealth) < 0.01;
 
         private bool m_IsDead;
 
@@ -37,7 +54,17 @@ namespace Unity.NJUCS.Game
         void Start()
         {
             CurrentHealth = MaxHealth;
+            CurrentShield = StartingShield;
             m_Invincible = false;
+        }
+
+        private void Update()
+        {
+            if (m_Invincible && (Time.time - m_BecomeInvincibleTime > m_InvinvibleTime))
+                m_Invincible = false;
+
+            CurrentHealth = Mathf.Clamp(CurrentHealth + HealingSpeed * Time.deltaTime, 0, MaxHealth);
+
         }
         /// <summary>
         /// 治疗对象时调用
@@ -65,13 +92,20 @@ namespace Unity.NJUCS.Game
         /// <param name="damageSource">伤害来源</param>
         public void TakeDamage(float damage, GameObject damageSource)
         {
-            if (Time.time - m_BecomeInvincibleTime > m_InvinvibleTime)
-                m_Invincible = false;
 
             if (m_Invincible)
                 return;
 
             Debug.Log(gameObject + " 's health is damaged by " + damageSource);
+
+            if(CurrentShield > 0)
+            {
+                damage -= CurrentShield;
+                if (CurrentShield < 0)
+                    CurrentShield = 0;
+                if (damage <= 0)
+                    return;
+            }
 
             float healthBefore = CurrentHealth;
             CurrentHealth -= damage;
@@ -85,6 +119,11 @@ namespace Unity.NJUCS.Game
             }
             Debug.Log(message: "current health:" + CurrentHealth);
             HandleDeath();
+        }
+        
+        public void GainShield(float amount)
+        {
+            CurrentShield = Mathf.Clamp(amount + CurrentShield, 0, MaxShield);
         }
 
         /// <summary>
@@ -100,7 +139,16 @@ namespace Unity.NJUCS.Game
             m_BecomeInvincibleTime = Time.time;
             m_Invincible = true;
 
-            OnBecomeInvincible?.Invoke();
+            OnBecomeInvincible?.Invoke(time);
+        }
+
+
+        public void Respawn()
+        {
+            CurrentHealth = MaxHealth;
+            CurrentShield = StartingShield;
+            m_Invincible = false;
+            OnRespawn?.Invoke();
         }
 
         /// <summary>
@@ -125,7 +173,7 @@ namespace Unity.NJUCS.Game
                 return;
 
             // call OnDie action
-            if (CurrentHealth <= 0f)
+            if (CurrentHealth <= 0f && !m_Invincible)
             {
                 m_IsDead = true;
                 OnDie?.Invoke();

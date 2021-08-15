@@ -33,13 +33,13 @@ namespace Unity.NJUCS.Character
             {
                 character.ToggleSprint();
             }
-            if (CrossPlatformInputManager.GetKeyUp(KeyCode.LeftShift))
-            {
-                character.ToggleSprint();
-            }
             if (CrossPlatformInputManager.GetKeyDown(KeyCode.Space))
             {
                 character.Jump();
+            }
+            if (CrossPlatformInputManager.GetKeyDown(KeyCode.J))
+            {
+                character.Cast(CharacterCasting.CharacterSpells.Spell_J);
             }
         }
     }

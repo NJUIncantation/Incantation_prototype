@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\NPC\Scripts\Tools\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Spell\SpellLightning.cs" />
     <Compile Include="Assets\Scripts\Game\Damageable.cs" />
     <Compile Include="Assets\Scripts\Widgets\PlayableWidget\FireDamageArea.cs" />
     <Compile Include="Assets\Scripts\Game\Exceptions.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\GameFlowManager.cs" />
     <Compile Include="Assets\Scripts\NPC\Scripts\Characters\Enemy\Grunt.cs" />
+    <Compile Include="Assets\Scripts\Spell\VirtualSpell.cs" />
     <Compile Include="Assets\Scripts\NPC\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\ObjectiveManager.cs" />
     <Compile Include="Assets\Scripts\UI\Avatar.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Assets\Scripts\Character\MainCharacter\PlayerCharacter.cs" />
     <Compile Include="Assets\Scripts\Game\Health.cs" />
     <Compile Include="Assets\Scripts\Character\MainCharacter\CharacterMovement.cs" />
+    <Compile Include="Assets\Scripts\Game\Mana.cs" />
     <Compile Include="Assets\Scripts\UI\StateBar.cs" />
     <Compile Include="Assets\Scripts\UI\UIBase.cs" />
     <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
@@ -95,7 +98,7 @@
     <Compile Include="Assets\Art\UI\Script\Slide.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\InputManager.cs" />
     <Compile Include="Assets\Scripts\NPC\Scripts\Characters\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Widgets\FlyingWidget\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\Widgets\Weapons\WeaponController.cs" />
     <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\Scripts\NPC\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\AudioManager.cs" />
@@ -109,6 +112,7 @@
     <Compile Include="Assets\Scripts\Game\Events.cs" />
     <Compile Include="Assets\Scripts\Widgets\FlyingWidget\FlyingObjectBase.cs" />
     <Compile Include="Assets\Scripts\Character\MainCharacter\CharacterIK.cs" />
+    <Compile Include="Assets\Scripts\Character\MainCharacter\CharacterCasting.cs" />
     <Compile Include="Assets\Scripts\Game\ObjectiveDock.cs" />
     <Compile Include="Assets\Scripts\NPC\Scripts\Tools\IEndGameOberver.cs" />
     <Compile Include="Assets\Scripts\Widgets\PlayableWidget\Pickup.cs" />

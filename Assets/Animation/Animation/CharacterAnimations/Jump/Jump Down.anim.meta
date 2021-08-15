@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Animation/Animation/CharacterAnimations/Jump/Jump Down.anim.meta
 guid: eddcf36ffd40f604b8efc495dd64daa8
 NativeFormatImporter:
+=======
+guid: 3820b3ca7f0e1454492e172514d4a5b0
+PrefabImporter:
+>>>>>>> 3ccf4a10204623c4e27074500ab3fb741a112251:Assets/Scripts/Widgets/prefabs/Weapons/EmptyHand.prefab.meta
   externalObjects: {}
   mainObjectFileID: 7400000
   userData: 
