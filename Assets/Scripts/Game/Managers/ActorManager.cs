@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using System.Reflection;
+using UnityEngine.Events;
+
 
 namespace Unity.NJUCS.Game
 {
     public class ActorManager : MonoBehaviour
     {
         private Dictionary<string, GameObject> Actors = new Dictionary<string, GameObject>();
+
+        public UnityAction<string, GameObject> OnActorCreated;
 
         private void Awake()
         {
@@ -23,6 +25,7 @@ namespace Unity.NJUCS.Game
             }
             Debug.Log("An actor is created: " + name);
             Actors.Add(name, gameObject);
+            OnActorCreated?.Invoke(name, gameObject);
         }
 
         public int AmountOfActors()

@@ -7650,6 +7650,7 @@ GameObject:
   - component: {fileID: 572796553}
   - component: {fileID: 572796554}
   - component: {fileID: 572796555}
+  - component: {fileID: 572796556}
   m_Layer: 0
   m_Name: GamePlay
   m_TagString: Untagged
@@ -7706,6 +7707,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3df58d48b6fe3945a997639201c1533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &572796556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572796551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c42f382861025b4eb8df17423832c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &576506808
@@ -10760,7 +10773,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &827458675
 Transform:
@@ -14677,8 +14690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796f0cb4d048af148974addd644e13a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIName: 
-  UILayer: 0
   PlayerHealthBar: {fileID: 1489142410}
   PlayerManaBar: {fileID: 132577465}
   PlayerAvatar: {fileID: 357253272}
@@ -16812,7 +16823,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1295713161}
   - component: {fileID: 1295713160}
-  - component: {fileID: 1295713159}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -16820,19 +16830,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1295713159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1295713158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e4e5f80991cb54d8e04a904e0ce9e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TopObjective: {fileID: 0}
 --- !u!114 &1295713160
 MonoBehaviour:
   m_ObjectHideFlags: 0

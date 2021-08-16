@@ -12,49 +12,49 @@ public class Mana : MonoBehaviour
     public float ManaRestoringSpeed = 0;
 
     public UnityAction<float, GameObject> OnManaGained;
-    public UnityAction<float, GameObject> OnManaSpent;
+    public UnityAction<float, GameObject> OnManaSpent;  
 
-    [SerializeField]
-    private float CurrentMana;
+    private float m_CurrentMana;
+    //public float CurrentMana { get; }
 
-    public float GetRatio() => CurrentMana / MaxMana;
+    public float GetRatio() => m_CurrentMana / MaxMana;
 
     private void Start()
     {
-        CurrentMana = MaxMana;
+        m_CurrentMana = MaxMana;
     }
 
     private void Update()
     {
-        CurrentMana = Mathf.Clamp(CurrentMana + ManaRestoringSpeed * Time.deltaTime, 0, MaxMana);
+        m_CurrentMana = Mathf.Clamp(m_CurrentMana + ManaRestoringSpeed * Time.deltaTime, 0, MaxMana);
     }
 
-    public bool IsFull() => Mathf.Abs(CurrentMana - MaxMana) < 0.01;
+    public bool IsFull() => Mathf.Abs(m_CurrentMana - MaxMana) < 0.01;
 
-    public void ClearMana() => CurrentMana = 0;
+    public void ClearMana() => m_CurrentMana = 0;
 
     public void GainMana(float mana, GameObject source)
     {
-        CurrentMana = Mathf.Clamp(CurrentMana + mana, 0, MaxMana);
+        m_CurrentMana = Mathf.Clamp(m_CurrentMana + mana, 0, MaxMana);
         OnManaGained?.Invoke(mana, source);
     }
 
     public void ResetMana(float maxMana)
     {
         MaxMana = maxMana;
-        CurrentMana = MaxMana;
+        m_CurrentMana = MaxMana;
     }
 
     public bool HaveEnoughMana(float manacost)
     {
-        return manacost <= CurrentMana;
+        return manacost <= m_CurrentMana;
     }
     public bool SpendMana(float mana, GameObject spendon)
     {
-        if(CurrentMana >= mana)
+        if(m_CurrentMana >= mana)
         {
             //Debug.Log("Spending mana");
-            CurrentMana -= mana;
+            m_CurrentMana -= mana;
             OnManaSpent?.Invoke(mana, spendon);
             return true;
         }

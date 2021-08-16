@@ -22,7 +22,7 @@ namespace Unity.NJUCS.Game
 
         [Tooltip("当前护盾值")]
         [SerializeField]
-        private float CurrentShield = 0f;
+        private float m_CurrentShield = 0f;
 
         [Tooltip("生命回复速度: 生命/秒")]
         private float HealingSpeed = 0;
@@ -34,14 +34,16 @@ namespace Unity.NJUCS.Game
         public UnityAction OnDie;
         public UnityAction OnRespawn;
 
-        [SerializeField]
-        private float CurrentHealth;
-       
+        private float m_CurrentHealth;
 
-        public float GetRatio() => CurrentHealth / MaxHealth;
+        public float CurrentHealth { get; }
+        public float CurrentShield { get; }
+
+
+        public float GetRatio() => m_CurrentHealth / MaxHealth;
         public bool IsCritical() => GetRatio() <= CriticalHealthRatio;
 
-        public bool IsFull() => Mathf.Abs(CurrentHealth - MaxHealth) < 0.01;
+        public bool IsFull() => Mathf.Abs(m_CurrentHealth - MaxHealth) < 0.01;
 
         private bool m_IsDead;
 
@@ -53,8 +55,8 @@ namespace Unity.NJUCS.Game
 
         void Start()
         {
-            CurrentHealth = MaxHealth;
-            CurrentShield = StartingShield;
+            m_CurrentHealth = MaxHealth;
+            m_CurrentShield = StartingShield;
             m_Invincible = false;
         }
 
@@ -63,7 +65,7 @@ namespace Unity.NJUCS.Game
             if (m_Invincible && (Time.time - m_BecomeInvincibleTime > m_InvinvibleTime))
                 m_Invincible = false;
 
-            CurrentHealth = Mathf.Clamp(CurrentHealth + HealingSpeed * Time.deltaTime, 0, MaxHealth);
+            m_CurrentHealth = Mathf.Clamp(m_CurrentHealth + HealingSpeed * Time.deltaTime, 0, MaxHealth);
 
         }
         /// <summary>
@@ -73,12 +75,12 @@ namespace Unity.NJUCS.Game
         /// <param name="healSource">给予治疗的对象</param>
         public void Heal(float healAmount, GameObject healSource)
         {
-            float healthBefore = CurrentHealth;
-            CurrentHealth += healAmount;
-            CurrentHealth = Mathf.Clamp(CurrentHealth, 0f, MaxHealth);
+            float healthBefore = m_CurrentHealth;
+            m_CurrentHealth += healAmount;
+            m_CurrentHealth = Mathf.Clamp(m_CurrentHealth, 0f, MaxHealth);
 
             // call OnHeal action
-            float trueHealAmount = CurrentHealth - healthBefore;
+            float trueHealAmount = m_CurrentHealth - healthBefore;
             if (trueHealAmount > 0f)
             {
                 OnHealed?.Invoke(trueHealAmount, healSource);
@@ -98,32 +100,32 @@ namespace Unity.NJUCS.Game
 
             Debug.Log(gameObject + " 's health is damaged by " + damageSource);
 
-            if(CurrentShield > 0)
+            if(m_CurrentShield > 0)
             {
-                damage -= CurrentShield;
-                if (CurrentShield < 0)
-                    CurrentShield = 0;
+                damage -= m_CurrentShield;
+                if (m_CurrentShield < 0)
+                    m_CurrentShield = 0;
                 if (damage <= 0)
                     return;
             }
 
-            float healthBefore = CurrentHealth;
-            CurrentHealth -= damage;
-            CurrentHealth = Mathf.Clamp(CurrentHealth, 0f, MaxHealth);
+            float healthBefore = m_CurrentHealth;
+            m_CurrentHealth -= damage;
+            m_CurrentHealth = Mathf.Clamp(m_CurrentHealth, 0f, MaxHealth);
 
             // call OnDamage action
-            float trueDamageAmount = healthBefore - CurrentHealth;
+            float trueDamageAmount = healthBefore - m_CurrentHealth;
             if (trueDamageAmount > 0f)
             {
                 OnDamaged?.Invoke(trueDamageAmount, damageSource);
             }
-            Debug.Log(message: "current health:" + CurrentHealth);
+            Debug.Log(message: "current health:" + m_CurrentHealth);
             HandleDeath();
         }
         
         public void GainShield(float amount)
         {
-            CurrentShield = Mathf.Clamp(amount + CurrentShield, 0, MaxShield);
+            m_CurrentShield = Mathf.Clamp(amount + m_CurrentShield, 0, MaxShield);
         }
 
         /// <summary>
@@ -145,8 +147,8 @@ namespace Unity.NJUCS.Game
 
         public void Respawn()
         {
-            CurrentHealth = MaxHealth;
-            CurrentShield = StartingShield;
+            m_CurrentHealth = MaxHealth;
+            m_CurrentShield = StartingShield;
             m_Invincible = false;
             OnRespawn?.Invoke();
         }
@@ -156,7 +158,7 @@ namespace Unity.NJUCS.Game
         /// </summary>
         public void Kill()
         {
-            CurrentHealth = 0f;
+            m_CurrentHealth = 0f;
 
             // call OnDamage action
             OnDamaged?.Invoke(MaxHealth, null);
@@ -173,7 +175,7 @@ namespace Unity.NJUCS.Game
                 return;
 
             // call OnDie action
-            if (CurrentHealth <= 0f && !m_Invincible)
+            if (m_CurrentHealth <= 0f && !m_Invincible)
             {
                 m_IsDead = true;
                 OnDie?.Invoke();

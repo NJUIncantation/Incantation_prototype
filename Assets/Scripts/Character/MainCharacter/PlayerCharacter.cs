@@ -66,7 +66,13 @@ namespace Unity.NJUCS.Character
         // Update is called once per frame
         void Update()
         {
-            //transform.Translate(velocity);
+            m_actorManager.AmountOfActors();
+            CameraManager cameraManager = FindObjectOfType<CameraManager>();
+            if (cameraManager != null)
+            {
+                Debug.Log("CameraManger");
+                cameraManager.AmountOfCameras();
+            }
         }
         public void UpdatePosition(float forward, float right)
         {

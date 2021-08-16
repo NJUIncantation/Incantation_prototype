@@ -1,23 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 namespace Unity.NJUCS.Game
 {
     public class CameraManager : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         private Dictionary<string, GameObject> Cameras = new Dictionary<string, GameObject>();
+
+        public UnityAction<string, GameObject> OnCameraCreated;
 
         private void Awake()
         {
@@ -30,8 +21,9 @@ namespace Unity.NJUCS.Game
             {
                 return;
             }
-            Debug.Log("An actor is created: " + name);
+            //Debug.Log("A camera is created: " + name);
             Cameras.Add(name, gameObject);
+            OnCameraCreated?.Invoke(name, gameObject);
         }
 
         public int AmountOfCameras()
@@ -41,7 +33,7 @@ namespace Unity.NJUCS.Game
 
         public void DeleteCamera(string name)
         {
-            Debug.Log("An actor is deleted: " + name);
+            //Debug.Log("A camera is deleted: " + name);
             Cameras.Remove(name);
         }
 

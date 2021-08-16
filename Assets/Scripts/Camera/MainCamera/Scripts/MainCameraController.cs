@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.NJUCS.Game;
 namespace Unity.NJUCS.Camera
 {
     public class MainCameraController : MonoBehaviour
@@ -19,6 +20,8 @@ namespace Unity.NJUCS.Camera
         // Start is called before the first frame update
         void Start()
         {
+            CameraManager cameraManager = FindObjectOfType<CameraManager>();
+            cameraManager.CreateCamera("mainCamera", gameObject);
             camRotation = transform.localRotation;
             camSmoothFactor = 1;
             lookUpMax = 60;
