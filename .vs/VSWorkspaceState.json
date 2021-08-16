@@ -4,8 +4,9 @@
     "\\Assets",
     "\\Assets\\Scripts",
     "\\Assets\\Scripts\\UI",
-    "\\Assets\\Scripts\\UI\\CombatUI"
+    "\\Assets\\Scripts\\UI\\UIFramework",
+    "\\Assets\\Scripts\\UI\\UIFramework\\UIPanel"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\UI\\CombatUI\\Compass.cs",
+  "SelectedNode": "\\Assets\\Scripts\\UI\\UIFramework\\UIPanel\\UIPanelType.cs",
   "PreviewInSolutionExplorer": false
 }

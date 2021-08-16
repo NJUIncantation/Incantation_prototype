@@ -71,6 +71,7 @@ namespace Unity.NJUCS.UI
             panelStack.Push(panel);
 
             panel.GetComponent<BasePanel>().OnEnter();
+            Debug.Log(type + " is pushed");
         }
 
         //Pop panel out and exit 
@@ -88,6 +89,7 @@ namespace Unity.NJUCS.UI
 
             BasePanel topPanel2 = panelStack.Peek();
             topPanel2.OnResume();
+            Debug.Log("a panel is poped");
         }
 
         //Search UIPanel from panelList according to UIPanelType

@@ -381,6 +381,7 @@
 "Assets/Scripts/UI/UIFramework/UIPanel/BasePanel.cs"
 "Assets/Scripts/UI/UIFramework/UIPanel/UIPanel.cs"
 "Assets/Scripts/UI/UIFramework/UIPanel/UIPanelType.cs"
+"Assets/Scripts/UI/UIRoot.cs"
 "Assets/Scripts/Widgets/FlyingWidget/FlyingObjectBase.cs"
 "Assets/Scripts/Widgets/FlyingWidget/FlyingObjectStandard.cs"
 "Assets/Scripts/Widgets/PlayableWidget/FireDamageArea.cs"
