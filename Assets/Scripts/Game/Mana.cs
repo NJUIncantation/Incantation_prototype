@@ -15,7 +15,12 @@ public class Mana : MonoBehaviour
     public UnityAction<float, GameObject> OnManaSpent;  
 
     private float m_CurrentMana;
-    //public float CurrentMana { get; }
+    public float CurrentMana {
+        get
+        {
+            return m_CurrentMana;
+        }
+    }
 
     public float GetRatio() => m_CurrentMana / MaxMana;
 

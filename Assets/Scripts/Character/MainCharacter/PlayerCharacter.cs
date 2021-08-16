@@ -70,7 +70,7 @@ namespace Unity.NJUCS.Character
             CameraManager cameraManager = FindObjectOfType<CameraManager>();
             if (cameraManager != null)
             {
-                Debug.Log("CameraManger");
+                //Debug.Log("CameraManger");
                 cameraManager.AmountOfCameras();
             }
         }

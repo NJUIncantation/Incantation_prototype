@@ -36,7 +36,12 @@ namespace Unity.NJUCS.Game
 
         private float m_CurrentHealth;
 
-        public float CurrentHealth { get; }
+        public float CurrentHealth { 
+            get
+            {
+                return m_CurrentHealth;
+            }
+        }
         public float CurrentShield { get; }
 
 

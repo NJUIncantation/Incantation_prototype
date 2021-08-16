@@ -3,8 +3,9 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\UI"
+    "\\Assets\\Scripts\\UI",
+    "\\Assets\\Scripts\\UI\\CombatUI"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\UI\\UIManager.cs",
+  "SelectedNode": "\\Assets\\Scripts\\UI\\CombatUI\\Compass.cs",
   "PreviewInSolutionExplorer": false
 }
