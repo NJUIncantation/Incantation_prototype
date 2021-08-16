@@ -27,6 +27,8 @@ public void Shoot(WeaponController controller)
 从controller控制的武器中发射该飞行物
 
 
+
+
 ### public class FlyingObjectStandard : FlyingObjectBase
 
 **描述：**
@@ -42,21 +44,49 @@ public void Shoot(WeaponController controller)
 | 名称                    | 描述                                  |
 | ----------------------- | ------------------------------------- |
 | Radius                  | 弹丸碰撞检测的半径                    |
+| Root                    | 飞行物根的transform（用于碰撞检测）   |
 | Tip                     | 飞行物顶点的transform（用于碰撞检测） |
 | MaxLifeTime             | 子弹生存时间                          |
+| HittableLayers          | 碰撞检测的LayerMask                   |
 | Speed                   | 子弹速度                              |
 | GravityDownAcceleration | 子弹受到的重力加速度                  |
 | InheritWeaponVelocity   | 是否计算武器本身的速度                |
 | Damage                  | 飞行物伤害                            |
-| AreaOfDamage            | 伤害范围                              |
+| AreaOfEffect            | 伤害范围                              |
 
 **成员函数：**
+
+飞行物的成员函数都是*私有函数*，外部调用只能使用父类FlyingObjectBase 的`Shoot()`函数，以下说明在每个函数内实现的功能
+
+```C#
+void OnEnable()
+```
+
+实例化飞行物时被调用，在实际武器代码中`FlyingObjectBase newFlyingObject = Instantiate(FlyingObjectPrefab,WeaponMuzzle.position,WeaponMuzzle.rotation);`实例化一个新的飞行物
 
 ```C#
 new void OnShoot()
 ```
 
 重写父类FlyingObjectBase的public UnityAction `OnShoot`
+
+```C#
+void Update()
+```
+
+飞行物生成后在空中的飞行与消亡，并利用Raycast检测是否发生碰撞，如果发生碰撞调用`OnHit()`
+
+```C#
+bool IsHitValid(RaycastHit hit)
+```
+
+判断碰撞是否合法
+
+```C#
+void OnHit()
+```
+
+发生碰撞，产生damageArea，飞行物被销毁
 
 
 
@@ -70,14 +100,18 @@ new void OnShoot()
 
 **成员变量：**
 
-| 名称               | 描述                                     |
-| ------------------ | ---------------------------------------- |
-| WeaponName         | 武器名字                                 |
-| WeaponMuzzle       | 存放枪口的位置                           |
-| ShootType          | 武器攻击类型                             |
-| FlyingObjectPrefab | 飞行物预制体                             |
-| Owner              | 记录谁拥有这个武器                       |
-| SourcePrefab       | 用来判断实例的武器是否来自于同一个Prefab |
+| 名称                     | 描述                                     |
+| ------------------------ | ---------------------------------------- |
+| WeaponName               | 武器名字                                 |
+| WeaponMuzzle             | 存放枪口的位置                           |
+| ShootType                | 武器攻击类型                             |
+| BulletSpreadAngle        | 随机扩散的最大角度(0表示没有扩散)        |
+| BulletsPerShot           | 一次发射弹丸的数量                       |
+| SingleFlyingObjectPrefab | 单发子弹预制体                           |
+| SpreadFlyingObjectPrefab | 霰弹子弹预制体                           |
+| Owner                    | 记录谁拥有这个武器                       |
+| SourcePrefab             | 用来判断实例的武器是否来自于同一个Prefab |
+| MuzzleWorldVelocity      | 武器（人物）移动速度                     |
 
 **成员函数：**
 
@@ -85,7 +119,19 @@ new void OnShoot()
 public bool TryShoot()
 ```
 
-用来判断当前武器能否发射（还没做）并实例化子弹并发射，返回值表示是否能发射
+（单发，无扩散）用来判断当前武器能否发射（还没做）并实例化子弹并发射，无视BulletsPerShot的值，返回值表示是否能发射
+
+```c#
+public bool TryShootSpread()
+```
+
+（多发，散射）用来判断当前武器能否发射并实例化BulletsPerShot颗子弹并发射，返回值表示是否能发射
+
+```c#
+public Vector3 GetShotDirectionWithinSpread(Transform shootTransform)
+```
+
+随机散射函数，输入发射的transform，返回一个BulletSpreadAngle角度内的发射方向
 
 
 
@@ -114,10 +160,16 @@ public bool AddWeapon(WeaponController weaponPrefab)
 添加一个武器，参数为添加的武器
 
 ```C#
-public void ActivedWeaponShoot()
+public void ActivedWeaponShootSingle()
 ```
 
-当前使用的武器开火
+当前使用的武器单发开火
+
+```C#
+public void ActivedWeaponShootSpread()
+```
+
+当前使用的武器散发开火
 
 ```C#
 public WeaponController HasWeapon(WeaponController weaponPrefab)
