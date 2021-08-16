@@ -17,6 +17,9 @@ namespace Unity.NJUCS.Game
         [Tooltip("所有武器会被添加到父级")]
         public Transform WeaponParentSocket;
 
+        [Tooltip("控制发射朝向")]
+        public Transform WeaponOriention;
+
         public int ActiveWeaponIndex { get; private set; }
 
         WeaponController[] m_WeaponSlots = new WeaponController[9]; // 9 available weapon slots
@@ -45,6 +48,7 @@ namespace Unity.NJUCS.Game
                 if (m_WeaponSlots[i] == null)
                 {
                     WeaponController weaponInstance = Instantiate(weaponPrefab, WeaponParentSocket);
+                    weaponInstance.WeaponOriention = WeaponOriention;
                     weaponInstance.transform.localPosition = Vector3.zero;
                     weaponInstance.transform.localRotation = Quaternion.identity;
 

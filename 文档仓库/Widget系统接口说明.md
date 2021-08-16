@@ -104,6 +104,7 @@ void OnHit()
 | ------------------------ | ---------------------------------------- |
 | WeaponName               | 武器名字                                 |
 | WeaponMuzzle             | 存放枪口的位置                           |
+| WeaponOriention          | 控制发射朝向                             |
 | ShootType                | 武器攻击类型                             |
 | BulletSpreadAngle        | 随机扩散的最大角度(0表示没有扩散)        |
 | BulletsPerShot           | 一次发射弹丸的数量                       |
@@ -141,7 +142,7 @@ public Vector3 GetShotDirectionWithinSpread(Transform shootTransform)
 
 属于Unity.NJUCS.Game
 
-管理player的武器系统，player应挂载该组件实现武器攻击逻辑，在`void update()`中实现根据input来攻击
+管理player的武器系统，player应挂载该组件实现武器攻击逻辑，在`void update()`中实现根据input来攻击，当前设计为Q单发射击，E散发射击
 
 **成员变量：**
 
@@ -149,6 +150,7 @@ public Vector3 GetShotDirectionWithinSpread(Transform shootTransform)
 | ------------------ | ----------------------------- |
 | StartingWeapons    | 开始时装备的武器              |
 | WeaponParentSocket | 所有武器被添加到该父transform |
+| WeaponOriention    | 控制发射朝向                  |
 | ActiveWeaponIndex  | 当前正在使用的武器编号        |
 
 **成员函数：**

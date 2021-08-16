@@ -26,6 +26,9 @@ namespace Unity.NJUCS.Widget
         [Tooltip("存放枪口的位置")]
         public Transform WeaponMuzzle;
 
+        [Tooltip("武器攻击方向（存放人物主体的transform）")]
+        public Transform WeaponOriention;
+
         [Header("Shoot Parameters")]
         [Tooltip("武器攻击类型")]
         public WeaponShootType ShootType;
@@ -57,7 +60,7 @@ namespace Unity.NJUCS.Widget
         void HandleShoot()
         {
             //子弹实例化
-            FlyingObjectBase newFlyingObject = Instantiate(SingleFlyingObjectPrefab,WeaponMuzzle.position,WeaponMuzzle.rotation);
+            FlyingObjectBase newFlyingObject = Instantiate(SingleFlyingObjectPrefab, WeaponMuzzle.position, WeaponOriention.rotation);
             newFlyingObject.Shoot(this);
         }
 
@@ -71,7 +74,7 @@ namespace Unity.NJUCS.Widget
         {
             for(int i = 0; i < BulletsPerShot; i++)
             {
-                Vector3 shotDirection = GetShotDirectionWithinSpread(WeaponMuzzle);
+                Vector3 shotDirection = GetShotDirectionWithinSpread(WeaponOriention);
                 FlyingObjectBase newFlyingObject = Instantiate(SpreadFlyingObjectPrefab, WeaponMuzzle.position, 
                     Quaternion.LookRotation(shotDirection));
                 newFlyingObject.Shoot(this);

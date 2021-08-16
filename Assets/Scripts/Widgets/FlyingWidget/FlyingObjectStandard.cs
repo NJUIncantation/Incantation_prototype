@@ -21,7 +21,7 @@ namespace Unity.NJUCS.Widget
         public float MaxLifeTime = 5f;
 
         [Tooltip("碰撞检测的LayerMask")]
-        public LayerMask HittableLayers = LayerMask.NameToLayer("AllLayer");
+        public LayerMask HittableLayers;
 
 
         [Header("Movement")]
@@ -55,15 +55,14 @@ namespace Unity.NJUCS.Widget
         //实例化时被调用
         void OnEnable()
         {
+            HittableLayers = LayerMask.NameToLayer("AllLayer");
+
             AreaOfDamage = GetComponent<DamageArea>();
             m_FlyingObjectBase = GetComponent<FlyingObjectBase>();
             m_FlyingObjectBase.OnShoot += OnShoot;
             Destroy(gameObject, MaxLifeTime);
 
-            // Ignore colliders of owner
-            m_IgnoredColliders = new List<Collider>();
-            Collider[] ownerColliders = m_FlyingObjectBase.Owner.GetComponentsInChildren<Collider>();
-            m_IgnoredColliders.AddRange(ownerColliders);
+            
         }
 
         new void OnShoot()
@@ -72,6 +71,11 @@ namespace Unity.NJUCS.Widget
             m_LastRootPosition = Root.position;
             m_Velocity = transform.forward * Speed;
             transform.position += m_FlyingObjectBase.InheritedMuzzleVelocity * Time.deltaTime;
+
+            // Ignore colliders of owner
+            m_IgnoredColliders = new List<Collider>();
+            Collider[] ownerColliders = m_FlyingObjectBase.Owner.GetComponentsInChildren<Collider>();
+            m_IgnoredColliders.AddRange(ownerColliders);
         }
 
         void Update()
