@@ -10074,6 +10074,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764377037}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &766761700 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2488931413297947810, guid: 519f1de9b01312849832398c64fd2933, type: 3}
+  m_PrefabInstance: {fileID: 4269369722946330102}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &768842175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26039,6 +26044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxMana: 0
   ManaRestoringSpeed: 0
+  CurrentMana: 0
 --- !u!114 &2049644660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26052,8 +26058,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingWeapons:
-  - {fileID: -2440598485630340822, guid: 3820b3ca7f0e1454492e172514d4a5b0, type: 3}
-  WeaponParentSocket: {fileID: 738528427}
+  - {fileID: -2440598485630340822, guid: 0289ef14fc689894e8a12f7d2ce78ffe, type: 3}
+  WeaponParentSocket: {fileID: 766761700}
+  WeaponOriention: {fileID: 4269369722946330103}
 --- !u!1001 &2057087395
 PrefabInstance:
   m_ObjectHideFlags: 0
