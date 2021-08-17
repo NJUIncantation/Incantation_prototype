@@ -2,106 +2,153 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-namespace Unity.NJUCS.NPC 
-{
+using Unity.NJUCS.Game;
 
-    public enum EnemyStates 
+namespace Unity.NJUCS.NPC
+{
+    public enum EnemyStates
     {
         GUARD,
         PATROL,
         CHASE,
         DEAD
     }
-
     [RequireComponent(typeof(NavMeshAgent))]
-
-    public class EnemyController : MonoBehaviour
+    [RequireComponent(typeof(Health))]
+    [RequireComponent(typeof(Damageable))]
+    [RequireComponent(typeof(Collider))]
+    public class EnemyController : VirtualEnemy
     {
-        private EnemyStates enemy_states;
+        private EnemyStates enemyStates;
         private NavMeshAgent agent;
         private Animator anim;
+        private Collider coll;
+        private Health health;
 
         [Header("Basic Settings")]
-
-        public float sightRadius;  
+        public float sightRadius;
         private float speed;
         public float lookAtTime;
         public bool isGuard;
-        private float remainLookAtTime; 
-        private GameObject attackTarget;
+        private float remainLookAtTime;
+        private float lastAttackTime;
+        protected GameObject attackTarget;
         private Quaternion guardRotation;
 
         [Header("Patrol State")]
-
         public float patrolRange;
+        private Vector3 wayPoint;//Ëæ»úÑ²Âßµã
+        private Vector3 guardPos;//³õÊ¼Î»ÖÃ
 
-        private Vector3 wayPoint;//éšæœºå·¡é€»ç‚¹  
-        private Vector3 guardPos;//åˆå§‹ä½ç½®
+        [Header("Test variable")]
+        public float coolDown;
+        public float attackRange;
+        public float skillRange;
 
-        //é…åˆåŠ¨ç”»çš„boolå˜é‡
-        bool isWalk;
-        bool isChase;
-        bool isFollow;
+
+        //ÅäºÏ¶¯»­µÄbool±äÁ¿
+        bool isWalk = false;
+        bool isChase = false;
+        bool isFollow = false;
+        bool isDead = false;
+        bool playerDead = false;
+        bool isCritical = false;
 
         void Awake()
         {
             agent = GetComponent<NavMeshAgent>();
             anim = GetComponent<Animator>();
+            coll = GetComponent<Collider>();
+            health = GetComponent<Health>();
             speed = agent.speed;
             guardPos = transform.position;
             guardRotation = transform.rotation;
             remainLookAtTime = lookAtTime;
         }
-        void Start() //ä¸Awakeä¸åŒï¼Œåœ¨ç‚¹å‡»playåæ‰æ‰§è¡Œ
+        void Start() //ÓëAwake²»Í¬£¬ÔÚµã»÷playºó²ÅÖ´ĞĞ
         {
-            if(isGuard)
+            //FIXME:
+            EnemyManager.Instance.AddEnemy(this);
+            if (isGuard)
             {
-                enemy_states = EnemyStates.GUARD;
+                enemyStates = EnemyStates.GUARD;
             }
             else
             {
-                enemy_states = EnemyStates.PATROL;
-                GetNewWayPoint();//å¾—åˆ°åˆå§‹ç§»åŠ¨çš„ç‚¹
+                enemyStates = EnemyStates.PATROL;
+                GetNewWayPoint();//µÃµ½³õÊ¼ÒÆ¶¯µÄµã
             }
         }
+
+        //void OnEnable()
+        //{
+        //    GameManager.Instance.AddObserver(this);
+        //}
+
+        void OnDisable()
+        {
+            if (EnemyManager.IsInitialized)
+            {
+                //FIXME:
+                EnemyManager.Instance.RemoveEnemy(this);
+            }
+        }
+
+
         void Update()
-        {       
-            SwitchStates();
-            SwitchAnimation();
+        {
+            if (health.CurrentHealth < 0)
+            {
+                isDead = true;
+            }
+            if (!playerDead)
+            {
+                SwitchStates();
+                SwitchAnimation();
+                lastAttackTime -= Time.deltaTime;
+            }
         }
 
         void SwitchAnimation()
         {
-            anim.SetBool("Walk",isWalk);
-            anim.SetBool("Chase",isChase);
-            anim.SetBool("Follow",isFollow);
+            anim.SetBool("Walk", isWalk);
+            anim.SetBool("Chase", isChase);
+            anim.SetBool("Follow", isFollow);
+            //anim.SetBool("Critical", characterStats.isCritical);
+            anim.SetBool("Death", isDead);
         }
 
         void SwitchStates()
         {
-    
-            if(FoundPlayer())
+            if (isDead)
             {
-                enemy_states = EnemyStates.CHASE;
+                enemyStates = EnemyStates.DEAD;
+            }
+            else if (FoundPlayer())
+            {
+                enemyStates = EnemyStates.CHASE;
                 //Debug.Log("Enemy have found player!");
             }
 
-            switch(enemy_states)
+            switch (enemyStates)
             {
                 case EnemyStates.GUARD:
                     isChase = false;
-                    if(transform.position != guardPos)
+                    if (transform.position != guardPos)
                     {
+                        print("guardPos" + guardPos);
+                        print("position" + transform.position);
+                        print(transform.position - guardPos);
                         isWalk = true;
                         agent.isStopped = false;
                         agent.destination = guardPos;
-                    
-                        if(Vector3.SqrMagnitude(guardPos-transform.position) <= agent.stoppingDistance
+
+                        if (Vector3.SqrMagnitude(guardPos - transform.position) <= agent.stoppingDistance
                             && transform.rotation != guardRotation)
                         {
                             isWalk = false;
                             //Debug.Log("Enemy is rotating!");
-                            transform.rotation = Quaternion.Lerp(transform.rotation, guardRotation, 0.03f);
+                            transform.rotation = Quaternion.Lerp(transform.rotation, guardRotation, 0.01f);
                         }
                     }
                     break;
@@ -109,17 +156,17 @@ namespace Unity.NJUCS.NPC
 
                     isChase = false;
                     agent.speed = speed * 0.5f;
-               
-                    if(Vector3.Distance(wayPoint, transform.position) <= agent.stoppingDistance)
+
+                    if (Vector3.Distance(wayPoint, transform.position) <= agent.stoppingDistance)
                     {
                         isWalk = false;
-                        //åˆ°äº†å·¡é€»ç‚¹åº”è¯¥åœä¸‹æ¥ç­‰å¾…ä¸€æ®µæ—¶é—´
-                        if(remainLookAtTime > 0)
+                        //µ½ÁËÑ²ÂßµãÓ¦¸ÃÍ£ÏÂÀ´µÈ´ıÒ»¶ÎÊ±¼ä
+                        if (remainLookAtTime > 0)
                         {
                             remainLookAtTime -= Time.deltaTime;
                         }
                         else
-                        {                       
+                        {
                             GetNewWayPoint();
                         }
                     }
@@ -129,60 +176,113 @@ namespace Unity.NJUCS.NPC
                         agent.destination = wayPoint;
                     }
                     break;
-                case EnemyStates.CHASE:                             
-                
+                case EnemyStates.CHASE:
+
                     isWalk = false;
                     isChase = true;
-
                     agent.speed = speed;
-                    if(FoundPlayer())
+
+                    if (FoundPlayer())
                     {
-                        // è¿½å‡»player
+                        // ×·»÷player
                         isFollow = true;
+                        agent.isStopped = false;
                         agent.destination = attackTarget.transform.position;
-                        //TODO: è¿›å…¥æ”»å‡»èŒƒå›´åˆ‡æ¢çŠ¶æ€
                     }
                     else
                     {
-                        //æ‹‰è„±è·ç¦»åˆ‡æ¢çŠ¶æ€
+                        //À­ÍÑ¾àÀëÇĞ»»×´Ì¬
                         isFollow = false;
-                        if(remainLookAtTime > 0)
+                        if (remainLookAtTime > 0)
                         {
-                            agent.destination = transform.position;//åœä½è§‚å¯Ÿ
+                            agent.destination = transform.position;//Í£×¡¹Û²ì
                             remainLookAtTime -= Time.deltaTime;
                         }
-                        else if(isGuard)
+                        else if (isGuard)
                         {
-                            enemy_states = EnemyStates.GUARD;
+                            enemyStates = EnemyStates.GUARD;
                         }
                         else
-                        {                       
-                            enemy_states = EnemyStates.PATROL;
-                        }                  
+                        {
+                            enemyStates = EnemyStates.PATROL;
+                        }
+                    }
+                    //½øÈë¹¥»÷·¶Î§ÇĞ»»×´Ì¬
+                    if (TargetInAttackRange() || TargetInSkillRange())
+                    {
+                        isFollow = false;
+                        agent.isStopped = true;
+                        if (lastAttackTime < 0)
+                        {
+                            lastAttackTime = coolDown;
+
+                            //ÊÇ·ñ±©»÷
+                            //characterStats.isCritical = Random.value < characterStats.attackData.criticalChance;
+                            //if(characterStats.isCritical) Debug.Log("±©»÷");
+                            //else Debug.Log("ÆÕÍ¨¹¥»÷");
+                            //¹¥»÷
+                            Attack();
+                        }
                     }
                     break;
                 case EnemyStates.DEAD:
+
+                    coll.enabled = false;
+                    agent.enabled = false;
+                    Destroy(gameObject, 2f);
                     break;
                 default:
                     Debug.Log("error in function SwitchStates of class EnemyController!\n");
-                    enemy_states = EnemyStates.DEAD;
+                    enemyStates = EnemyStates.DEAD;
                     break;
+            }
+        }
+
+        bool TargetInAttackRange()
+        {
+            if (attackTarget != null)
+            {
+                return Vector3.Distance(attackTarget.transform.position, transform.position) <= attackRange;
+            }
+            else return false;
+        }
+
+        bool TargetInSkillRange()
+        {
+            if (attackTarget != null)
+            {
+                return Vector3.Distance(attackTarget.transform.position, transform.position) <= skillRange;
+            }
+            else return false;
+        }
+
+        void Attack()
+        {
+            transform.LookAt(attackTarget.transform);
+            if (TargetInAttackRange())//¹¥»÷¶¯»­
+            {
+                anim.SetTrigger("Attack");
+            }
+            if (TargetInSkillRange())//¼¼ÄÜ¶¯»­
+            {
+                print("set the trigger Skill!");
+                anim.SetTrigger("Skill");
             }
         }
 
         bool FoundPlayer()
         {
-        
+
             var colliders = Physics.OverlapSphere(transform.position, sightRadius);
 
             foreach (var target in colliders)
             {
-                if(target.CompareTag("Player"))
+                if (target.CompareTag("Player"))
                 {
                     attackTarget = target.gameObject;
                     return true;
                 }
-            } 
+            }
 
             attackTarget = null;
             return false;
@@ -195,17 +295,38 @@ namespace Unity.NJUCS.NPC
             float randomX = Random.Range(-patrolRange, patrolRange);
             float randomZ = Random.Range(-patrolRange, patrolRange);
 
-            Vector3 randomPoint = new Vector3(guardPos.x+randomX,transform.position.y,guardPos.z+randomZ);
+            Vector3 randomPoint = new Vector3(guardPos.x + randomX, transform.position.y, guardPos.z + randomZ);
             NavMeshHit hit;
-            wayPoint = NavMesh.SamplePosition(randomPoint,out hit,patrolRange,1)?hit.position:transform.position;
-     
+            wayPoint = NavMesh.SamplePosition(randomPoint, out hit, patrolRange, 1) ? hit.position : transform.position;
+
+
         }
 
-        private void OnDrawGizmosSelected() {
+        private void OnDrawGizmosSelected()
+        {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, sightRadius);
         }
 
+        //Animation Event
+
+        //void Hit()
+        //{
+        //    if (attackTarget != null)
+        //    {
+        //        var targetStats = attackTarget.GetComponent<CharacterStats>();
+        //        targetStats.TakeDamage(characterStats, targetStats);
+        //    }
+        //}
+
+        //public void EndNotify()
+        //{
+        //    //ÓÎÏ·Í£Ö¹
+        //    playerDead = true;
+        //    isChase = false;
+        //    isWalk = false;
+        //    attackTarget = null;
+        //    anim.SetBool("Win", true);
+        //}
     }
 }
-
