@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/DockScene.unity
+- path: Assets/Scenes/widgetTestScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

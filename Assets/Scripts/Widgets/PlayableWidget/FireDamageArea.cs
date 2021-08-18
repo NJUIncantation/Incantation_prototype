@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Unity.NJUCS.Game
+namespace Unity.NJUCS.Game 
 {
     public class FireDamageArea : MonoBehaviour
     {

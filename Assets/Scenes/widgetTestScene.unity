@@ -7650,6 +7650,8 @@ GameObject:
   - component: {fileID: 572796553}
   - component: {fileID: 572796554}
   - component: {fileID: 572796555}
+  - component: {fileID: 572796556}
+  - component: {fileID: 572796557}
   m_Layer: 0
   m_Name: GamePlay
   m_TagString: Untagged
@@ -7706,6 +7708,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3df58d48b6fe3945a997639201c1533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &572796556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572796551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c42f382861025b4eb8df17423832c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &572796557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572796551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8b68ef223a27c4e9b293054c247f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &576506808
@@ -10820,13 +10846,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 827458674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1125a0c48dfcee34da9a6171a1305855, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f8781b1e58b7f9489256fa8d8ef2708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AreaOfEffectDistance: 10
-  Center: {x: 0, y: 0, z: 0}
-  Damage: 0
-  Owner: {fileID: 0}
 --- !u!114 &827458677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10836,9 +10858,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 827458674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f8781b1e58b7f9489256fa8d8ef2708, type: 3}
+  m_Script: {fileID: 11500000, guid: 1125a0c48dfcee34da9a6171a1305855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AreaOfEffectDistance: 0
+  Center: {x: 0, y: 0, z: 0}
+  Damage: 0
+  Owner: {fileID: 0}
 --- !u!4 &827672438 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 55fecf1063fe8474493f4866aaadffbf, type: 3}
@@ -14712,11 +14738,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796f0cb4d048af148974addd644e13a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIName: 
-  UILayer: 0
   PlayerHealthBar: {fileID: 1489142410}
   PlayerManaBar: {fileID: 132577465}
   PlayerAvatar: {fileID: 357253272}
+  myCompass: {fileID: 0}
 --- !u!4 &1080751226 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 472690, guid: ad8fe0235a8670d4c83f451033ac0a20, type: 3}
@@ -26044,7 +26069,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxMana: 0
   ManaRestoringSpeed: 0
-  CurrentMana: 0
 --- !u!114 &2049644660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27429,7 +27453,7 @@ PrefabInstance:
     - target: {fileID: 5751519363865370505, guid: 55a9d1cd28e06404a89e10d303fa8f35, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4d789e79bae0c1041ad2285c5e37dfb6, type: 3}
+      objectReference: {fileID: 21300000, guid: 2c6236bae38596b459d5a28fa0abcce8, type: 3}
     - target: {fileID: 5751519363865370505, guid: 55a9d1cd28e06404a89e10d303fa8f35, type: 3}
       propertyPath: m_Color.a
       value: 1

@@ -23,6 +23,7 @@ namespace Unity.NJUCS.UI
         private CameraManager m_cameraManager;
         private Health playerHealth;
         private Mana playerMana;
+        private GameObject MainCamera;
 
         // Start is called before the first frame update
         protected void Start()
@@ -49,8 +50,14 @@ namespace Unity.NJUCS.UI
             if (m_cameraManager == null)
             {
                 m_cameraManager = FindObjectOfType<CameraManager>();
+                return;
             }
-            myCompass.changeCompass(m_cameraManager.FindCameraByName("mainCamera").GetComponent<Transform>().eulerAngles.y);
+            MainCamera = m_cameraManager.FindCameraByName("mainCamera");
+            if(MainCamera != null && myCompass != null)
+            {
+                myCompass.changeCompass(MainCamera.GetComponent<Transform>().eulerAngles.y);
+            }
+
             //Debug.Log(m_actorManager.FindActorByName("mainCharacter").GetComponent<Camera>().transform.eulerAngles.y);
             PlayerHealthBar.MycurrentValue = playerHealth.CurrentHealth;
             //Debug.Log(playerHealth.CurrentHealth);

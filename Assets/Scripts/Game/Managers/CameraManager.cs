@@ -21,7 +21,7 @@ namespace Unity.NJUCS.Game
             {
                 return;
             }
-            //Debug.Log("A camera is created: " + name);
+            Debug.Log("A camera is created: " + name);
             Cameras.Add(name, gameObject);
             OnCameraCreated?.Invoke(name, gameObject);
         }
