@@ -29,7 +29,7 @@ namespace Unity.NJUCS.UI
         {
             string path = "UIResources/Avatar/";
             path += AvatarName;
-            //avatar.sprite = Resources.Load<Sprite>(path);
+            avatar.sprite = Resources.Load<Sprite>(path);
         }
     }
 }

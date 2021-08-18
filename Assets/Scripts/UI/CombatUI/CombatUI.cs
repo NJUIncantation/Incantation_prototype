@@ -24,14 +24,43 @@ namespace Unity.NJUCS.UI
         private Health playerHealth;
         private Mana playerMana;
         private GameObject MainCamera;
+        
+        
+        public void OnActorCreatedFunc(string name, GameObject gameobject)
+        { 
+            playerHealth = m_actorManager.FindActorByName("mainCharacter").GetComponent<Health>();
+            playerMana = m_actorManager.FindActorByName("mainCharacter").GetComponent<Mana>();
+            InitializePlayerBar(playerHealth.MaxHealth, playerMana.MaxMana);
+            //Debug.Log("get actor");
+        }
+
+        public void OnCameraCreatedFunc(string name, GameObject gameobject)
+        { 
+            MainCamera = m_cameraManager.FindCameraByName("mainCamera");
+            //Debug.Log("get camera");
+        }
 
         // Start is called before the first frame update
         protected void Start()
         {
             combatCanvas = GetComponent<Canvas>();
 
-            ///Need to initialize health, mana and name of player here
-            
+            // Initialize health, mana and name of player here
+            m_actorManager = FindObjectOfType<ActorManager>();
+            m_actorManager.OnActorCreated += OnActorCreatedFunc;
+            if(m_actorManager.FindActorByName("mainCharacter") != null)
+            {
+                playerHealth = m_actorManager.FindActorByName("mainCharacter").GetComponent<Health>();
+                playerMana = m_actorManager.FindActorByName("mainCharacter").GetComponent<Mana>();
+                InitializePlayerBar(playerHealth.MaxHealth, playerMana.MaxMana);
+            }
+
+            m_cameraManager = FindObjectOfType<CameraManager>();
+            m_cameraManager.OnCameraCreated += OnCameraCreatedFunc;
+            if (m_cameraManager.FindCameraByName("mainCamera") != null)
+            {
+                MainCamera = m_cameraManager.FindCameraByName("mainCamera");
+            }
             
             // For Test
             InitializePlayerAvatar("Player");
@@ -39,28 +68,12 @@ namespace Unity.NJUCS.UI
 
         // Update is called once per frame
         void Update()
-        {
-            if (m_actorManager == null)
-            {
-                m_actorManager = FindObjectOfType<ActorManager>();
-                playerHealth = m_actorManager.FindActorByName("mainCharacter").GetComponent<Health>();
-                playerMana = m_actorManager.FindActorByName("mainCharacter").GetComponent<Mana>();
-                InitializePlayerBar(playerHealth.MaxHealth, playerMana.MaxMana);
-            }
-            if (m_cameraManager == null)
-            {
-                m_cameraManager = FindObjectOfType<CameraManager>();
-                return;
-            }
-            MainCamera = m_cameraManager.FindCameraByName("mainCamera");
+        {            
             if(MainCamera != null && myCompass != null)
             {
                 myCompass.changeCompass(MainCamera.GetComponent<Transform>().eulerAngles.y);
             }
-
-            //Debug.Log(m_actorManager.FindActorByName("mainCharacter").GetComponent<Camera>().transform.eulerAngles.y);
             PlayerHealthBar.MycurrentValue = playerHealth.CurrentHealth;
-            //Debug.Log(playerHealth.CurrentHealth);
             PlayerManaBar.MycurrentValue = playerMana.CurrentMana;
         }
 
@@ -75,5 +88,6 @@ namespace Unity.NJUCS.UI
         {
             PlayerAvatar.LoadAvatar(AvatarName);
         }
+
     }
 }

@@ -3,10 +3,11 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\Camera\\MainCamera\\Scripts",
     "\\Assets\\Scripts\\UI",
-    "\\Assets\\Scripts\\UI\\UIFramework",
-    "\\Assets\\Scripts\\UI\\UIFramework\\UIPanel"
+    "\\Assets\\Scripts\\UI\\CombatUI",
+    "\\Assets\\Scripts\\UI\\UIFramework"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\UI\\UIFramework\\UIPanel\\UIPanelType.cs",
+  "SelectedNode": "\\Assets\\Scripts\\UI\\CombatUI\\StateBar.cs",
   "PreviewInSolutionExplorer": false
 }
