@@ -2,20 +2,34 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 namespace Unity.NJUCS.Game
 {
     public class GameFlowManager : MonoBehaviour
     {
+        ObjectiveManager objectiveManager;
         private void Awake()
         {
             Debug.Log("Game starts");
-            EventManager.AddListener<GameOverEvent>(OnEnemyKilled);
+            ObjectiveManager objectiveManager = FindObjectOfType<ObjectiveManager>();
+            objectiveManager.RegisterObjective(FindObjectOfType<ObjectiveDock>());
+            EventManager.AddListener<AllObjectivesCompletedEvent>(OnAllObjectivesCompleted);
         }
 
-        void OnEnemyKilled(GameOverEvent evt)
+        void Start()
+        {
+            
+        }
+
+        void OnAllObjectivesCompleted(GameEvent AllObjectivesCompletedEvent)
         {
             Application.Quit();
+        }
+
+        private void OnDestroy()
+        {
+            Destroy(objectiveManager);
         }
     }
 }

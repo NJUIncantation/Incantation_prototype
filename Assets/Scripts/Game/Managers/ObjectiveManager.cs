@@ -19,7 +19,7 @@ namespace Unity.NJUCS.Game
             Objective.OnObjectiveCreated += RegisterObjective;
         }
 
-        void RegisterObjective(Objective objective)
+        public void RegisterObjective(Objective objective)
         {
             Debug.Log("Objective created: " + objective.ObjectiveTitle);
             m_Objectives.Add(objective);

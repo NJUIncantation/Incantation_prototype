@@ -53,13 +53,13 @@ namespace Unity.NJUCS.Game
                 float damageAfterDecay = Damage;
                 if (damageDecayByDistance != null)
                 {
-                    Debug.Log("Apply damage on a damageable object: " + uniqueDamageable);
+                    //Debug.Log("Apply damage on a damageable object: " + uniqueDamageable);
                     damageAfterDecay = damageDecayByDistance(uniqueDamageable.transform.position);
                 }
                 uniqueDamageable.InflictDamage(damageAfterDecay, true, Owner);
             }
 
-            Debug.Log("DamageArea Created! Master = " + Owner + ", Damage = " + Damage);
+            //Debug.Log("DamageArea Created! Master = " + Owner + ", Damage = " + Damage);
         }
 
         private float DefaultDamageDecayByDistance(Vector3 currentPosition)

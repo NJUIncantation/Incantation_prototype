@@ -69,6 +69,10 @@ namespace Unity.NJUCS.NPC
         {
             //FIXME:
             EnemyManager.Instance.AddEnemy(this);
+            if (health != null)
+            {
+                health.OnDie += OnDie;
+            }
             if (isGuard)
             {
                 enemyStates = EnemyStates.GUARD;
@@ -94,6 +98,10 @@ namespace Unity.NJUCS.NPC
             }
         }
 
+        void OnDie()
+        {
+            EventManager.Broadcast(Events.EnemyKillEvent);
+        }
 
         void Update()
         {
@@ -229,13 +237,19 @@ namespace Unity.NJUCS.NPC
 
                     coll.enabled = false;
                     agent.enabled = false;
-                    Destroy(gameObject, 2f);
+                    DestroyEnemy();
                     break;
                 default:
                     Debug.Log("error in function SwitchStates of class EnemyController!\n");
                     enemyStates = EnemyStates.DEAD;
                     break;
             }
+        }
+
+        private void DestroyEnemy()
+        {
+            EnemyManager.Instance.RemoveEnemy(this);
+            Destroy(gameObject, 2f);
         }
 
         bool TargetInAttackRange()

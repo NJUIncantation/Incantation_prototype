@@ -7,8 +7,6 @@ namespace Unity.NJUCS.NPC
 {
     public class EnemyManager : Singleton<EnemyManager>
     {
-
-        Dictionary<string, VirtualEnemy> enemiesDict = new Dictionary<string, VirtualEnemy>();
         List<VirtualEnemy> virtualEnemies = new List<VirtualEnemy>();
         // Start is called before the first frame update
         void Start()
@@ -23,17 +21,7 @@ namespace Unity.NJUCS.NPC
         }
 
         #region Enemy Container Function
-        public void AddEnemy(string name, VirtualEnemy enmey)
-        {
-            if(enemiesDict.ContainsKey(name))
-            {
-                Debug.Log("Enemy already existed!");
-            }
-            else
-            {
-                enemiesDict.Add(name, enmey);
-            }
-        }
+
         public void AddEnemy(VirtualEnemy enemy)
         {
             virtualEnemies.Add(enemy);
@@ -43,17 +31,7 @@ namespace Unity.NJUCS.NPC
             virtualEnemies.Remove(enemy);
         }
 
-        public void RemoveEnemy(string name, VirtualEnemy enmey)
-        {
-            if (enemiesDict.ContainsKey(name))
-            {
-                enemiesDict.Remove(name);
-            }
-            else
-            {
-                Debug.Log("Enemy do not exist");
-            }
-        }
+
         #endregion
 
         public List<VirtualEnemy> GetEnemies()
