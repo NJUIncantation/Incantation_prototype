@@ -13,7 +13,7 @@ namespace Unity.NJUCS.Game
         {
             Debug.Log("Game starts");
             ObjectiveManager objectiveManager = FindObjectOfType<ObjectiveManager>();
-            objectiveManager.RegisterObjective(FindObjectOfType<ObjectiveDock>());
+            //objectiveManager.RegisterObjective(FindObjectOfType<ObjectiveDock>());
             EventManager.AddListener<AllObjectivesCompletedEvent>(OnAllObjectivesCompleted);
         }
 

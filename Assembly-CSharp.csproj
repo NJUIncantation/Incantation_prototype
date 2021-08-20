@@ -62,7 +62,6 @@
     <Compile Include="Assets\Scripts\Game\Exceptions.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\ActorManager.cs" />
     <Compile Include="Assets\Scripts\UI\CombatUI\Compass.cs" />
-    <Compile Include="Assets\Scripts\Game\AudioUtility.cs" />
     <Compile Include="Assets\script.cs" />
     <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\Scripts\Character\MainCharacter\CharacterAnimationController.cs" />
@@ -116,6 +115,7 @@
     <Compile Include="Assets\Scripts\NPC\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Widgets\PlayableWidget\Pickup.cs" />
     <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\Scripts\Game\AudioUtility.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Prefabs\Cameras\CameraGuidelines.txt" />

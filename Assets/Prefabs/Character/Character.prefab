@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 4269369724391720333}
   - component: {fileID: -5775511461109548918}
   - component: {fileID: 5045177772144917950}
+  - component: {fileID: -640445265053965891}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -283,6 +284,7 @@ MonoBehaviour:
   CriticalHealthRatio: 0.3
   MaxShield: 10
   StartingShield: 0
+  m_CurrentShield: 0
 --- !u!114 &4269369724391720333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +325,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd2d4fb00eda3a40940777f2eec009b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-640445265053965891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4269369724391720324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e89c8a398d95b5341a8cc32392b47fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartingWeapons:
+  - {fileID: -2440598485630340822, guid: 0289ef14fc689894e8a12f7d2ce78ffe, type: 3}
+  WeaponParentSocket: {fileID: 0}
+  WeaponOriention: {fileID: 0}
 --- !u!1001 &4269369723608931178
 PrefabInstance:
   m_ObjectHideFlags: 0

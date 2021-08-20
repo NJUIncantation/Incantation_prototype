@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using UnityEngine.Audio;
 
 namespace Unity.NJUCS.Game
@@ -6,7 +7,14 @@ namespace Unity.NJUCS.Game
     public class AudioManager : MonoBehaviour
     {
         public AudioMixer[] AudioMixers;
-        
+
+        public static float MainVolumeRatio = 1f;
+        public static float FightVolumeRatio = 1f;
+        public static float MenuVolumeRatio = 1f;
+
+        //AudioClip
+        //AudioSource
+        //AudioListener
 
         public AudioMixerGroup[] FindMatchingGroups(string subPath)
         {
