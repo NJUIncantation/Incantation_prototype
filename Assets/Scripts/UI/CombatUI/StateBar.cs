@@ -12,10 +12,11 @@ namespace Unity.NJUCS.UI
     public class StateBar : MonoBehaviour
     {
 
-        private Image content;
+        [SerializeField] private Image content;
 
-        [SerializeField]
-        private Text stateValue;
+        [SerializeField] private Text stateValue;
+
+        private Canvas canvas;
 
         private float currentFill;
 
@@ -63,7 +64,7 @@ namespace Unity.NJUCS.UI
         // Start is called before the first frame update
         void Start()
         {
-            content = GetComponent<Image>();
+            canvas = GetComponent<Canvas>();
         }
 
         // Update is called once per frame
@@ -78,6 +79,20 @@ namespace Unity.NJUCS.UI
         {
             MyMaxValue = maxValue;
             MycurrentValue = currentValue;
+        }
+
+        public void ChangePosition(string name, Vector3 BarPosition)
+        {
+            if(name != "Enemy")
+            {
+                return;
+            }
+            canvas.GetComponent<RectTransform>().localPosition = BarPosition;
+        }
+
+        public void Active(bool active)
+        {
+            canvas.enabled = active;
         }
     }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7572610009316005012}
   - component: {fileID: 7572610009316005010}
   - component: {fileID: 7572610009316005013}
-  - component: {fileID: 1198429172095644804}
   m_Layer: 5
   m_Name: State
   m_TagString: Untagged
@@ -77,19 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1198429172095644804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7572610009316005015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362f9378d28fab5469e4d523fd6fe8f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateValue: {fileID: 7572610010730023378}
 --- !u!1 &7572610009614570413
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,6 +238,7 @@ GameObject:
   - component: {fileID: 7572610010435854157}
   - component: {fileID: 7572610010435854156}
   - component: {fileID: 7572610010435854159}
+  - component: {fileID: 1383231921937576639}
   m_Layer: 5
   m_Name: StateBar
   m_TagString: Untagged
@@ -342,6 +329,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1383231921937576639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572610010435854145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362f9378d28fab5469e4d523fd6fe8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 7572610009316005013}
+  stateValue: {fileID: 7572610010730023378}
 --- !u!1 &7572610010730023380
 GameObject:
   m_ObjectHideFlags: 0
