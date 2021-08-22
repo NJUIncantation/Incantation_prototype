@@ -9964,11 +9964,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764377037}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &766761700 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2488931413297947810, guid: 519f1de9b01312849832398c64fd2933, type: 3}
-  m_PrefabInstance: {fileID: 4269369722946330102}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &768842175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15854,6 +15849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5dfe91abe6cf084bb963f174722e6c5, type: 3}
+--- !u!4 &1188410835 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 635146669538419553, guid: 519f1de9b01312849832398c64fd2933, type: 3}
+  m_PrefabInstance: {fileID: 4269369722946330102}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1188944256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26103,8 +26103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingWeapons:
-  - {fileID: -2440598485630340822, guid: 0289ef14fc689894e8a12f7d2ce78ffe, type: 3}
-  WeaponParentSocket: {fileID: 766761700}
+  - {fileID: -1907706758070829354, guid: e0370318c00b5824fa39ee4ecb9e754a, type: 3}
+  WeaponParentSocket: {fileID: 1188410835}
   WeaponOriention: {fileID: 4269369722946330103}
 --- !u!1001 &2057087395
 PrefabInstance:
