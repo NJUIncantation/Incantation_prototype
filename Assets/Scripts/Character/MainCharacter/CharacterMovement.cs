@@ -70,11 +70,11 @@ namespace Unity.NJUCS.Character
             }
             if(inAir)
             {
-                Debug.Log("inAir");
+                //Debug.Log("inAir");
                 if (Physics.Linecast(transform.position + new Vector3(0, 0.1f, 0), transform.position + new Vector3(0, -0.1f, 0)))
                 {
                     inAir = false;
-                    Debug.Log("onlanded");
+                    //Debug.Log("onlanded");
                     onLanded();
                 }
             }

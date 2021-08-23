@@ -8,9 +8,9 @@ namespace Unity.NJUCS.Game
     {
         public AudioMixer[] AudioMixers;
 
-        public static float MainVolumeRatio = 1f;
-        public static float FightVolumeRatio = 1f;
-        public static float MenuVolumeRatio = 1f;
+        public static string MasterVolume = "MasterVolume";
+        public static string MusicVolume = "MusicVolume";
+        public static string EffectrVolume = "EffectVolume";
 
         //AudioClip
         //AudioSource
@@ -51,6 +51,22 @@ namespace Unity.NJUCS.Game
                     break;
                 }
             }
+        }
+
+        public AudioMixerSnapshot FindSnapshot(string name)
+        {
+            for (int i = 0; i < AudioMixers.Length; i++)
+            {
+                if (AudioMixers[i] != null)
+                {
+                    AudioMixerSnapshot AMS = AudioMixers[i].FindSnapshot(name);
+                    if(AMS != null)
+                    {
+                        return AMS;
+                    }
+                }
+            }
+            return null;
         }
     }
 }

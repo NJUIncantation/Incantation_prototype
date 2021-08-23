@@ -71,7 +71,7 @@ namespace Unity.NJUCS.UI
             panelStack.Push(panel);
 
             panel.GetComponent<BasePanel>().OnEnter();
-            Debug.Log(type + " is pushed");
+            //Debug.Log(type + " is pushed");
         }
 
         //Pop panel out and exit 
@@ -126,7 +126,7 @@ namespace Unity.NJUCS.UI
 
                 UIPanelType type = (UIPanelType)Enum.Parse(typeof(UIPanelType), file.Name.Replace(".prefab", ""));
                 string path = @"UIPrefabs/" + file.Name.Replace(".prefab", "");
-                Debug.Log(path);
+                //Debug.Log(path);
                 bool UIPanelExistInList = false;
 
                 UIPanel uIPanel = SearchPanelForType(type);

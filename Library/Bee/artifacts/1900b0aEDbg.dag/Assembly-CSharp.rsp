@@ -338,7 +338,6 @@
 "Assets/Scripts/Character/MainCharacter/CharacterMovement.cs"
 "Assets/Scripts/Character/MainCharacter/PlayerCharacter.cs"
 "Assets/Scripts/Character/MainCharacter/PlayerInput.cs"
-"Assets/Scripts/Game/AudioUtility.cs"
 "Assets/Scripts/Game/Damageable.cs"
 "Assets/Scripts/Game/DamageArea.cs"
 "Assets/Scripts/Game/Events.cs"

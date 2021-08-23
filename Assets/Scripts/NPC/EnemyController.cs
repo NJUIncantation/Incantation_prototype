@@ -100,6 +100,7 @@ namespace Unity.NJUCS.NPC
 
         void OnDie()
         {
+            //Debug.Log("broadcasting");
             EventManager.Broadcast(Events.EnemyKillEvent);
         }
 

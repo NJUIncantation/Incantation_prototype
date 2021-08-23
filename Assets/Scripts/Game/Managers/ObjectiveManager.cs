@@ -21,7 +21,7 @@ namespace Unity.NJUCS.Game
 
         public void RegisterObjective(Objective objective)
         {
-            Debug.Log("Objective created: " + objective.ObjectiveTitle);
+            //Debug.Log("Objective created: " + objective.ObjectiveTitle);
             m_Objectives.Add(objective);
         }
 
@@ -71,7 +71,7 @@ namespace Unity.NJUCS.Game
                     return;
                 }
             }
-
+            Debug.Log("AllObjectivesCompletedEvent");
             m_ObjectivesCompleted = true;
             EventManager.Broadcast(Events.AllObjectivesCompletedEvent);
         }

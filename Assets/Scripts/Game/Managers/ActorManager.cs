@@ -23,7 +23,7 @@ namespace Unity.NJUCS.Game
             {
                 return;
             }
-            Debug.Log("An actor is created: " + name);
+            //Debug.Log("An actor is created: " + name);
             Actors.Add(name, gameObject);
             OnActorCreated?.Invoke(name, gameObject);
         }

@@ -14,7 +14,7 @@ namespace Unity.NJUCS.Game
         public string ObjectiveDescription;
 
         [Tooltip("目标是否为可选")]
-        public bool IsOptional;
+        public bool IsOptional = true;
 
         [Tooltip("目标延迟时间")]
         public float DelayVisible;
@@ -59,7 +59,9 @@ namespace Unity.NJUCS.Game
 
         public void CompleteObjective(string descriptionText, string counterText, string notificationText)
         {
+            //Debug.Log("Completing Object");
             IsCompleted = true;
+            IsEnable = false;
 
             UpdateObjective(descriptionText, counterText, notificationText);
 

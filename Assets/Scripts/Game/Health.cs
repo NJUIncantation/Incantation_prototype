@@ -34,6 +34,7 @@ namespace Unity.NJUCS.Game
         public UnityAction OnDie;
         public UnityAction OnRespawn;
 
+        [SerializeField]
         private float m_CurrentHealth;
 
         public float CurrentHealth { 
@@ -103,8 +104,6 @@ namespace Unity.NJUCS.Game
             if (m_Invincible)
                 return;
 
-            Debug.Log(gameObject + " 's health is damaged by " + damageSource);
-
             if(m_CurrentShield > 0)
             {
                 damage -= m_CurrentShield;
@@ -124,7 +123,6 @@ namespace Unity.NJUCS.Game
             {
                 OnDamaged?.Invoke(trueDamageAmount, damageSource);
             }
-            Debug.Log(message: "current health:" + m_CurrentHealth);
             HandleDeath();
         }
         
@@ -182,6 +180,7 @@ namespace Unity.NJUCS.Game
             // call OnDie action
             if (m_CurrentHealth <= 0f && !m_Invincible)
             {
+                //Debug.Log("Dying");
                 m_IsDead = true;
                 OnDie?.Invoke();
             }

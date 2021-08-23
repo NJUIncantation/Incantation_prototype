@@ -11,7 +11,7 @@ namespace Unity.NJUCS.Game
         ObjectiveManager objectiveManager;
         private void Awake()
         {
-            Debug.Log("Game starts");
+            //Debug.Log("Game starts");
             ObjectiveManager objectiveManager = FindObjectOfType<ObjectiveManager>();
             //objectiveManager.RegisterObjective(FindObjectOfType<ObjectiveDock>());
             EventManager.AddListener<AllObjectivesCompletedEvent>(OnAllObjectivesCompleted);
@@ -24,6 +24,7 @@ namespace Unity.NJUCS.Game
 
         void OnAllObjectivesCompleted(GameEvent AllObjectivesCompletedEvent)
         {
+            Debug.Log("OnAllObjectivesCompleted");
             Application.Quit();
         }
 
