@@ -100,7 +100,7 @@ MonoBehaviour:
   WeaponMuzzle: {fileID: 8964278004878794420}
   WeaponOriention: {fileID: 0}
   ShootType: 0
-  BulletSpreadAngle: 0
+  BulletSpreadAngle: 10
   BulletsPerShot: 5
   SingleFlyingObjectPrefab: {fileID: 2123943624221576092, guid: d762fd9c48175aa4c8d1a4de1e5d8d01, type: 3}
   SpreadFlyingObjectPrefab: {fileID: -1522175558774789244, guid: d07fbf3e1e3d258459736e82ef9276cb, type: 3}
