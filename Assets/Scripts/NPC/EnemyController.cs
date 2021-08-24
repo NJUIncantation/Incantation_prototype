@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Unity.NJUCS.Game;
+using Unity.NJUCS.UI;
 
 namespace Unity.NJUCS.NPC
 {
@@ -17,6 +18,7 @@ namespace Unity.NJUCS.NPC
     [RequireComponent(typeof(Health))]
     [RequireComponent(typeof(Damageable))]
     [RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(StateBar))]
     public class EnemyController : VirtualEnemy
     {
         private EnemyStates enemyStates;
@@ -24,6 +26,9 @@ namespace Unity.NJUCS.NPC
         private Animator anim;
         private Collider coll;
         private Health health;
+        [SerializeField] private StateBar enemyHealthBar;
+        private CameraManager m_cameraManager;
+        private GameObject MainCamera;
 
         [Header("Basic Settings")]
         public float sightRadius;
@@ -54,6 +59,12 @@ namespace Unity.NJUCS.NPC
         bool playerDead = false;
         bool isCritical = false;
 
+        public void OnCameraCreatedFunc(string name, GameObject gameobject)
+        { 
+            MainCamera = m_cameraManager.FindCameraByName("mainCamera");
+            Debug.Log("get camera");
+        }
+
         void Awake()
         {
             agent = GetComponent<NavMeshAgent>();
@@ -64,6 +75,14 @@ namespace Unity.NJUCS.NPC
             guardPos = transform.position;
             guardRotation = transform.rotation;
             remainLookAtTime = lookAtTime;
+
+            m_cameraManager = FindObjectOfType<CameraManager>();
+            m_cameraManager.OnCameraCreated += OnCameraCreatedFunc;
+            if (m_cameraManager.FindCameraByName("mainCamera") != null)
+            {
+                MainCamera = m_cameraManager.FindCameraByName("mainCamera");
+                Debug.Log("get camera");
+            }
         }
         void Start() //与Awake不同，在点击play后才执行
         {
@@ -72,6 +91,7 @@ namespace Unity.NJUCS.NPC
             if (health != null)
             {
                 health.OnDie += OnDie;
+                enemyHealthBar.Initialize(health.MaxHealth, health.MaxHealth);
             }
             if (isGuard)
             {
@@ -116,6 +136,7 @@ namespace Unity.NJUCS.NPC
                 SwitchAnimation();
                 lastAttackTime -= Time.deltaTime;
             }
+            updateHealthBar();
         }
 
         void SwitchAnimation()
@@ -343,5 +364,14 @@ namespace Unity.NJUCS.NPC
         //    attackTarget = null;
         //    anim.SetBool("Win", true);
         //}
+        void updateHealthBar()
+        {
+            enemyHealthBar.MycurrentValue = health.CurrentHealth;
+            enemyHealthBar.ChangeAngle("Enemy", MainCamera);
+            if(MainCamera == null)
+            {
+                Debug.Log("no camera");
+            }
+        }
     }
 }

@@ -58,6 +58,7 @@ namespace Unity.NJUCS.UI
                 }
 
                 stateValue.text = Math.Round(MycurrentValue, 0).ToString() + "/" + MyMaxValue;
+                content.fillAmount = currentFill;
             }
         }
 
@@ -70,7 +71,7 @@ namespace Unity.NJUCS.UI
         // Update is called once per frame
         void Update()
         {
-            content.fillAmount = currentFill;
+            //content.fillAmount = currentFill;
         }
 
         // Initialize state of character, including health and mana
@@ -81,13 +82,13 @@ namespace Unity.NJUCS.UI
             MycurrentValue = currentValue;
         }
 
-        public void ChangePosition(string name, Vector3 BarPosition)
+        public void ChangeAngle(string name, UnityEngine.GameObject camera)
         {
             if(name != "Enemy")
             {
                 return;
             }
-            canvas.GetComponent<RectTransform>().localPosition = BarPosition;
+            canvas.transform.rotation = camera.transform.rotation;
         }
 
         public void Active(bool active)

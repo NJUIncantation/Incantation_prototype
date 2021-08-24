@@ -28,7 +28,6 @@ namespace Unity.NJUCS.UI
 
         private EnemyManager enemyManager;
         private List<VirtualEnemy> enemies = new List<VirtualEnemy>();
-        private List<StateBar> enemiesHealthBar = new List<StateBar>();
         
         
         public void OnActorCreatedFunc(string name, GameObject gameobject)
@@ -71,7 +70,6 @@ namespace Unity.NJUCS.UI
             InitializePlayerAvatar("Player");
 
             enemyManager = FindObjectOfType<EnemyManager>();
-            //updateEnemies();
         }
 
         // Update is called once per frame
@@ -83,7 +81,6 @@ namespace Unity.NJUCS.UI
             }
             PlayerHealthBar.MycurrentValue = playerHealth.CurrentHealth;
             PlayerManaBar.MycurrentValue = playerMana.CurrentMana;
-            //updateEnemies();
         }
 
 
@@ -96,32 +93,6 @@ namespace Unity.NJUCS.UI
         private void InitializePlayerAvatar(string AvatarName)
         {
             PlayerAvatar.LoadAvatar(AvatarName);
-        }
-
-        private void updateEnemies()
-        {
-            enemiesHealthBar.Clear();
-            enemies = enemyManager.GetEnemies();
-            Debug.Log(enemies.ToArray().Length);
-            foreach(VirtualEnemy enemy in enemies)
-            {
-                Health enemyHealth = enemy.GetComponent<Health>();
-                StateBar enemyHealthBar = GetComponent<StateBar>();
-                enemyHealthBar.Initialize(enemyHealth.MaxHealth, enemyHealth.MaxHealth);
-                enemyHealthBar.MycurrentValue = enemyHealth.CurrentHealth;
-
-                Vector3 ObjectPosition = enemy.GetPosition();
-                Vector2 BarPosition = UnityEngine.Camera.main.WorldToScreenPoint(ObjectPosition);
-                float PosOffset = 10;
-                Vector3 BarPosition_3 = new Vector3(BarPosition.x, BarPosition.y + PosOffset, 0);
-                if(BarPosition_3.x > Screen.width||BarPosition_3.x <0||BarPosition_3.y > Screen.height || BarPosition_3.y < 0)
-                {
-                    enemyHealthBar.Active(false);
-                }
-                enemyHealthBar.ChangePosition("Enemy", BarPosition);
-
-                enemiesHealthBar.Add(enemyHealthBar);
-            }
         }
     }
 }

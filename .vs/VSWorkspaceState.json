@@ -3,6 +3,7 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\NPC",
     "\\Assets\\Scripts\\UI",
     "\\Assets\\Scripts\\UI\\CombatUI",
     "\\Assets\\Scripts\\UI\\UIFramework"
