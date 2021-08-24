@@ -201,6 +201,21 @@ namespace Unity.NJUCS.PlayerInput
 		}
 
 
+		//下列函数为PC专用
+
+
+		public static Vector3 MouseInWorld()
+        {
+			Vector3 screenPos = UnityEngine.Camera.main.WorldToScreenPoint(UnityEngine.Camera.main.transform.position);
+			Vector3 mousePosOnScreen = Input.mousePosition;
+			mousePosOnScreen.z = screenPos.z;
+			Vector3 mousePosInWorld = UnityEngine.Camera.main.ScreenToWorldPoint(mousePosOnScreen);
+			return mousePosInWorld;
+		}
+
+		//上述函数为PC专用
+
+
 		// virtual axis and button classes - applies to mobile input
 		// Can be mapped to touch joysticks, tilt, gyro, etc, depending on desired implementation.
 		// Could also be implemented by other input devices - kinect, electronic sensors, etc

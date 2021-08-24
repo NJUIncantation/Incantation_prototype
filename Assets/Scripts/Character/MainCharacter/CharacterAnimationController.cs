@@ -56,7 +56,7 @@ namespace Unity.NJUCS.Character
         }
         public void Land()
         {
-            Debug.Log("setTrggier");
+            //Debug.Log("setTrggier");
             animator.SetTrigger("Land");
         }
     }

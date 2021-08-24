@@ -15,7 +15,7 @@ namespace Unity.NJUCS.Game
         [Tooltip("Start sending notification about remaining enemies when this amount of enemies is left")]
         public int NotificationEnemiesRemainingThreshold = 3;
 
-        int m_KillTotal;
+        int m_KillTotal = 0;
 
         protected override void Start()
         {
@@ -34,15 +34,15 @@ namespace Unity.NJUCS.Game
 
         void OnEnemyKilled(EnemyKillEvent evt)
         {
+            //Debug.Log("Trigger OnEnemyKilled");
             if (IsCompleted)
                 return;
 
             m_KillTotal++;
+            //Debug.Log("Enemy killed: " + m_KillTotal);
 
-            if (MustKillAllEnemies)
-                KillsToCompleteObjective = evt.RemainingEnemyCount + m_KillTotal;
 
-            int targetRemaining = MustKillAllEnemies ? evt.RemainingEnemyCount : KillsToCompleteObjective - m_KillTotal;
+            int targetRemaining =  KillsToCompleteObjective - m_KillTotal;
 
             // update the objective text according to how many enemies remain to kill
             if (targetRemaining == 0)

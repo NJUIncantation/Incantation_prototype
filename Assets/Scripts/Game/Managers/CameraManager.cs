@@ -8,6 +8,8 @@ namespace Unity.NJUCS.Game
     {
         private Dictionary<string, GameObject> Cameras = new Dictionary<string, GameObject>();
 
+        public UnityEngine.Camera ActiveCamera;
+
         public UnityAction<string, GameObject> OnCameraCreated;
 
         private void Awake()
@@ -21,7 +23,7 @@ namespace Unity.NJUCS.Game
             {
                 return;
             }
-            Debug.Log("A camera is created: " + name);
+            //Debug.Log("A camera is created: " + name);
             Cameras.Add(name, gameObject);
             OnCameraCreated?.Invoke(name, gameObject);
         }

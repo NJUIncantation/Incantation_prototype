@@ -16,7 +16,7 @@ namespace Unity.NJUCS.NPC
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Health))]
     [RequireComponent(typeof(Damageable))]
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(BoxCollider))]
     public class EnemyController : VirtualEnemy
     {
         private EnemyStates enemyStates;
@@ -100,6 +100,7 @@ namespace Unity.NJUCS.NPC
 
         void OnDie()
         {
+            //Debug.Log("broadcasting");
             EventManager.Broadcast(Events.EnemyKillEvent);
         }
 
