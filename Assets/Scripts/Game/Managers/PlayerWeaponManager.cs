@@ -63,17 +63,24 @@ namespace Unity.NJUCS.Game
             return false ;
         }
 
-        // Update is called once per frame
-        void Update()
+        // Control is called once per frame in playerInput
+        public void Control(bool Q_inputDown, bool Q_inputHeld, bool Q_inputUp, bool E_inputDown, bool E_inputHeld, bool E_inputUp)
         {
-            if (CrossPlatformInputManager.GetKeyDown(KeyCode.Q))
+            WeaponController activeWeapon = GetActiveWeapon();
+            if(activeWeapon != null)
+            {
+                bool hasUsedQ = activeWeapon.HandleShootInputsQ(Q_inputDown, Q_inputHeld, Q_inputUp);
+                bool hasUsedE = activeWeapon.HandleShootInputsE(E_inputDown, E_inputHeld, E_inputUp);
+            }
+            
+            /*if (CrossPlatformInputManager.GetKeyDown(KeyCode.Q))
             {
                 ActivedWeaponShootSingle();
             }
             if (CrossPlatformInputManager.GetKeyDown(KeyCode.E))
             {
                 ActivedWeaponShootSpread();
-            }
+            }*/
         }
 
         //当前使用的武器单发开火
@@ -100,6 +107,24 @@ namespace Unity.NJUCS.Game
                 }
             }
 
+            return null;
+        }
+
+        public WeaponController GetActiveWeapon()
+        {
+            return GetWeaponAtSlotIndex(ActiveWeaponIndex);
+        }
+
+        public WeaponController GetWeaponAtSlotIndex(int index)
+        {
+            // find the active weapon in our weapon slots based on our active weapon index
+            if (index >= 0 &&
+                index < m_WeaponSlots.Length)
+            {
+                return m_WeaponSlots[index];
+            }
+
+            // if we didn't find a valid active weapon in our weapon slots, return null
             return null;
         }
     }
