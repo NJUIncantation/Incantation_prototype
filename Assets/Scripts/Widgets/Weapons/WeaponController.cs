@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.NJUCS.Game;
 
 namespace Unity.NJUCS.Widget
 {
     public enum WeaponShootType
     {
-        Manual,
-        Automatic,
+        SingleShot,
+        SpreadShot,
         Charge,
     }
 
@@ -30,8 +31,17 @@ namespace Unity.NJUCS.Widget
         public Transform WeaponOriention;
 
         [Header("Shoot Parameters")]
-        [Tooltip("武器攻击类型")]
-        public WeaponShootType ShootType;
+        [Tooltip("Q技能攻击类型")]
+        public WeaponShootType Q_ShootType;
+
+        [Tooltip("Q技能消耗")]
+        public float Q_ManaCost = 0f;
+
+        [Tooltip("E技能攻击类型")]
+        public WeaponShootType E_ShootType;
+
+        [Tooltip("E技能消耗")]
+        public float E_ManaCost = 0f;
 
         [Tooltip("随机扩散的最大角度(0表示没有扩散)")]
         public float BulletSpreadAngle = 0f;
@@ -49,6 +59,58 @@ namespace Unity.NJUCS.Widget
         public GameObject SourcePrefab { get; set; }    //用来判断实例的武器是否来自于同一个Prefab
         public float CurrentCharge { get; private set; }
         public Vector3 MuzzleWorldVelocity { get; private set; }
+
+        bool m_WantsToShoot = false;
+
+
+        public bool HandleShootInputsQ(bool inputDown, bool inputHeld, bool inputUp)
+        {
+            m_WantsToShoot = inputDown || inputHeld;
+            switch (Q_ShootType)
+            {
+                case WeaponShootType.SingleShot:
+                    if (inputDown)
+                    {
+                        return TryShoot();
+                    }
+                    return false;
+                case WeaponShootType.SpreadShot:
+                    if (inputDown)
+                    {
+                        return TryShootSpread();
+                    }
+                    return false;
+                case WeaponShootType.Charge:
+                    return false;
+
+                default:return false;
+            }
+        }
+
+        public bool HandleShootInputsE(bool inputDown, bool inputHeld, bool inputUp)
+        {
+            m_WantsToShoot = inputDown || inputHeld;
+            switch (E_ShootType)
+            {
+                case WeaponShootType.SingleShot:
+                    if (inputDown)
+                    {
+                        return TryShoot();
+                    }
+                    return false;
+                case WeaponShootType.SpreadShot:
+                    if (inputDown)
+                    {
+                        return TryShootSpread();
+                    }
+                    return false;
+                case WeaponShootType.Charge:
+                    return false;
+
+                default: return false;
+            }
+        }
+
 
 
         public bool TryShoot()

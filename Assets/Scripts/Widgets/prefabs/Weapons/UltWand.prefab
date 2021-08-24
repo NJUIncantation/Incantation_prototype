@@ -99,7 +99,8 @@ MonoBehaviour:
   WeaponName: UltimateWand
   WeaponMuzzle: {fileID: 8964278004878794420}
   WeaponOriention: {fileID: 0}
-  ShootType: 0
+  Q_ShootType: 0
+  E_ShootType: 1
   BulletSpreadAngle: 10
   BulletsPerShot: 5
   SingleFlyingObjectPrefab: {fileID: 2123943624221576092, guid: d762fd9c48175aa4c8d1a4de1e5d8d01, type: 3}
