@@ -8,6 +8,6 @@
     "\\Assets\\Scripts\\UI\\CombatUI",
     "\\Assets\\Scripts\\UI\\UIFramework"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\UI\\CombatUI\\CombatUI.cs",
+  "SelectedNode": "\\Assets\\Scripts\\NPC\\EnemyController.cs",
   "PreviewInSolutionExplorer": false
 }
