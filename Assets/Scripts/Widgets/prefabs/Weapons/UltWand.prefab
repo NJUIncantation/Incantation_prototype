@@ -100,7 +100,9 @@ MonoBehaviour:
   WeaponMuzzle: {fileID: 8964278004878794420}
   WeaponOriention: {fileID: 0}
   Q_ShootType: 0
+  Q_ManaCost: 10
   E_ShootType: 1
+  E_ManaCost: 15
   BulletSpreadAngle: 10
   BulletsPerShot: 5
   SingleFlyingObjectPrefab: {fileID: 2123943624221576092, guid: d762fd9c48175aa4c8d1a4de1e5d8d01, type: 3}
