@@ -285,6 +285,7 @@ MonoBehaviour:
   MaxShield: 10
   StartingShield: 0
   m_CurrentShield: 0
+  m_CurrentHealth: 0
 --- !u!114 &4269369724391720333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,9 +339,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingWeapons:
-  - {fileID: -2440598485630340822, guid: 0289ef14fc689894e8a12f7d2ce78ffe, type: 3}
-  WeaponParentSocket: {fileID: 0}
-  WeaponOriention: {fileID: 0}
+  - {fileID: -1907706758070829354, guid: 20335828a76ea534f954ae3ead62bd60, type: 3}
+  WeaponParentSocket: {fileID: 635146669538419553}
+  WeaponOriention: {fileID: 4374508551653686401}
 --- !u!1001 &4269369723608931178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -410,5 +411,10 @@ Transform:
 --- !u!95 &7662114510676961019 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 12dafab78b0907044ad7664452a8790c, type: 3}
+  m_PrefabInstance: {fileID: 4269369723608931178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &635146669538419553 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5480977901411583989, guid: 12dafab78b0907044ad7664452a8790c, type: 3}
   m_PrefabInstance: {fileID: 4269369723608931178}
   m_PrefabAsset: {fileID: 0}
