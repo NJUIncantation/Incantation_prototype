@@ -19,6 +19,8 @@ namespace Unity.NJUCS.UI
         [SerializeField] private StateBar PlayerManaBar;
         [SerializeField] private Avatar PlayerAvatar;
         [SerializeField] private Compass myCompass;
+        [SerializeField] Button PauseButton;
+
 
         private ActorManager m_actorManager;
         private CameraManager m_cameraManager;
@@ -48,6 +50,8 @@ namespace Unity.NJUCS.UI
         protected void Start()
         {
             combatCanvas = GetComponent<Canvas>();
+
+            PauseButton.onClick.AddListener(OnClickPauseButton);
 
             // Initialize health, mana and name of player here
             m_actorManager = FindObjectOfType<ActorManager>();
@@ -93,6 +97,13 @@ namespace Unity.NJUCS.UI
         private void InitializePlayerAvatar(string AvatarName)
         {
             PlayerAvatar.LoadAvatar(AvatarName);
+        }
+
+        private void OnClickPauseButton()
+        {
+            //Debug.Log("OnClickPauseButton");
+            //UIManager.Instance.PopPanel();
+            UIManager.Instance.PushPanel(UIPanelType.PauseUI);
         }
     }
 }

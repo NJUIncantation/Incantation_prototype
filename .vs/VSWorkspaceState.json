@@ -3,11 +3,14 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\NPC",
     "\\Assets\\Scripts\\UI",
     "\\Assets\\Scripts\\UI\\CombatUI",
-    "\\Assets\\Scripts\\UI\\UIFramework"
+    "\\Assets\\Scripts\\UI\\OptionsUI",
+    "\\Assets\\Scripts\\UI\\StartUI",
+    "\\Assets\\Scripts\\UI\\UIFramework",
+    "\\Assets\\Scripts\\UI\\UIFramework\\Manager",
+    "\\Assets\\Scripts\\UI\\UIFramework\\UIPanel"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\NPC\\EnemyController.cs",
+  "SelectedNode": "\\Assets\\Scripts\\UI\\CombatUI\\CombatUI.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -5,6 +5,10 @@ namespace Unity.NJUCS.UI
 {
     public enum UIPanelType
     {
-        CombatUI
+        AboutUI,
+        CombatUI,
+        OptionsUI,
+        PauseUI,
+        StartUI
     }
 }
