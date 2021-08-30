@@ -71,6 +71,17 @@ namespace Unity.NJUCS.Game
             {
                 bool hasUsedQ = activeWeapon.HandleShootInputsQ(Q_inputDown, Q_inputHeld, Q_inputUp);
                 bool hasUsedE = activeWeapon.HandleShootInputsE(E_inputDown, E_inputHeld, E_inputUp);
+                Mana mana = gameObject.GetComponent<Mana>();
+                if (hasUsedQ)
+                {
+                    mana.SpendMana(activeWeapon.Q_ManaCost, gameObject);
+                    Debug.Log(message: "Q cost:" + activeWeapon.Q_ManaCost);
+                }
+                if (hasUsedE)
+                {
+                    mana.SpendMana(activeWeapon.E_ManaCost, gameObject);
+                    Debug.Log(message: "E cost:" + activeWeapon.E_ManaCost);
+                }
             }
             
             /*if (CrossPlatformInputManager.GetKeyDown(KeyCode.Q))

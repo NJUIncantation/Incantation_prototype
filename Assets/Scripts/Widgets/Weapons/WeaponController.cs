@@ -65,6 +65,9 @@ namespace Unity.NJUCS.Widget
 
         public bool HandleShootInputsQ(bool inputDown, bool inputHeld, bool inputUp)
         {
+            Mana mana = Owner.GetComponent<Mana>();
+            if (!mana.HaveEnoughMana(Q_ManaCost))
+                return false;
             m_WantsToShoot = inputDown || inputHeld;
             switch (Q_ShootType)
             {
@@ -89,6 +92,9 @@ namespace Unity.NJUCS.Widget
 
         public bool HandleShootInputsE(bool inputDown, bool inputHeld, bool inputUp)
         {
+            Mana mana = Owner.GetComponent<Mana>();
+            if (!mana.HaveEnoughMana(E_ManaCost))
+                return false;
             m_WantsToShoot = inputDown || inputHeld;
             switch (E_ShootType)
             {

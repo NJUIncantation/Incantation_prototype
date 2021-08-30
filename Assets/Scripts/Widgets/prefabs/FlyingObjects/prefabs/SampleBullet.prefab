@@ -55,7 +55,7 @@ MonoBehaviour:
   Speed: 20
   GravityDownAcceleration: 0
   InheritWeaponVelocity: 0
-  Damage: 40
+  Damage: 10
   AreaOfEffect: 1
 --- !u!114 &7121876870799223739
 MonoBehaviour:

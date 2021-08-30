@@ -156,7 +156,8 @@ namespace Unity.NJUCS.Widget
             AreaOfDamage.Damage = Damage;
             AreaOfDamage.InflictDamageInArea(HittableLayers, k_TriggerInteraction, 
                 (Vector3 currentPostion) => {
-                    float damage = AreaOfDamage.Damage * ((1 - (currentPostion - AreaOfDamage.Center).magnitude) / AreaOfDamage.AreaOfEffectDistance);
+                    float damage = AreaOfDamage.Damage;
+                    //float damage = AreaOfDamage.Damage * ((1 - (currentPostion - AreaOfDamage.Center).magnitude) / AreaOfDamage.AreaOfEffectDistance);
                     return damage > 0 ? damage : 0;
                 }
                 );
