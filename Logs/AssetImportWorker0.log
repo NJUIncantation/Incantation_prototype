@@ -15,11 +15,11 @@ D:/NJU/2021summer_unity/working/Incantation_prototype
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-61992
+64528
 Successfully changed project path to: D:/NJU/2021summer_unity/working/Incantation_prototype
 D:/NJU/2021summer_unity/working/Incantation_prototype
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 776.05 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 122.26 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1c1 (4e944ebb9621)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.7f1c1/Editor/Data/Resources/UnitySubsystems
@@ -35,785 +35,113 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1c1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56404
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56584
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.7f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005024 seconds.
+Registered in 0.002733 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 300.38 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 126.52 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.184 seconds
+- Completed reload, in  1.266 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.012014 seconds.
+Registered in 0.005318 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.29 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.98 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.310 seconds
+- Completed reload, in  1.362 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.65 seconds
-Refreshing native plugins compatible for Editor in 1.77 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 1.01 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3180 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3181 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 132.0 MB.
 System memory in use after: 132.2 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3654.
-Total: 9.307800 ms (FindLiveObjects: 0.699200 ms CreateObjectMapping: 0.445700 ms MarkObjects: 7.743800 ms  DeleteObjects: 0.415300 ms)
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3655.
+Total: 2.912300 ms (FindLiveObjects: 0.342100 ms CreateObjectMapping: 0.158700 ms MarkObjects: 2.269800 ms  DeleteObjects: 0.140600 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/UI/PauseUI/PauseUI.cs
-  artifactKey: Guid(0f7731f1b8168f141b01e294101337dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/UI/PauseUI/PauseUI.cs using Guid(0f7731f1b8168f141b01e294101337dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0256b1ea838522cef7125468e736ebb9') in 0.227993 seconds 
+  path: Assets/Resources/UIPrefabs/PauseUI.prefab
+  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a505ee3c987518dd2e90e1bb9bf4ca2') in 0.091481 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 140.202481 seconds.
-  path: Assets/Scripts/UI/PauseUI/PauseUI.cs
-  artifactKey: Guid(0f7731f1b8168f141b01e294101337dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/UI/PauseUI/PauseUI.cs using Guid(0f7731f1b8168f141b01e294101337dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd66b8d1806335538af75f727b713e4cf') in 0.006592 seconds 
+  Time since last request: 2.294717 seconds.
+  path: Assets/Resources/UIPrefabs/PauseUI.prefab
+  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1db4fd8f778a41e0bd864eebb6e6f866') in 0.007971 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.823782 seconds.
+  path: Assets/Resources/UIPrefabs/PauseUI.prefab
+  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fe7e2afde0d675bf936068addaa3ac2') in 0.007006 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.569261 seconds.
+  path: Assets/Resources/UIPrefabs/PauseUI.prefab
+  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f374ecafb55e33c07e6f43335da0861') in 0.007556 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.127667 seconds.
+  path: Assets/Resources/UIPrefabs/PauseUI.prefab
+  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f2d526ca97837638da77d0fade30189') in 0.007113 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.825182 seconds.
+  path: Assets/Resources/UIPrefabs/PauseUI.prefab
+  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '333a091466b1edb4961278cb908cfe1a') in 0.006636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.033824 seconds.
+  path: Assets/Resources/UIPrefabs/PauseUI.prefab
+  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63adefa150291cd33e20c603608b6a51') in 0.007519 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.561903 seconds.
+  path: Assets/Resources/UIPrefabs/PauseUI.prefab
+  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d4981a995d2f1f727d3f14205a41851') in 0.006864 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.657210 seconds.
+  path: Assets/Resources/UIPrefabs/PauseUI.prefab
+  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd61e4508a9f20a614f703cc4a7b6502') in 0.006773 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.014844 seconds.
+Registered in 0.020107 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.90 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.93 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.422 seconds
+- Completed reload, in  1.493 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.96 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.48 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3171 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 131.5 MB.
-System memory in use after: 131.7 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3657.
-Total: 6.929900 ms (FindLiveObjects: 0.578500 ms CreateObjectMapping: 0.484300 ms MarkObjects: 5.816100 ms  DeleteObjects: 0.048500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 51.826458 seconds.
-  path: Assets/Scripts/UI/PauseUI/PauseUI.cs
-  artifactKey: Guid(0f7731f1b8168f141b01e294101337dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/UI/PauseUI/PauseUI.cs using Guid(0f7731f1b8168f141b01e294101337dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71581219bc0c88f98c1a2d40e677c198') in 0.013354 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.017032 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.29 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.785 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.27 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.6 MB.
 System memory in use after: 131.8 MB.
 
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3660.
-Total: 3.672700 ms (FindLiveObjects: 0.416000 ms CreateObjectMapping: 0.188700 ms MarkObjects: 3.037100 ms  DeleteObjects: 0.029300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.022323 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.64 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.989 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.25 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.6 MB.
-System memory in use after: 131.8 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3663.
-Total: 9.440700 ms (FindLiveObjects: 0.945100 ms CreateObjectMapping: 0.520100 ms MarkObjects: 7.895700 ms  DeleteObjects: 0.076700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.028922 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.06 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.107 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.21 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.6 MB.
-System memory in use after: 131.8 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3666.
-Total: 8.013300 ms (FindLiveObjects: 0.944600 ms CreateObjectMapping: 0.468700 ms MarkObjects: 6.545500 ms  DeleteObjects: 0.051500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 1885.803710 seconds.
-  path: Assets/Resources/UIPrefabs/AboutUI.prefab
-  artifactKey: Guid(bbca1cf76c761524e80bdcb7217c9712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/AboutUI.prefab using Guid(bbca1cf76c761524e80bdcb7217c9712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '001a0d551945649279951363545f5415') in 0.156787 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000821 seconds.
-  path: Assets/Resources/UIPrefabs/StartUI.prefab
-  artifactKey: Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/StartUI.prefab using Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '765564b28f8df1944f5f8382103a74cb') in 0.018010 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000752 seconds.
-  path: Assets/Resources/UIPrefabs/OptionsUI.prefab
-  artifactKey: Guid(97f88fef63a083b478e455d1385a0ec6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/OptionsUI.prefab using Guid(97f88fef63a083b478e455d1385a0ec6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3b6cff83bee067f4b897ec40f9c073f') in 0.014212 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.704668 seconds.
-  path: Assets/Resources/UIPrefabs/PauseUI.prefab
-  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7368bcc52edb35353d7baa1d0110e5c') in 0.024900 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009534 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.18 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.939 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.37 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.6 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3669.
-Total: 11.838400 ms (FindLiveObjects: 1.074000 ms CreateObjectMapping: 0.707600 ms MarkObjects: 9.951900 ms  DeleteObjects: 0.100500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.037840 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.52 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.374 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.71 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3672.
-Total: 4.788200 ms (FindLiveObjects: 0.582300 ms CreateObjectMapping: 0.335000 ms MarkObjects: 3.835700 ms  DeleteObjects: 0.032900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 224.873839 seconds.
-  path: Assets/Resources/UIPrefabs/CombatUI.prefab
-  artifactKey: Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/CombatUI.prefab using Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcdff79508c3936583f547cfd35db5dd') in 0.216060 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.883682 seconds.
-  path: Assets/Resources/UIPrefabs/CombatUI.prefab
-  artifactKey: Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/CombatUI.prefab using Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85863ad266449c3c6e3500590ac08340') in 0.150917 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.660115 seconds.
-  path: Assets/Resources/UIPrefabs/CombatUI.prefab
-  artifactKey: Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/CombatUI.prefab using Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0ec0580fa7bde6ff99b02a7d28cf175') in 0.091119 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.910763 seconds.
-  path: Assets/Resources/UIPrefabs/CombatUI.prefab
-  artifactKey: Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/CombatUI.prefab using Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27c060d692a1759148a84224348fc455') in 0.075175 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.060673 seconds.
-  path: Assets/Resources/UIPrefabs/CombatUI.prefab
-  artifactKey: Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/CombatUI.prefab using Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b4a87fd572968799294a1a80dfe097d') in 0.076895 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.916349 seconds.
-  path: Assets/Resources/UIPrefabs/CombatUI.prefab
-  artifactKey: Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/CombatUI.prefab using Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88130541c8ebf5dc52a5059a0a014a5a') in 0.080660 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.365550 seconds.
-  path: Assets/Resources/UIPrefabs/CombatUI.prefab
-  artifactKey: Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/CombatUI.prefab using Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64e214f60e46284a78c5da80e58a14c1') in 0.071797 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.341478 seconds.
-  path: Assets/Resources/UIPrefabs/CombatUI.prefab
-  artifactKey: Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/CombatUI.prefab using Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8f8cd17acc7d0bdc5a2b80f333c71ec') in 0.070666 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.024557 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.76 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.692 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.66 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3675.
-Total: 5.636800 ms (FindLiveObjects: 0.550100 ms CreateObjectMapping: 0.375100 ms MarkObjects: 4.649400 ms  DeleteObjects: 0.059800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 442.642259 seconds.
-  path: Assets/Resources/UIPrefabs/CombatUI.prefab
-  artifactKey: Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/CombatUI.prefab using Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56952d14357ed79b23aac94fc0310d2f') in 0.286044 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.681997 seconds.
-  path: Assets/Resources/UIPrefabs/CombatUI.prefab
-  artifactKey: Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/CombatUI.prefab using Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b80a9529d52e884f03610dcfc1fad58') in 0.127210 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010938 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.37 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.145 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 5.29 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3678.
-Total: 5.989900 ms (FindLiveObjects: 0.670400 ms CreateObjectMapping: 0.451900 ms MarkObjects: 4.814000 ms  DeleteObjects: 0.051100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005323 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.349 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.36 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3681.
-Total: 3.192200 ms (FindLiveObjects: 0.330300 ms CreateObjectMapping: 0.166000 ms MarkObjects: 2.667600 ms  DeleteObjects: 0.026900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005238 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.92 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.440 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.88 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3684.
-Total: 3.556700 ms (FindLiveObjects: 0.372400 ms CreateObjectMapping: 0.183800 ms MarkObjects: 2.972800 ms  DeleteObjects: 0.026200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006314 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.35 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.307 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.54 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3687.
-Total: 5.564300 ms (FindLiveObjects: 0.489000 ms CreateObjectMapping: 0.232200 ms MarkObjects: 4.816300 ms  DeleteObjects: 0.025100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005036 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.52 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.466 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.97 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3690.
-Total: 4.090800 ms (FindLiveObjects: 0.514900 ms CreateObjectMapping: 0.283600 ms MarkObjects: 3.263700 ms  DeleteObjects: 0.027000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005423 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.54 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.322 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.73 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3693.
-Total: 6.257100 ms (FindLiveObjects: 0.934500 ms CreateObjectMapping: 0.629500 ms MarkObjects: 4.662900 ms  DeleteObjects: 0.028300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 1733.669503 seconds.
-  path: Assets/Resources/UIPrefabs/PauseUI.prefab
-  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ded56dccff4cf8a6a789c95c5412c94') in 0.065111 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005353 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.70 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.391 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.89 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3696.
-Total: 4.549800 ms (FindLiveObjects: 0.511300 ms CreateObjectMapping: 0.314600 ms MarkObjects: 3.700400 ms  DeleteObjects: 0.021900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005250 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.82 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.329 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.00 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3699.
-Total: 2.804300 ms (FindLiveObjects: 0.386900 ms CreateObjectMapping: 0.194700 ms MarkObjects: 2.198500 ms  DeleteObjects: 0.023300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006794 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.56 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.662 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.60 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 131.9 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3702.
-Total: 3.460800 ms (FindLiveObjects: 0.452700 ms CreateObjectMapping: 0.181000 ms MarkObjects: 2.753200 ms  DeleteObjects: 0.072600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 278.796216 seconds.
-  path: Assets/Resources/UIResources/Prefabs/Button.prefab
-  artifactKey: Guid(4d1a06215e08527489649c82845889b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIResources/Prefabs/Button.prefab using Guid(4d1a06215e08527489649c82845889b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c40b6c043ee6ce6a380669a17e4dfe9d') in 0.082555 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006710 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.05 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.454 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.94 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 132.0 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3705.
-Total: 2.681200 ms (FindLiveObjects: 0.377900 ms CreateObjectMapping: 0.181800 ms MarkObjects: 2.099500 ms  DeleteObjects: 0.020900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006001 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.420 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.28 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 132.0 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3708.
-Total: 4.080000 ms (FindLiveObjects: 0.648800 ms CreateObjectMapping: 0.331500 ms MarkObjects: 3.060400 ms  DeleteObjects: 0.037100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006496 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.02 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.382 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.93 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 132.0 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3711.
-Total: 3.407200 ms (FindLiveObjects: 0.496100 ms CreateObjectMapping: 0.219400 ms MarkObjects: 2.654300 ms  DeleteObjects: 0.036000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005377 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.465 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.67 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 132.0 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3714.
-Total: 2.573900 ms (FindLiveObjects: 0.309600 ms CreateObjectMapping: 0.195600 ms MarkObjects: 2.045700 ms  DeleteObjects: 0.021800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009213 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.92 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.453 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.95 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 132.0 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3717.
-Total: 3.312600 ms (FindLiveObjects: 0.552400 ms CreateObjectMapping: 0.258700 ms MarkObjects: 2.470300 ms  DeleteObjects: 0.027700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005649 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.93 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.594 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.20 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.7 MB.
-System memory in use after: 132.0 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3720.
-Total: 2.772300 ms (FindLiveObjects: 0.355800 ms CreateObjectMapping: 0.171300 ms MarkObjects: 2.204100 ms  DeleteObjects: 0.039800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 6648.701440 seconds.
-  path: Assets/Resources/UIPrefabs/AboutUI.prefab
-  artifactKey: Guid(bbca1cf76c761524e80bdcb7217c9712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/AboutUI.prefab using Guid(bbca1cf76c761524e80bdcb7217c9712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6659b5d379e4834f6b1999427d1e7596') in 0.058099 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000428 seconds.
-  path: Assets/Resources/UIPrefabs/PauseUI.prefab
-  artifactKey: Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/PauseUI.prefab using Guid(a739c2a1eadcd5a48b5d4a57e9aeeae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a386e0ae1d3e67b493e4b9d160f5631') in 0.008540 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000422 seconds.
-  path: Assets/Resources/UIPrefabs/StartUI.prefab
-  artifactKey: Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/StartUI.prefab using Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f732bf265b237f1a2f46c1c0edcce9ea') in 0.007465 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000363 seconds.
-  path: Assets/Resources/UIPrefabs/CombatUI.prefab
-  artifactKey: Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/CombatUI.prefab using Guid(15a3b14ada1f35a43a74fd08056a5cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c60340ea08d00a993e0e663f6f7ce6fb') in 0.051992 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000429 seconds.
-  path: Assets/Resources/UIPrefabs/OptionsUI.prefab
-  artifactKey: Guid(97f88fef63a083b478e455d1385a0ec6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/OptionsUI.prefab using Guid(97f88fef63a083b478e455d1385a0ec6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b69b4b0fda7476f18e7c9572e0bdfd2a') in 0.007432 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 20.088907 seconds.
-  path: Assets/Resources/UIPrefabs/StartUI.prefab
-  artifactKey: Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/StartUI.prefab using Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0d0c53f3d1c1377fff048c5ca4e75eb') in 0.010867 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.830576 seconds.
-  path: Assets/Resources/UIPrefabs/StartUI.prefab
-  artifactKey: Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/StartUI.prefab using Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14e611347a442bb179218954e55aa914') in 0.009117 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.954512 seconds.
-  path: Assets/Resources/UIPrefabs/StartUI.prefab
-  artifactKey: Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/StartUI.prefab using Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2f47223f8745f94878bd84d5f930454') in 0.008027 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.139239 seconds.
-  path: Assets/Resources/UIPrefabs/StartUI.prefab
-  artifactKey: Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/StartUI.prefab using Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9245c73f623b64cae4a21314babaf6d7') in 0.009344 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 22.672298 seconds.
-  path: Assets/Resources/UIPrefabs/StartUI.prefab
-  artifactKey: Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/StartUI.prefab using Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44aede1e35ef6783e053ac4103530624') in 0.008090 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.288405 seconds.
-  path: Assets/Resources/UIPrefabs/StartUI.prefab
-  artifactKey: Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/StartUI.prefab using Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35e86521d62aa720d8bf66a47f71e771') in 0.008948 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.836890 seconds.
-  path: Assets/Resources/UIPrefabs/StartUI.prefab
-  artifactKey: Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/StartUI.prefab using Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6eeaeb3ae689a7ce784694e71292b699') in 0.008435 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005534 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.92 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.626 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.02 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.8 MB.
-System memory in use after: 132.0 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3723.
-Total: 2.874500 ms (FindLiveObjects: 0.437300 ms CreateObjectMapping: 0.192700 ms MarkObjects: 2.219100 ms  DeleteObjects: 0.024100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 185.949082 seconds.
-  path: Assets/Resources/UIPrefabs/StartUI.prefab
-  artifactKey: Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/StartUI.prefab using Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b8e1c71db72784e9066cec0c23de5c5') in 0.055329 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.205933 seconds.
-  path: Assets/Resources/UIPrefabs/StartUI.prefab
-  artifactKey: Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/UIPrefabs/StartUI.prefab using Guid(a398b7cc7dce22b4393d54ab758e301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8975c8d53b38bca08b4ee033013fe49e') in 0.008333 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005089 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.93 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.534 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.96 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.8 MB.
-System memory in use after: 132.0 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3726.
-Total: 3.013300 ms (FindLiveObjects: 0.388600 ms CreateObjectMapping: 0.190100 ms MarkObjects: 2.411600 ms  DeleteObjects: 0.021700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005146 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\NJU\2021summer_unity\working\Incantation_prototype\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.69 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.521 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.43 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3170 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 131.8 MB.
-System memory in use after: 132.0 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3729.
-Total: 2.774000 ms (FindLiveObjects: 0.350600 ms CreateObjectMapping: 0.203200 ms MarkObjects: 2.196300 ms  DeleteObjects: 0.022700 ms)
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3658.
+Total: 2.803000 ms (FindLiveObjects: 0.336400 ms CreateObjectMapping: 0.179400 ms MarkObjects: 2.266000 ms  DeleteObjects: 0.020500 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

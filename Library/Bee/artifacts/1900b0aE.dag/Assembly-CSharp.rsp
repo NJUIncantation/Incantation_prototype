@@ -384,6 +384,7 @@
 "Assets/Scripts/Widgets/PlayableWidget/FireDamageArea.cs"
 "Assets/Scripts/Widgets/PlayableWidget/HealthPickup.cs"
 "Assets/Scripts/Widgets/PlayableWidget/Pickup.cs"
+"Assets/Scripts/Widgets/PlayableWidget/UltWandPickup.cs"
 "Assets/Scripts/Widgets/Weapons/WeaponController.cs"
 -langversion:8.0
 
