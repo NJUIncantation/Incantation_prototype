@@ -11,7 +11,7 @@ namespace Unity.NJUCS.UI
         // Start is called before the first frame update
         void Start()
         {
-            UIManager.Instance.PushPanel(UIPanelType.CombatUI);
+            UIManager.Instance.PushPanel(UIPanelType.StartUI);
         }
 
     }

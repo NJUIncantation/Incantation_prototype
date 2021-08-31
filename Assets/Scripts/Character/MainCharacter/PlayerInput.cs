@@ -71,7 +71,7 @@ namespace Unity.NJUCS.Character
                 bool Fire_inputHeld = GetFireInputHeld();
                 bool Fire_inputUp = !GetFireInputHeld() && m_FireInputWasHeld;
                 
-                //m_playerWeaponManager.Control(Fire_inputDown, Fire_inputHeld, Fire_inputUp);
+                m_playerWeaponManager.Control(Fire_inputDown, Fire_inputHeld, Fire_inputUp);
 
                 //m_playerWeaponManager.Control(Q_inputDown, Q_inputHeld, Q_inputUp, E_inputDown, E_inputHeld, E_inputUp);
             }

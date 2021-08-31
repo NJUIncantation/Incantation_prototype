@@ -71,25 +71,27 @@ namespace Unity.NJUCS.UI
             panelStack.Push(panel);
 
             panel.GetComponent<BasePanel>().OnEnter();
-            //Debug.Log(type + " is pushed");
+            Debug.Log(type + " is pushed");
         }
 
         //Pop panel out and exit 
         public void PopPanel()
         {
-            if (panelStack == null)
+            if (panelStack == null) { 
                 panelStack = new Stack<BasePanel>();
+                Debug.Log("null panelstack");
+            }
 
             if (panelStack.Count <= 0) return;
 
             BasePanel topPanel = panelStack.Pop();
             topPanel.OnExit();
+            Debug.Log("a panel is poped");
 
             if (panelStack.Count <= 0) return;
 
             BasePanel topPanel2 = panelStack.Peek();
             topPanel2.OnResume();
-            Debug.Log("a panel is poped");
         }
 
         //Search UIPanel from panelList according to UIPanelType
@@ -174,11 +176,10 @@ namespace Unity.NJUCS.UI
 
                 panelDict.Add(type, instPanel.GetComponent<BasePanel>());
 
-                //Debug.Log(panelDict);
                 return instPanel.GetComponent<BasePanel>();
             }
-            
-            return panel.GetComponent<BasePanel>();
+
+            return panel;
         }
 
     }

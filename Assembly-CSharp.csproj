@@ -78,7 +78,9 @@
     <Compile Include="Assets\Scripts\UI\UIRoot.cs" />
     <Compile Include="Assets\Scripts\Spell\VirtualSpell.cs" />
     <Compile Include="Assets\Scripts\NPC\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\UI\OptionsUI\OptionsUI.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\ObjectiveManager.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseUI\PauseUI.cs" />
     <Compile Include="Assets\Scripts\UI\CombatUI\Avatar.cs" />
     <Compile Include="Assets\Scripts\PlayerInput\MobileInput.cs" />
     <Compile Include="Assets\Scripts\UI\UIFramework\UIPanel\UIPanel.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="Assets\Scripts\Game\Mana.cs" />
     <Compile Include="Assets\Scripts\UI\CombatUI\StateBar.cs" />
     <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
+    <Compile Include="Assets\Scripts\UI\AboutUI\AboutUI.cs" />
     <Compile Include="Assets\Old Sea Port\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\Scripts\Character\MainCharacter\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\UI\UIFramework\UIPanel\BasePanel.cs" />
@@ -113,6 +116,7 @@
     <Compile Include="Assets\Scripts\Widgets\FlyingWidget\FlyingObjectBase.cs" />
     <Compile Include="Assets\Scripts\Character\MainCharacter\CharacterIK.cs" />
     <Compile Include="Assets\Scripts\Character\MainCharacter\CharacterCasting.cs" />
+    <Compile Include="Assets\Scripts\UI\StartUI\StartUI.cs" />
     <Compile Include="Assets\Scripts\Game\ObjectiveDock.cs" />
     <Compile Include="Assets\Scripts\NPC\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Widgets\PlayableWidget\Pickup.cs" />
@@ -121,6 +125,7 @@
   <ItemGroup>
      <None Include="Assets\Prefabs\Cameras\CameraGuidelines.txt" />
      <None Include="Assets\Old Sea Port\Shaders\MFEP_Stream.shader" />
+     <None Include="Assets\Resources\3D Items - Mega Pack\Read Me.txt" />
      <None Include="Assets\Old Sea Port\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity 2021.1.7f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -739,6 +744,9 @@
     </Reference>
     <Reference Include="VSSettingsProvider">
       <HintPath>Library\ScriptAssemblies\VSSettingsProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
