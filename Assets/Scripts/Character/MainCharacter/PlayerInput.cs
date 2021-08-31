@@ -16,6 +16,8 @@ namespace Unity.NJUCS.Character
         private PlayerWeaponManager m_playerWeaponManager;
         private bool m_QInputWasHeld;
         private bool m_EInputWasHeld;
+        //modified
+        private bool m_FireInputWasHeld;
 
         void Start()
         {
@@ -45,21 +47,33 @@ namespace Unity.NJUCS.Character
             {
                 character.Jump();
             }
+            //ÊÍ·Å¼¼ÄÜ
             if (CrossPlatformInputManager.GetKeyDown(KeyCode.J))
             {
                 character.Cast(CharacterCasting.CharacterSpells.Spell_J);
             }
-            //Q/E skills handle
+            if (CrossPlatformInputManager.GetKeyDown(KeyCode.K))
+            {
+                character.Cast(CharacterCasting.CharacterSpells.Spell_K);
+            }
+            //fire input handle
+            //modified
             if (m_playerWeaponManager != null)
             {
-                bool Q_inputDown = GetInputHeld(KeyCode.Q) && !m_QInputWasHeld;
+                /*bool Q_inputDown = GetInputHeld(KeyCode.Q) && !m_QInputWasHeld;
                 bool Q_inputHeld = GetInputHeld(KeyCode.Q);
                 bool Q_inputUp = !GetInputHeld(KeyCode.Q) && m_QInputWasHeld;
                 bool E_inputDown = GetInputHeld(KeyCode.E) && !m_EInputWasHeld;
                 bool E_inputHeld = GetInputHeld(KeyCode.E);
-                bool E_inputUp = !GetInputHeld(KeyCode.E) && m_EInputWasHeld;
+                bool E_inputUp = !GetInputHeld(KeyCode.E) && m_EInputWasHeld;*/
 
-                m_playerWeaponManager.Control(Q_inputDown, Q_inputHeld, Q_inputUp, E_inputDown, E_inputHeld, E_inputUp);
+                bool Fire_inputDown = GetFireInputHeld() && !m_FireInputWasHeld;
+                bool Fire_inputHeld = GetFireInputHeld();
+                bool Fire_inputUp = !GetFireInputHeld() && m_FireInputWasHeld;
+                
+                //m_playerWeaponManager.Control(Fire_inputDown, Fire_inputHeld, Fire_inputUp);
+
+                //m_playerWeaponManager.Control(Q_inputDown, Q_inputHeld, Q_inputUp, E_inputDown, E_inputHeld, E_inputUp);
             }
         }
 
@@ -67,6 +81,14 @@ namespace Unity.NJUCS.Character
         {
             m_QInputWasHeld = GetInputHeld(KeyCode.Q);
             m_EInputWasHeld = GetInputHeld(KeyCode.E);
+            //modified
+            m_FireInputWasHeld = GetFireInputHeld();
+        }
+
+        //modified
+        public bool GetFireInputHeld()
+        {
+            return CrossPlatformInputManager.GetButtonDown("Fire1");
         }
 
         bool GetInputHeld(UnityEngine.KeyCode keyCode)

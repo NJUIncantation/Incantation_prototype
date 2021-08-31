@@ -55,7 +55,7 @@ namespace Unity.NJUCS.Character
 
             m_actorManager.CreateActor(characterName, gameObject);
             mana.ResetMana(100);
-            characterCasting.LoadSpells();
+            characterCasting.LoadSpells(CharacterCasting.CharacterSpells.Spell_J ,new SpellLightning());
         }
 
         private void OnDestroy()

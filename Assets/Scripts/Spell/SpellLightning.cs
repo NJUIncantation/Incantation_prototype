@@ -14,7 +14,8 @@ namespace Unity.NJUCS.Spell
             ManaCost = 10;
             CoolDown = 5;
             damageArea = new DamageArea();
-            damageArea.AreaOfEffectDistance = 2.5f;
+            damageArea.AreaOfEffectDistance = 3.5f;
+            particleSystem = Instantiate(Resources.Load<ParticleSystem>("Spells/LightningPrison"));
         }
         private void OnDestroy()
         {
@@ -22,8 +23,6 @@ namespace Unity.NJUCS.Spell
         }
         public override bool Cast()
         {
-            if(particleSystem == null)
-                particleSystem = Instantiate(Resources.Load<ParticleSystem>("Spells/LightningPrison"));
             //»‘‘⁄¿‰»¥
             //Debug.Log("Cooldown: " + CoolDownTimeLeft());
             if (CoolDownTimeLeft() != 0)

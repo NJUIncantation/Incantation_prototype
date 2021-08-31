@@ -362,6 +362,7 @@
 "Assets/Scripts/PlayerInput/StandaloneInput.cs"
 "Assets/Scripts/PlayerInput/VirtualInput.cs"
 "Assets/Scripts/Spell/SpellLightning.cs"
+"Assets/Scripts/Spell/SpittingFilreSpell.cs"
 "Assets/Scripts/Spell/VirtualSpell.cs"
 "Assets/Scripts/Tools/Singleton.cs"
 "Assets/Scripts/UI/CombatUI/Avatar.cs"
@@ -379,6 +380,7 @@
 "Assets/Scripts/Widgets/PlayableWidget/FireDamageArea.cs"
 "Assets/Scripts/Widgets/PlayableWidget/HealthPickup.cs"
 "Assets/Scripts/Widgets/PlayableWidget/Pickup.cs"
+"Assets/Scripts/Widgets/PlayableWidget/UltWandPickup.cs"
 "Assets/Scripts/Widgets/Weapons/WeaponController.cs"
 -langversion:8.0
 

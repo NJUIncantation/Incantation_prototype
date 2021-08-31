@@ -9,15 +9,16 @@ namespace Unity.NJUCS.Character
     {
         public enum CharacterSpells
         {
-            Spell_J
+            Spell_J,
+            Spell_K
         }
 
         public Dictionary<CharacterSpells, VirtualSpell> MySpells = new Dictionary<CharacterSpells, VirtualSpell>();
 
         //TODO: 技能的接口应当更加灵活
-        public void LoadSpells()
+        public void LoadSpells(CharacterSpells characterSpells, VirtualSpell virtualSpell)
         {
-            MySpells.Add(CharacterSpells.Spell_J, new SpellLightning());
+            MySpells.Add(characterSpells, virtualSpell);
         }
 
         public VirtualSpell GetSpell(CharacterSpells spell)

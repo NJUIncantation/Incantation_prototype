@@ -69,9 +69,11 @@
     <Compile Include="Assets\Scripts\Tools\Singleton.cs" />
     <Compile Include="Assets\Scripts\Widgets\PlayableWidget\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\Game\Objective.cs" />
+    <Compile Include="Assets\Scripts\Spell\SpittingFilreSpell.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\PlayerWeaponManager.cs" />
     <Compile Include="Assets\Resources\UIResources\UI\Script\Togglescript.cs" />
     <Compile Include="Assets\Scripts\UI\UIFramework\Manager\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Widgets\PlayableWidget\UltWandPickup.cs" />
     <Compile Include="Assets\Scripts\Game\Managers\GameFlowManager.cs" />
     <Compile Include="Assets\Scripts\UI\UIRoot.cs" />
     <Compile Include="Assets\Scripts\Spell\VirtualSpell.cs" />
