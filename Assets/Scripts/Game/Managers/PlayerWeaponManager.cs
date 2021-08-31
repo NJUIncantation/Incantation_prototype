@@ -64,7 +64,23 @@ namespace Unity.NJUCS.Game
         }
 
         // Control is called once per frame in playerInput
-        public void Control(bool Q_inputDown, bool Q_inputHeld, bool Q_inputUp, bool E_inputDown, bool E_inputHeld, bool E_inputUp)
+        public void Control(bool Fire_inputDown, bool Fire_inputHeld, bool Fire_inputUp)
+        {
+            WeaponController activeWeapon = GetActiveWeapon();
+            if (activeWeapon != null)
+            {
+                bool hasFired = activeWeapon.HandleShootInputsQ(Fire_inputDown, Fire_inputHeld, Fire_inputUp);
+                Mana mana = gameObject.GetComponent<Mana>();
+                if (hasFired)
+                {
+                    mana.SpendMana(activeWeapon.Q_ManaCost, gameObject);
+                    Debug.Log(message: "Q cost:" + activeWeapon.Q_ManaCost);
+                }
+            }
+
+        }
+
+        /*public void Control(bool Q_inputDown, bool Q_inputHeld, bool Q_inputUp, bool E_inputDown, bool E_inputHeld, bool E_inputUp)
         {
             WeaponController activeWeapon = GetActiveWeapon();
             if(activeWeapon != null)
@@ -84,15 +100,7 @@ namespace Unity.NJUCS.Game
                 }
             }
             
-            /*if (CrossPlatformInputManager.GetKeyDown(KeyCode.Q))
-            {
-                ActivedWeaponShootSingle();
-            }
-            if (CrossPlatformInputManager.GetKeyDown(KeyCode.E))
-            {
-                ActivedWeaponShootSpread();
-            }*/
-        }
+        }*/
 
         //当前使用的武器单发开火
         public void ActivedWeaponShootSingle()
