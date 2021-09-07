@@ -126,7 +126,7 @@ namespace Unity.NJUCS.NPC
 
         void Update()
         {
-            if (health.CurrentHealth < 0)
+            if (health.CurrentHealth <= 0)
             {
                 isDead = true;
             }
