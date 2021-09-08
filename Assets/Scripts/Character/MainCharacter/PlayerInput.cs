@@ -48,13 +48,13 @@ namespace Unity.NJUCS.Character
                 character.Jump();
             }
             //ÊÍ·Å¼¼ÄÜ
-            if (CrossPlatformInputManager.GetKeyDown(KeyCode.J))
+            if (CrossPlatformInputManager.GetKeyDown(KeyCode.Q))
             {
-                character.Cast(CharacterCasting.CharacterSpells.Spell_J);
+                character.Cast(CharacterCasting.CharacterSpells.Spell_Q);
             }
-            if (CrossPlatformInputManager.GetKeyDown(KeyCode.K))
+            if (CrossPlatformInputManager.GetKeyDown(KeyCode.E))
             {
-                character.Cast(CharacterCasting.CharacterSpells.Spell_K);
+                character.Cast(CharacterCasting.CharacterSpells.Spell_E);
             }
             //fire input handle
             //modified

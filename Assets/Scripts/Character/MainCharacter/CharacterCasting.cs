@@ -9,8 +9,8 @@ namespace Unity.NJUCS.Character
     {
         public enum CharacterSpells
         {
-            Spell_J,
-            Spell_K
+            Spell_Q,
+            Spell_E
         }
 
         public Dictionary<CharacterSpells, VirtualSpell> MySpells = new Dictionary<CharacterSpells, VirtualSpell>();

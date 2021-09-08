@@ -35,10 +35,10 @@ namespace Unity.NJUCS.Character
             maxSpeed = 0;
             rotationSpeed = 11;
             smoothSpeed = 0;
-            walkSpeed = 2f;
+            walkSpeed = 2.5f;
             runSpeed = 5f;
             sprintSpeed = 8f;
-            crouchSpeed = 3.3f;
+            crouchSpeed = 3f;
             jumpForce = 300;
             SetMovementMode(MovementMode.Walking);
             m_rigidbody = GetComponent<Rigidbody>();
@@ -50,7 +50,6 @@ namespace Unity.NJUCS.Character
         // Update is called once per frame
         void Update()
         {
-            //transform.Translate(velocity.normalized*maxSpeed);
 
             actualVelocity = Vector3.Lerp(actualVelocity, (transform.position - characterPosition) / Time.deltaTime, Time.deltaTime * 5);
             characterPosition = transform.position;
@@ -59,9 +58,8 @@ namespace Unity.NJUCS.Character
             {
                 //Debug.Log(velocity.magnitude);
                 m_rigidbody.velocity = new Vector3(velocity.normalized.x * smoothSpeed, GetComponent<Rigidbody>().velocity.y, velocity.normalized.z * smoothSpeed);
-                smoothSpeed = Mathf.Lerp(smoothSpeed, maxSpeed, Time.deltaTime * 5);
+                smoothSpeed = Mathf.Lerp(smoothSpeed, maxSpeed, Time.deltaTime);
                 t_mesh.rotation = Quaternion.Lerp(t_mesh.rotation, Quaternion.LookRotation(velocity), Time.deltaTime * rotationSpeed);
-                //Debug.Log(rigidbody.velocity.magnitude);
 
             }
             else

@@ -14,7 +14,7 @@ namespace Unity.NJUCS.Spell
             ManaCost = 10;
             CoolDown = 5;
             damageArea = new DamageArea();
-            damageArea.AreaOfEffectDistance = 3.5f;
+            damageArea.AreaOfEffectDistance = 4f;
             particleSystem = Instantiate(Resources.Load<ParticleSystem>("Spells/LightningPrison"));
         }
         private void OnDestroy()

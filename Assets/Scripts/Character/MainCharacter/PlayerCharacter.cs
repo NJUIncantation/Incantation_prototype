@@ -55,7 +55,8 @@ namespace Unity.NJUCS.Character
 
             m_actorManager.CreateActor(characterName, gameObject);
             mana.ResetMana(100);
-            characterCasting.LoadSpells(CharacterCasting.CharacterSpells.Spell_J ,new SpellLightning());
+            characterCasting.LoadSpells(CharacterCasting.CharacterSpells.Spell_Q ,new SpellLightning());
+            characterCasting.LoadSpells(CharacterCasting.CharacterSpells.Spell_E, new SpittingFireSpell());
         }
 
         private void OnDestroy()
@@ -66,7 +67,6 @@ namespace Unity.NJUCS.Character
         // Update is called once per frame
         void Update()
         {
-            m_actorManager.AmountOfActors();
             CameraManager cameraManager = FindObjectOfType<CameraManager>();
             if (cameraManager != null)
             {
@@ -146,8 +146,8 @@ namespace Unity.NJUCS.Character
         {
             if (characterMovement.GetMovementMode() == MovementMode.Sprinting)
             {
-                characterMovement.SetMovementMode(MovementMode.Running);
-                characterAnimationController.SetMovementMode(MovementMode.Running);
+                characterMovement.SetMovementMode(MovementMode.Walking);
+                characterAnimationController.SetMovementMode(MovementMode.Walking);
             }
             else
             {
