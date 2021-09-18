@@ -19,6 +19,7 @@ namespace Unity.NJUCS.NPC
     [RequireComponent(typeof(Damageable))]
     [RequireComponent(typeof(BoxCollider))]
     [RequireComponent(typeof(StateBar))]
+    [RequireComponent(typeof(AttackStats))]
     public class EnemyController : VirtualEnemy
     {
         private EnemyStates enemyStates;
@@ -26,6 +27,7 @@ namespace Unity.NJUCS.NPC
         private Animator anim;
         private Collider coll;
         private Health health;
+        private AttackStats attackStats;
         [SerializeField] private StateBar enemyHealthBar;
         private CameraManager m_cameraManager;
         private GameObject MainCamera;
@@ -45,10 +47,10 @@ namespace Unity.NJUCS.NPC
         private Vector3 wayPoint;//随机巡逻点
         private Vector3 guardPos;//初始位置
 
-        [Header("Test variable")]
-        public float coolDown;
-        public float attackRange;
-        public float skillRange;
+        //[Header("Test variable")]
+        //public float coolDown;
+        //public float attackRange;
+        //public float skillRange;
 
 
         //配合动画的bool变量
@@ -56,7 +58,7 @@ namespace Unity.NJUCS.NPC
         bool isChase = false;
         bool isFollow = false;
         bool isDead = false;
-        bool playerDead = false;
+        //bool playerDead = false;
         bool isCritical = false;
 
         public void OnCameraCreatedFunc(string name, GameObject gameobject)
@@ -71,6 +73,7 @@ namespace Unity.NJUCS.NPC
             anim = GetComponent<Animator>();
             coll = GetComponent<Collider>();
             health = GetComponent<Health>();
+            attackStats = GetComponent<AttackStats>();
             speed = agent.speed;
             guardPos = transform.position;
             guardRotation = transform.rotation;
@@ -130,12 +133,15 @@ namespace Unity.NJUCS.NPC
             {
                 isDead = true;
             }
-            if (!playerDead)
+            /*if (!playerDead)
             {
                 SwitchStates();
                 SwitchAnimation();
                 lastAttackTime -= Time.deltaTime;
-            }
+            }*/
+            SwitchStates();
+            SwitchAnimation();
+            lastAttackTime -= Time.deltaTime;
             updateHealthBar();
         }
 
@@ -144,7 +150,7 @@ namespace Unity.NJUCS.NPC
             anim.SetBool("Walk", isWalk);
             anim.SetBool("Chase", isChase);
             anim.SetBool("Follow", isFollow);
-            //anim.SetBool("Critical", characterStats.isCritical);
+            anim.SetBool("Critical", attackStats.isCritical);
             anim.SetBool("Death", isDead);
         }
 
@@ -166,9 +172,9 @@ namespace Unity.NJUCS.NPC
                     isChase = false;
                     if (transform.position != guardPos)
                     {
-                        print("guardPos" + guardPos);
-                        print("position" + transform.position);
-                        print(transform.position - guardPos);
+                        //print("guardPos" + guardPos);
+                        //print("position" + transform.position);
+                        //print(transform.position - guardPos);
                         isWalk = true;
                         agent.isStopped = false;
                         agent.destination = guardPos;
@@ -182,8 +188,7 @@ namespace Unity.NJUCS.NPC
                         }
                     }
                     break;
-                case EnemyStates.PATROL:
-
+                case EnemyStates.PATROL:                   
                     isChase = false;
                     agent.speed = speed * 0.5f;
 
@@ -203,6 +208,7 @@ namespace Unity.NJUCS.NPC
                     else
                     {
                         isWalk = true;
+                        agent.isStopped = false;
                         agent.destination = wayPoint;
                     }
                     break;
@@ -215,6 +221,7 @@ namespace Unity.NJUCS.NPC
                     if (FoundPlayer())
                     {
                         // 追击player
+                        //Debug.Log("Found Enemy!");
                         isFollow = true;
                         agent.isStopped = false;
                         agent.destination = attackTarget.transform.position;
@@ -244,21 +251,16 @@ namespace Unity.NJUCS.NPC
                         agent.isStopped = true;
                         if (lastAttackTime < 0)
                         {
-                            lastAttackTime = coolDown;
-
-                            //是否暴击
-                            //characterStats.isCritical = Random.value < characterStats.attackData.criticalChance;
-                            //if(characterStats.isCritical) Debug.Log("暴击");
-                            //else Debug.Log("普通攻击");
-                            //攻击
+                            lastAttackTime = attackStats.CoolDown;
+                            //暴击判断
+                            attackStats.isCritical = Random.value < attackStats.CriticalChance;
                             Attack();
                         }
                     }
                     break;
                 case EnemyStates.DEAD:
-
                     coll.enabled = false;
-                    agent.enabled = false;
+                    agent.radius = 0;
                     DestroyEnemy();
                     break;
                 default:
@@ -278,16 +280,18 @@ namespace Unity.NJUCS.NPC
         {
             if (attackTarget != null)
             {
-                return Vector3.Distance(attackTarget.transform.position, transform.position) <= attackRange;
+                return Vector3.Distance(attackTarget.transform.position, transform.position) 
+                    <= attackStats.ATKRange + attackTarget.GetComponent<Collider>().bounds.size.x/2.0f;
             }
             else return false;
         }
 
-        bool TargetInSkillRange()
+        protected bool TargetInSkillRange()
         {
             if (attackTarget != null)
             {
-                return Vector3.Distance(attackTarget.transform.position, transform.position) <= skillRange;
+                return Vector3.Distance(attackTarget.transform.position, transform.position) 
+                    <= attackStats.SkillRange + attackTarget.GetComponent<Collider>().bounds.size.x/2.0f;
             }
             else return false;
         }
@@ -301,9 +305,48 @@ namespace Unity.NJUCS.NPC
             }
             if (TargetInSkillRange())//技能动画
             {
-                print("set the trigger Skill!");
+                //print("set the trigger Skill!");
                 anim.SetTrigger("Skill");
             }
+        }
+
+        void Hit()
+        {
+            //作为animation event被调用
+            //判断范围
+            if(HitCheck() == true)
+            {
+                //伤害计算
+                float baseDamage = Random.Range(attackStats.MinATK, attackStats.MaxATK);
+                float finalDamage = attackStats.isCritical ? 
+                    baseDamage * attackStats.CriticalMultiplier : baseDamage;
+                //Debug.Log("最终伤害:"+finalDamage);
+                attackTarget.GetComponent<Health>().TakeDamage(finalDamage, anim.GetComponent<GameObject>());
+            }
+        }
+
+        bool HitCheck()
+        {
+            if(attackTarget == null)
+            {
+                return false;
+            }
+            //正前方的向量
+            Vector3 norVec = transform.rotation * Vector3.forward;
+            //与敌人的方向向量
+            Vector3 temVec = attackTarget.transform.position - transform.position;
+            //两个向量的夹角
+            float angle = Mathf.Acos(Vector3.Dot(norVec.normalized, temVec.normalized)) * Mathf.Rad2Deg;
+            //FIXME:
+            if (TargetInAttackRange())
+            {
+                if (angle <= 60 * 0.5f)
+                {
+                    //Debug.Log("在扇形攻击范围内");
+                    return true;
+                }
+            }
+            return false;
         }
 
         bool FoundPlayer()
@@ -333,8 +376,9 @@ namespace Unity.NJUCS.NPC
 
             Vector3 randomPoint = new Vector3(guardPos.x + randomX, transform.position.y, guardPos.z + randomZ);
             NavMeshHit hit;
-            wayPoint = NavMesh.SamplePosition(randomPoint, out hit, patrolRange, 1) ? hit.position : transform.position;
 
+            wayPoint = NavMesh.SamplePosition(randomPoint, out hit, patrolRange, 1) ? hit.position : transform.position;
+            //Debug.Log("position: " + wayPoint);
 
         }
 
@@ -344,16 +388,6 @@ namespace Unity.NJUCS.NPC
             Gizmos.DrawWireSphere(transform.position, sightRadius);
         }
 
-        //Animation Event
-
-        //void Hit()
-        //{
-        //    if (attackTarget != null)
-        //    {
-        //        var targetStats = attackTarget.GetComponent<CharacterStats>();
-        //        targetStats.TakeDamage(characterStats, targetStats);
-        //    }
-        //}
 
         //public void EndNotify()
         //{
